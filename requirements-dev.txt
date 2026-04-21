@@ -1,6 +1,6 @@
 # requirements-dev.txt — Dev/CI dependencies
 -r requirements.txt
-pytest==8.2.2
+pytest==9.0.3
 pytest-cov==5.0.0
 ruff==0.4.8
 black==24.4.2

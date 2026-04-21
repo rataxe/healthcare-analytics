@@ -1,0 +1,139 @@
+name: Healthcare Analytics — Fabric CI/CD
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "src/notebooks/**"
+      - "src/pipelines/**"
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: "Target environment"
+        required: true
+        default: "dev"
+        type: choice
+        options: [dev, staging, prod]
+
+env:
+  PYTHON_VERSION: "3.11"
+
+jobs:
+  # ── Kodkvalitet ────────────────────────────────────────────────────────────
+  lint-and-test:
+    name: Lint & Test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+          cache: "pip"
+
+      - name: Install dependencies
+        run: |
+          pip install -r requirements-dev.txt
+
+      - name: Ruff lint
+        run: ruff check src/python/ tests/
+
+      - name: Black format check
+        run: black --check src/python/ tests/
+
+      - name: Run pytest
+        run: |
+          pytest tests/ -v --cov=src/python --cov-report=xml
+        env:
+          PYTHONPATH: ${{ github.workspace }}
+
+      - name: Upload coverage
+        uses: codecov/codecov-action@v4
+        with:
+          file: coverage.xml
+
+  # ── Datagenerering & validering ────────────────────────────────────────────
+  generate-and-validate:
+    name: Generate synthetic data
+    runs-on: ubuntu-latest
+    needs: lint-and-test
+    if: github.event_name == 'workflow_dispatch'
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+          cache: "pip"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Generate synthetic data (1000 patienter för CI)
+        run: |
+          python src/python/generate_synthetic_data.py \
+            --rows 1000 \
+            --output data/ci_test
+
+      - name: Validate output files
+        run: |
+          python -c "
+          import pandas as pd
+          import sys
+          tables = ['patients','encounters','diagnoses','vitals_labs','medications']
+          for t in tables:
+              df = pd.read_csv(f'data/ci_test/{t}.csv')
+              assert len(df) > 0, f'{t} är tom!'
+              print(f'✅ {t}: {len(df)} rader')
+          "
+
+  # ── Fabric Deployment ──────────────────────────────────────────────────────
+  deploy-to-fabric:
+    name: Deploy to Fabric (${{ github.event.inputs.environment || 'dev' }})
+    runs-on: ubuntu-latest
+    needs: lint-and-test
+    environment: ${{ github.event.inputs.environment || 'dev' }}
+    if: github.ref == 'refs/heads/main'
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+          cache: "pip"
+
+      - name: Install fabric-cicd
+        run: pip install fabric-cicd azure-identity
+
+      - name: Deploy notebooks & pipelines to Fabric
+        env:
+          FABRIC_TENANT_ID:     ${{ secrets.FABRIC_TENANT_ID }}
+          FABRIC_CLIENT_ID:     ${{ secrets.FABRIC_CLIENT_ID }}
+          FABRIC_CLIENT_SECRET: ${{ secrets.FABRIC_CLIENT_SECRET }}
+          FABRIC_WORKSPACE_ID:  ${{ secrets.FABRIC_WORKSPACE_ID }}
+        run: |
+          python - <<'EOF'
+          import os
+          from fabric_cicd import FabricWorkspace
+          from azure.identity import ClientSecretCredential
+
+          credential = ClientSecretCredential(
+              tenant_id=os.environ["FABRIC_TENANT_ID"],
+              client_id=os.environ["FABRIC_CLIENT_ID"],
+              client_secret=os.environ["FABRIC_CLIENT_SECRET"],
+          )
+          workspace = FabricWorkspace(
+              workspace_id=os.environ["FABRIC_WORKSPACE_ID"],
+              repository_directory="./",
+              item_type_in_scope=["Notebook", "DataPipeline"],
+              credential=credential,
+          )
+          workspace.publish_all_items()
+          print("✅ Deployment klar!")
+          EOF

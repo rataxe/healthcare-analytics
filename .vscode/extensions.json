@@ -1,0 +1,16 @@
+{
+  "recommendations": [
+    "GitHub.copilot",
+    "GitHub.copilot-chat",
+    "ms-python.python",
+    "ms-python.black-formatter",
+    "charliermarsh.ruff",
+    "ms-toolsai.jupyter",
+    "ms-mssql.mssql",
+    "mtxr.sqltools",
+    "ms-azure-devops.azure-pipelines",
+    "ms-azuretools.vscode-azurefunctions",
+    "hediet.vscode-drawio",
+    "ms-fabric.ms-fabric"
+  ]
+}

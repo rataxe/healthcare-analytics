@@ -1,0 +1,12 @@
+.env
+data/raw/
+data/ci_test/
+__pycache__/
+*.pyc
+.venv/
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+coverage.xml
+*.log
+.vscode/nowdev-ai-config.json

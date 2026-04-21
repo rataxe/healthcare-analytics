@@ -4,7 +4,7 @@ from azure.identity import AzureCliCredential
 
 cred = AzureCliCredential(process_timeout=30)
 SCAN_EP = "https://71c4b6d5-0065-4c6c-a125-841a582754eb-api.purview-service.microsoft.com"
-ACCOUNT_EP = "https://71c4b6d5-0065-4c6c-a125-841a582754eb.purview.azure.com"
+ACCOUNT_EP = "https://prviewacc.purview.azure.com"
 
 token = cred.get_token("https://purview.azure.net/.default").token
 h = {"Authorization": f"Bearer {token}"}

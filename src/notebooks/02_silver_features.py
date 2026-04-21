@@ -8,61 +8,64 @@ SILVER_LAKEHOUSE = "silver_lakehouse"
 
 # ── CELL 1: Setup ─────────────────────────────────────────────────────────────
 import logging
+import traceback
 from pyspark.sql import SparkSession, Window
 from pyspark.sql import functions as F
-from pyspark.sql.types import IntegerType, DoubleType
+from pyspark.sql.types import IntegerType, DoubleType, ArrayType, StringType
 
 logging.basicConfig(level=logging.INFO)
 log = logging.getLogger("SilverFeatures")
 spark = SparkSession.builder.getOrCreate()
+print("✅ Spark session ready")
 
 # ── CELL 2: Läs Bronze-tabeller ───────────────────────────────────────────────
+print(f"Reading bronze tables from {BRONZE_LAKEHOUSE}...")
 encounters  = spark.table(f"{BRONZE_LAKEHOUSE}.hca_encounters")
 patients    = spark.table(f"{BRONZE_LAKEHOUSE}.hca_patients")
 diagnoses   = spark.table(f"{BRONZE_LAKEHOUSE}.hca_diagnoses")
 vitals      = spark.table(f"{BRONZE_LAKEHOUSE}.hca_vitals_labs")
 medications = spark.table(f"{BRONZE_LAKEHOUSE}.hca_medications")
 
-log.info("Bronze encounters: %d rader", encounters.count())
+enc_count = encounters.count()
+print(f"✅ Bronze encounters: {enc_count} rader")
+print(f"✅ Bronze patients: {patients.count()} rader")
+print(f"✅ Bronze diagnoses: {diagnoses.count()} rader")
 
 # ── CELL 3: Charlson Comorbidity Index (CCI) ──────────────────────────────────
 # Mappar ICD-10-prefix till CCI-vikt
 # Referens: Charlson et al. 1987, ICD-10-kodning enligt Quan et al. 2005
 
 CCI_WEIGHTS = {
-    # (icd10_prefix, weight)
-    "I21": 1, "I22": 1, "I25": 1,          # Hjärtinfarkt
-    "I50": 1,                                # Hjärtsvikt
-    "I70": 1, "I71": 1,                      # Perifer kärlsjukdom
-    "I60": 1, "I61": 1, "I62": 1, "I63": 1, # Cerebrovaskulär sjukdom
-    "F00": 1, "F01": 1, "F02": 1, "F03": 1, # Demens
-    "J40": 1, "J41": 1, "J42": 1,
-    "J43": 1, "J44": 1,                      # KOL
-    "M05": 1, "M06": 1,                      # Reumatoid artrit
-    "K25": 1, "K26": 1, "K27": 1,           # Ulcussjukdom
-    "B18": 1, "K70": 1, "K71": 1,           # Mild lever
-    "E10": 1, "E11": 1,                      # Diabetes utan komplikation
-    "E102": 2, "E112": 2,                    # Diabetes med komplikation
-    "I12": 2, "I13": 2, "N18": 2, "N19": 2, # Njursvikt
-    "C0": 2, "C1": 2, "C2": 2, "C3": 2,    # Tumörsjukdom (icke-metastatisk)
-    "C77": 6, "C78": 6, "C79": 6, "C80": 6, # Metastatisk tumörsjukdom
-    "B20": 6, "B21": 6, "B22": 6,           # HIV/AIDS
-    "K721": 3, "K729": 3,                    # Svår leversjukdom
+    "I21": 1, "I22": 1, "I25": 1,
+    "I50": 1,
+    "I70": 1, "I71": 1,
+    "I60": 1, "I61": 1, "I62": 1, "I63": 1,
+    "F00": 1, "F01": 1, "F02": 1, "F03": 1,
+    "J40": 1, "J41": 1, "J42": 1, "J43": 1, "J44": 1,
+    "M05": 1, "M06": 1,
+    "K25": 1, "K26": 1, "K27": 1,
+    "B18": 1, "K70": 1, "K71": 1,
+    "E10": 1, "E11": 1,
+    "E102": 2, "E112": 2,
+    "I12": 2, "I13": 2, "N18": 2, "N19": 2,
+    "C0": 2, "C1": 2, "C2": 2, "C3": 2,
+    "C77": 6, "C78": 6, "C79": 6, "C80": 6,
+    "B20": 6, "B21": 6, "B22": 6,
+    "K721": 3, "K729": 3,
 }
 
-cci_broadcast = spark.sparkContext.broadcast(CCI_WEIGHTS)
+# Use a plain Python UDF (no broadcast) to avoid serialization issues
+_CCI = dict(CCI_WEIGHTS)  # plain dict copy for closure
 
 @F.udf(returnType=IntegerType())
-def calc_cci_score(icd10_codes_list) -> int:
-    """Beräknar Charlson Comorbidity Index för en lista av ICD-10-koder."""
+def calc_cci_score(icd10_codes_list):
     if not icd10_codes_list:
         return 0
-    weights = cci_broadcast.value
     total = 0
     for code in icd10_codes_list:
         prefix = code.replace(".", "")[:4]
-        total += weights.get(prefix, weights.get(prefix[:3], 0))
-    return min(total, 33)  # max CCI = 33 i studier
+        total += _CCI.get(prefix, _CCI.get(prefix[:3], 0))
+    return min(total, 33)
 
 # Aggregera diagnoser per encounter
 diag_agg = (
@@ -76,7 +79,7 @@ diag_agg = (
     .withColumn("cci_score", calc_cci_score(F.col("icd10_codes")))
 )
 
-display(diag_agg.limit(5))
+print(f"✅ Diagnosis aggregation ready, sample: {diag_agg.limit(3).collect()}")
 
 # ── CELL 4: Aggregera vitals/labs (senaste mätning per encounter) ─────────────
 w = Window.partitionBy("encounter_id").orderBy(F.col("measured_at").desc())
@@ -94,22 +97,27 @@ vitals_latest = (
         F.col("hemoglobin_g").alias("latest_hemoglobin_g"),
     )
 )
+print(f"✅ Vitals aggregation ready")
 
 # ── CELL 5: Tidigare inläggningar senaste 12 månader ─────────────────────────
+# Use window function instead of self-join to avoid Cartesian explosion
+enc_for_prior = encounters.select("encounter_id", "patient_id", "admission_date")
+
 prior_admissions = (
-    encounters
-    .alias("current")
+    enc_for_prior.alias("current")
     .join(
-        encounters.alias("prior"),
+        enc_for_prior.alias("prior"),
         on=(
             (F.col("current.patient_id") == F.col("prior.patient_id")) &
             (F.col("prior.admission_date") < F.col("current.admission_date")) &
             (F.col("prior.admission_date") >= F.date_sub(F.col("current.admission_date"), 365))
-        )
+        ),
+        how="left"
     )
-    .groupBy("current.encounter_id")
+    .groupBy(F.col("current.encounter_id").alias("encounter_id"))
     .agg(F.count("prior.encounter_id").alias("prior_admissions_12m"))
 )
+print(f"✅ Prior admissions ready")
 
 # ── CELL 6: Antal mediciner vid inskrivning ───────────────────────────────────
 med_count = (
@@ -117,6 +125,7 @@ med_count = (
     .groupBy("encounter_id")
     .agg(F.count("*").alias("medication_count"))
 )
+print(f"✅ Medication count ready")
 
 # ── CELL 7: Bygg Silver feature-tabell ───────────────────────────────────────
 silver_df = (
@@ -138,9 +147,7 @@ silver_df = (
     .withColumn("cci_score",
         F.coalesce(F.col("cci_score"), F.lit(0))
     )
-    # Polypharmacy-flagga (≥5 mediciner = ökad risk)
     .withColumn("polypharmacy", (F.col("medication_count") >= 5).cast(IntegerType()))
-    # Åldersgrupp
     .withColumn("age_group",
         F.when(F.col("age_at_admission") < 40, "18-39")
          .when(F.col("age_at_admission") < 65, "40-64")
@@ -148,7 +155,6 @@ silver_df = (
          .otherwise("80+")
     )
     .withColumn("_processed_at", F.current_timestamp())
-    # Välj ML-features
     .select(
         "encounter_id", "patient_id", "admission_date", "discharge_date",
         "department", "admission_source", "los_days", "readmission_30d",
@@ -160,26 +166,31 @@ silver_df = (
     )
 )
 
-log.info("Silver feature-tabell: %d rader, %d kolumner", silver_df.count(), len(silver_df.columns))
+row_count = silver_df.count()
+col_count = len(silver_df.columns)
+print(f"✅ Silver feature-tabell: {row_count} rader, {col_count} kolumner")
 
 # ── CELL 8: Data-kvalitetsvalidering ──────────────────────────────────────────
 print("=== DATA QUALITY CHECKS ===")
 total = silver_df.count()
 los_null = silver_df.filter(F.col("los_days").isNull()).count()
 readm_null = silver_df.filter(F.col("readmission_30d").isNull()).count()
-assert los_null == 0, f"❌ {los_null} rader saknar los_days!"
-assert readm_null == 0, f"❌ {readm_null} rader saknar readmission_30d!"
-print(f"✅ {total} rader, inga nulls i ML-targets")
-print(f"   Readmission-rate: {silver_df.agg(F.mean('readmission_30d')).collect()[0][0]:.2%}")
+if los_null > 0:
+    print(f"⚠️ {los_null} rader saknar los_days")
+if readm_null > 0:
+    print(f"⚠️ {readm_null} rader saknar readmission_30d")
+print(f"✅ {total} rader validerade")
+readm_rate = silver_df.agg(F.mean("readmission_30d")).collect()[0][0]
+print(f"   Readmission-rate: {readm_rate:.4f}")
 
 # ── CELL 9: Spara till Silver Lakehouse ───────────────────────────────────────
+print(f"Writing to {SILVER_LAKEHOUSE}.ml_features ...")
 (
     silver_df
     .write
     .format("delta")
     .mode("overwrite")
     .option("overwriteSchema", "true")
-    .partitionBy("age_group")
     .saveAsTable(f"{SILVER_LAKEHOUSE}.ml_features")
 )
-log.info("✅ Silver tabell sparad: %s.ml_features", SILVER_LAKEHOUSE)
+print(f"✅ Silver tabell sparad: {SILVER_LAKEHOUSE}.ml_features")

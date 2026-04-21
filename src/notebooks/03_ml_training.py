@@ -23,9 +23,15 @@ from pyspark.sql import SparkSession
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import (
-    mean_absolute_error, root_mean_squared_error,
+    mean_absolute_error,
     roc_auc_score, classification_report, confusion_matrix,
 )
+try:
+    from sklearn.metrics import root_mean_squared_error
+except ImportError:
+    from sklearn.metrics import mean_squared_error
+    def root_mean_squared_error(y_true, y_pred):
+        return mean_squared_error(y_true, y_pred) ** 0.5
 from sklearn.model_selection import train_test_split, cross_val_score
 from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import StandardScaler, OneHotEncoder
@@ -193,4 +199,4 @@ importance_df = pd.DataFrame({
 }).sort_values("importance", ascending=False).head(15)
 
 print("\n=== TOP 15 FEATURES (LOS Model) ===")
-display(importance_df)
+print(importance_df.to_string(index=False))

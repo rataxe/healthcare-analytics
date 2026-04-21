@@ -65,6 +65,7 @@ def main():
         log.info("Reconnecting for %s...", table_name)
         conn = get_connection()
         cursor = conn.cursor()
+        cursor.fast_executemany = True
 
         # Clear incomplete data
         try:
@@ -77,6 +78,12 @@ def main():
 
         csv_path = DATA_DIR / f"{csv_name}.csv"
         df = pd.read_csv(csv_path)
+        # Deduplicate by primary key column (first column) to avoid PK violations
+        pk_col = df.columns[0]
+        before = len(df)
+        df = df.drop_duplicates(subset=[pk_col], keep="first")
+        if len(df) < before:
+            log.info("  Removed %d duplicate rows by %s", before - len(df), pk_col)
         # Convert float columns that should be int (SMALLINT/INT in SQL) — pandas uses float64 when NaN present
         int_cols = {
             "vitals_labs": ["systolic_bp", "diastolic_bp", "heart_rate"],
@@ -112,13 +119,21 @@ def main():
             except pyodbc.Error as e:
                 log.error("  Batch %d-%d failed: %s", i, i + batch_size, e)
                 conn.rollback()
-                # Reconnect and retry
-                log.info("  Reconnecting after error...")
+                # Reconnect and try row-by-row to skip duplicates
+                log.info("  Reconnecting, inserting row-by-row to skip dupes...")
                 conn.close()
                 conn = get_connection()
                 cursor = conn.cursor()
-                cursor.executemany(insert_sql, rows)
-                conn.commit()
+                skipped = 0
+                for row in rows:
+                    try:
+                        cursor.execute(insert_sql, row)
+                        conn.commit()
+                    except pyodbc.IntegrityError:
+                        conn.rollback()
+                        skipped += 1
+                if skipped:
+                    log.info("  Skipped %d duplicate rows in batch", skipped)
 
             if (i + batch_size) % 5000 == 0 or i + batch_size >= total:
                 log.info("  Progress: %d / %d", min(i + batch_size, total), total)

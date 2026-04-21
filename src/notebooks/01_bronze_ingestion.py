@@ -39,7 +39,6 @@ jdbc_url = (
     f"database={JDBC_DATABASE};"
     "encrypt=true;trustServerCertificate=false;"
     "hostNameInCertificate=*.database.windows.net;loginTimeout=30;"
-    "authentication=ActiveDirectoryServicePrincipal;"
 )
 log.info("JDBC URL konfigurerad (AAD token auth)")
 

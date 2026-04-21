@@ -19,25 +19,27 @@ PURVIEW_SCAN_ENDPOINT = "https://71c4b6d5-0065-4c6c-a125-841a582754eb-api.purvie
 
 EXPECTED_TABLES = {
     "hca.patients": 10000,
-    "hca.encounters": 17000,  # approximate
-    "hca.diagnoses": 30000,
-    "hca.vitals_labs": 48000,
-    "hca.medications": 60000,
+    "hca.encounters": 17292,
+    "hca.diagnoses": 30297,
+    "hca.vitals_labs": 48131,
+    "hca.medications": 60563,
 }
 
 FABRIC_ITEMS = {
-    "Lakehouse": ["bronze_lakehouse", "silver_lakehouse", "gold_lakehouse"],
-    "Notebook": ["01_bronze_ingestion", "02_silver_features", "03_ml_training"],
+    "Lakehouse": ["bronze_lakehouse", "silver_lakehouse", "gold_lakehouse", "gold_omop"],
+    "Notebook": ["01_bronze_ingestion", "02_silver_features", "03_ml_training", "04_omop_transformation"],
     "DataPipeline": ["healthcare_etl_pipeline"],
+    "SemanticModel": ["OMOP_CDM_Semantic_Model"],
 }
 
 
-def check_sql():
+def check_sql(token=None):
     """Validate Azure SQL has data."""
     log.info("=== Azure SQL Validation ===")
-    cred = AzureCliCredential()
-    token = cred.get_token("https://database.windows.net/.default")
-    token_bytes = token.token.encode("UTF-16-LE")
+    if token is None:
+        cred = AzureCliCredential(process_timeout=30)
+        token = cred.get_token("https://database.windows.net/.default").token
+    token_bytes = token.encode("UTF-16-LE")
     token_struct = struct.pack(f"<I{len(token_bytes)}s", len(token_bytes), token_bytes)
 
     conn = pyodbc.connect(
@@ -65,11 +67,12 @@ def check_sql():
     return ok
 
 
-def check_fabric():
+def check_fabric(token=None):
     """Validate Fabric workspace items."""
     log.info("=== Fabric Workspace Validation ===")
-    cred = AzureCliCredential()
-    token = cred.get_token("https://api.fabric.microsoft.com/.default").token
+    if token is None:
+        cred = AzureCliCredential(process_timeout=30)
+        token = cred.get_token("https://api.fabric.microsoft.com/.default").token
     headers = {"Authorization": f"Bearer {token}"}
 
     url = f"https://api.fabric.microsoft.com/v1/workspaces/{FABRIC_WORKSPACE_ID}/items"
@@ -98,11 +101,12 @@ def check_fabric():
     return ok
 
 
-def check_purview():
+def check_purview(token=None):
     """Validate Purview scan status."""
     log.info("=== Purview Validation ===")
-    cred = AzureCliCredential()
-    token = cred.get_token("https://purview.azure.net/.default").token
+    if token is None:
+        cred = AzureCliCredential(process_timeout=30)
+        token = cred.get_token("https://purview.azure.net/.default").token
     headers = {"Authorization": f"Bearer {token}"}
 
     # Check data source
@@ -142,10 +146,23 @@ def main():
     log.info("Healthcare Analytics — Deployment Validation")
     log.info("=" * 50)
 
+    # Pre-fetch all tokens with a single credential to avoid timeouts
+    cred = AzureCliCredential(process_timeout=30)
+    tokens = {}
+    for scope_name, scope in [("sql", "https://database.windows.net/.default"),
+                               ("fabric", "https://api.fabric.microsoft.com/.default"),
+                               ("purview", "https://purview.azure.net/.default")]:
+        try:
+            tokens[scope_name] = cred.get_token(scope).token
+            log.info("  Token acquired: %s", scope_name)
+        except Exception as e:
+            log.warning("  Token failed for %s: %s", scope_name, e)
+            tokens[scope_name] = None
+
     results = {}
-    results["sql"] = check_sql()
-    results["fabric"] = check_fabric()
-    results["purview"] = check_purview()
+    results["sql"] = check_sql(token=tokens.get("sql"))
+    results["fabric"] = check_fabric(token=tokens.get("fabric"))
+    results["purview"] = check_purview(token=tokens.get("purview"))
 
     log.info("")
     log.info("=== SUMMARY ===")

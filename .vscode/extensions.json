@@ -3,6 +3,7 @@
     "GitHub.copilot",
     "GitHub.copilot-chat",
     "ms-python.python",
+    "ms-python.vscode-pylance",
     "ms-python.black-formatter",
     "charliermarsh.ruff",
     "ms-toolsai.jupyter",
@@ -10,7 +11,12 @@
     "mtxr.sqltools",
     "ms-azure-devops.azure-pipelines",
     "ms-azuretools.vscode-azurefunctions",
+    "ms-azuretools.vscode-docker",
     "hediet.vscode-drawio",
-    "ms-fabric.ms-fabric"
+    "ms-fabric.ms-fabric",
+    "eamodio.gitlens",
+    "redhat.vscode-yaml",
+    "humao.rest-client",
+    "usernamehw.errorlens"
   ]
 }

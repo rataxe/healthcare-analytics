@@ -9,7 +9,7 @@
     "*.drawio": "xml"
   },
   "github.copilot.chat.codeGeneration.instructions": [
-    { "file": ".github/copilot-instructions.md" }
+    { "file": ".github/copilot/instructions.md" }
   ],
   "github.copilot.editor.enableAutoCompletions": true,
   "[python]": {

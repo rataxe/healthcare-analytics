@@ -1,0 +1,61 @@
+C:\Python313\Lib\site-packages\requests\__init__.py:113: RequestsDependencyWarning: urllib3 (2.5.0) or chardet (7.4.0.post2)/charset_normalizer (3.4.2) doesn't match a supported version!
+  warnings.warn(
+======================================================================
+1.1 APPLY SNOMED CT Code
+======================================================================
+  Ô£ô SNOMED CT Code ÔåÆ SQL: diagnoses
+  Ô£ô SNOMED CT Code ÔåÆ SQL: diagnoses
+  Ô£ô SNOMED CT Code ÔåÆ Fabric: condition_occurrence
+  Ô£ô SNOMED CT Code ÔåÆ Fabric: measurement
+  Ô£ô SNOMED CT Code ÔåÆ Fabric: silver_specimen
+  Ô£ô SNOMED CT Code ÔåÆ Fabric: fhir_bronze_specimen
+
+======================================================================
+1.2 APPLY OMOP Concept ID
+======================================================================
+  Ô£ô OMOP Concept ID ÔåÆ Fabric: condition_occurrence
+  Ô£ô OMOP Concept ID ÔåÆ Fabric: drug_exposure
+  Ô£ô OMOP Concept ID ÔåÆ Fabric: measurement
+  Ô£ô OMOP Concept ID ÔåÆ Fabric: person
+  Ô£ô OMOP Concept ID ÔåÆ Fabric: silver_specimen
+  Ô£ô OMOP Concept ID ÔåÆ Fabric: fhir_bronze_specimen
+  Ô£ô OMOP Concept ID ÔåÆ Fabric: visit_occurrence
+  Ô£ô OMOP Concept ID ÔåÆ SQL: diagnoses
+  Ô£ô OMOP Concept ID ÔåÆ SQL: diagnoses
+  Ô£ô OMOP Concept ID ÔåÆ SQL: medications
+  Ô£ô OMOP Concept ID ÔåÆ SQL: medications
+
+======================================================================
+1.3 MOVE ENTITIES TO BARNCANCER
+======================================================================
+
+======================================================================
+1.4 LINK GLOSSARY TERMS TO ENTITIES
+======================================================================
+  Found 99 unassigned terms
+  Entity pool: 82 entities available for linking
+  Ô£ô ACMG-klassificering ÔåÆ silver_specimen
+  Ô£ô ALAT/ASAT (Levertransaminaser) ÔåÆ vitals_labs, measurement
+  Ô£ô ALL (Akut Lymfatisk Leukemi) ÔåÆ diagnoses
+  Ô£ô AML (Akut Myeloisk Leukemi) ÔåÆ diagnoses
+  Ô£ô ATC (Anatomical Therapeutic Chemical Classification) ÔåÆ medications, drug_exposure
+  Ô£ô Akutmottagning ÔåÆ encounters, visit_occurrence
+  Ô£ô Apache Spark ÔåÆ lh_brainchild
+  Ô£ô Behandlingsprotokoll ÔåÆ medications, drug_exposure
+  Ô£ô Biobank ÔåÆ silver_specimen
+  Ô£ô Blodstatus (Hb, LPK, TPK) ÔåÆ vitals_labs, measurement
+  Ô£ô Brytpunktssamtal ÔåÆ encounters
+  Ô£ô CDA (Clinical Document Architecture) ÔåÆ brainchild fhir server (r4)
+  Ô£ô CRP (C-reaktivt protein) ÔåÆ vitals_labs, measurement
+  Ô£ô DRG-klassificering ÔåÆ diagnoses
+  Ô£ù Data Lakehouse: 401 {"error":{"code":"Unauthenticated","message":"Invalid token"}}
+
+  Linked: 14, Entity not found: 5
+
+======================================================================
+REMEDIATION SUMMARY
+======================================================================
+  Successful operations: 31
+  Failed operations:     1
+
+Fas 1 complete!

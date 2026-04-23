@@ -1,0 +1,211 @@
+C:\Python313\Lib\site-packages\requests\__init__.py:113: RequestsDependencyWarning: urllib3 (2.5.0) or chardet (7.4.0.post2)/charset_normalizer (3.4.2) doesn't match a supported version!
+  warnings.warn(
+======================================================================
+1. COLLECTIONS
+======================================================================
+  prviewacc (prviewacc) -> parent=ROOT
+  IT (upiwjm) -> parent=ROOT
+  H├ñlsosjukv├Ñrd (halsosjukvard) -> parent=prviewacc
+  SQL Databases (sql-databases) -> parent=halsosjukvard
+  Fabric Analytics (fabric-analytics) -> parent=halsosjukvard
+  Barncancerforskning (barncancer) -> parent=prviewacc
+  Fabric BrainChild (fabric-brainchild) -> parent=barncancer
+  Total: 7 collections
+
+======================================================================
+2. DATA SOURCES
+======================================================================
+  sql-hca-demo | kind=AzureSqlDatabase | coll=sql-databases
+  Fabric | kind=PowerBI | coll=fabric-analytics
+
+======================================================================
+3. SCANS & RECENT RUNS
+======================================================================
+
+  [sql-hca-demo] Scan: Scan-abl (AzureSqlDatabaseMsi)
+    [OK] Succeeded | 2026-04-22T08:11:02.0759037Z
+    [OK] Succeeded | 2026-04-22T02:11:02.6550611Z
+
+  [sql-hca-demo] Scan: Scan-ZNE (AzureSqlDatabaseMsi)
+    [OK] Succeeded | 2026-04-21T18:51:16.2699466Z
+
+  [sql-hca-demo] Scan: Scan-Stc (AzureSqlDatabaseMsi)
+    [OK] Succeeded | 2026-04-21T19:57:39.1211011Z
+
+  [Fabric] Scan: Scan-IzR (PowerBIMsi)
+    [WARN] CompletedWithExceptions | 2026-04-21T18:49:04.3226084Z
+
+======================================================================
+4. ENTITY COUNTS BY COLLECTION
+======================================================================
+  prviewacc (prviewacc): 151
+  IT (upiwjm): 0
+  H├ñlsosjukv├Ñrd (halsosjukvard): 38
+  SQL Databases (sql-databases): 21
+  Fabric Analytics (fabric-analytics): 567
+  Barncancerforskning (barncancer): 0 <-- EMPTY!
+  Fabric BrainChild (fabric-brainchild): 29
+
+======================================================================
+5. ENTITY COUNTS BY TYPE (non-zero)
+======================================================================
+  azure_sql_server: 1
+  azure_sql_db: 2
+  azure_sql_schema: 4
+  azure_sql_table: 11
+  azure_sql_view: 2
+  azure_sql_stored_procedure: 1
+  Process: 34
+  healthcare_data_product: 4
+  healthcare_fhir_service: 1
+  healthcare_fhir_resource_type: 8
+  healthcare_dicom_service: 1
+  healthcare_dicom_modality: 2
+  AtlasGlossaryTerm: 145
+  AtlasGlossaryCategory: 5
+  AtlasGlossary: 1
+
+  GRAND TOTAL: 806
+
+======================================================================
+6. GLOSSARY & CATEGORIES
+======================================================================
+  Glossary: Sjukv├Ñrdstermer (d939ea20-9c67-48af-98d9-b66965f7cde1)
+  Categories: 5
+    - Klinisk Data
+    - Interoperabilitet
+    - Barncancerforskning
+    - Kliniska Standarder
+    - Dataarkitektur
+  Terms: 145
+  Uncategorized: 0
+    ?: 145
+
+======================================================================
+7. CLASSIFICATIONS
+======================================================================
+  Swedish Personnummer: 4 [OK]
+    -> mssql://sql-hca-demo.database.windows.net/HealthcareAnalyticsDB/hca/encounters
+    -> mssql://sql-hca-demo.database.windows.net/HealthcareAnalyticsDB/hca/patients
+  Patient Name PHI: 1 [OK]
+    -> mssql://sql-hca-demo.database.windows.net/HealthcareAnalyticsDB/hca/patients
+  ICD10 Diagnosis Code: 2 [OK]
+    -> mssql://sql-hca-demo.database.windows.net/HealthcareAnalyticsDB/hca/diagnoses
+    -> mssql://sql-hca-demo.database.windows.net/HealthcareAnalyticsDB/hca/vw_ml_encoun
+  SNOMED CT Code: 0 [MISSING!]
+  FHIR Resource ID: 6 [OK]
+    -> mssql://sql-hca-demo.database.windows.net/HealthcareAnalyticsDB/hca/encounters
+    -> mssql://sql-hca-demo.database.windows.net/HealthcareAnalyticsDB/hca/vitals_labs
+  OMOP Concept ID: 0 [MISSING!]
+
+  Microsoft auto-classifications:
+    MICROSOFT.PERSONAL.NAME: 2
+
+======================================================================
+8. LINEAGE (Process entities)
+======================================================================
+  Total Process entities: 34
+    - KG Gold: Guidelines ÔåÆ Medical Nodes | coll=halsosjukvard
+    - SQL ETL: Vitals/Labs ÔåÆ HCA Bronze | coll=halsosjukvard
+    - Transform: FHIR Patient ÔåÆ Silver | coll=halsosjukvard
+    - FHIR Ingest: ImagingStudy | coll=halsosjukvard
+    - FHIR Ingest: Observation | coll=halsosjukvard
+
+  Sample lineage (KG Gold: Guidelines ÔåÆ Medical Nodes):
+    inputs: 1, outputs: 1
+
+======================================================================
+9. GOVERNANCE DOMAINS
+======================================================================
+  Klinisk V├Ñrd | status=Published | id=0a57cab0-2b5e-4e0d-b...
+  Forskning & Genomik | status=Published | id=1f845461-e1e6-4189-8...
+  Interoperabilitet & Standarder | status=Published | id=bdd4b57c-bcef-4435-b...
+  Data & Analytics | status=Published | id=f70887db-952b-471b-9...
+
+======================================================================
+10. TERM-ENTITY ASSIGNMENTS
+======================================================================
+  Assigned: 46/145
+  Unassigned: 99
+  Sample unassigned: ACMG-klassificering, ALAT/ASAT (Levertransaminaser), ALL (Akut Lymfatisk Leukemi), AML (Akut Myeloisk Leukemi), ATC (Anatomical Therapeutic Chemical Classification), Akutmottagning, Apache Spark, Barncancerfonden, Behandlingsprotokoll, Biobank
+
+======================================================================
+11. SQL TABLE DETAILS
+======================================================================
+  encounters | coll=sql-databases | cls=[MICROSOFT.PERSONAL.NAME] | terms=[├àterinl├ñggningsrisk, OMOP Visit Occurrence, V├Ñrdtid (LOS), FHIR Encounter, OMOP CDM, FHIR R4, Skyddad h├ñlsoinformation (PHI)]
+  patients | coll=sql-databases | cls=[MICROSOFT.PERSONAL.GENDER, MICROSOFT.PERSONAL.NAME] | terms=[FHIR Patient, OMOP Person, Svenskt personnummer, OMOP CDM, FHIR R4, Skyddad h├ñlsoinformation (PHI)]
+  encounters | coll=sql-databases | cls=[Swedish Personnummer, FHIR Resource ID] | terms=[├àterinl├ñggningsrisk, OMOP Visit Occurrence, V├Ñrdkontakt, V├Ñrdtid (LOS), OMOP CDM]
+  vitals_labs | coll=sql-databases | cls=[FHIR Resource ID] | terms=[Labresultat, Vitalparametrar, OMOP Measurement, OMOP CDM]
+  patients | coll=sql-databases | cls=[MICROSOFT.PERSONAL.GENDER, Swedish Personnummer, FHIR Resource ID, Patient Name PHI, MICROSOFT.GOVERNMENT.US.ZIP_CODE, MICROSOFT.PERSONAL.DATE_OF_BIRTH] | terms=[OMOP Person, Patientdemografi, OMOP CDM]
+  vitals_labs | coll=sql-databases | cls=[none] | terms=[Labresultat, Vitalparametrar, OMOP Measurement, FHIR Observation, OMOP CDM, FHIR R4]
+  medications | coll=sql-databases | cls=[none] | terms=[OMOP Drug Exposure, ATC-klassificering, OMOP CDM, FHIR R4, FHIR MedicationRequest]
+  diagnoses | coll=sql-databases | cls=[none] | terms=[FHIR Condition, OMOP Condition Occurrence, ICD-10, OMOP CDM, FHIR R4]
+  diagnoses | coll=sql-databases | cls=[ICD10 Diagnosis Code, FHIR Resource ID] | terms=[OMOP Condition Occurrence, ICD-10, OMOP CDM]
+  medications | coll=sql-databases | cls=[FHIR Resource ID] | terms=[OMOP Drug Exposure, ATC-klassificering, OMOP CDM]
+  dm_db_resource_stats | coll=sql-databases | cls=[none] | terms=[none]
+
+======================================================================
+12. CUSTOM ENTITIES (healthcare_*)
+======================================================================
+
+  healthcare_data_product: 4
+    - ML Feature Store | coll=halsosjukvard
+    - BrainChild Barncancerforskning | coll=halsosjukvard
+    - OMOP Forskningsdata | coll=halsosjukvard
+    - Klinisk Patientanalys | coll=halsosjukvard
+
+  healthcare_fhir_service: 1
+    - BrainChild FHIR Server (R4) | coll=fabric-brainchild
+
+  healthcare_fhir_resource_type: 8
+    - FHIR DiagnosticReport | coll=fabric-brainchild
+    - FHIR Condition | coll=fabric-brainchild
+    - FHIR Specimen | coll=fabric-brainchild
+    - FHIR Observation | coll=fabric-brainchild
+    - FHIR MedicationRequest | coll=fabric-brainchild
+    - FHIR Encounter | coll=fabric-brainchild
+    - FHIR Patient | coll=fabric-brainchild
+    - FHIR ImagingStudy | coll=fabric-brainchild
+
+  healthcare_dicom_service: 1
+    - BrainChild DICOM Server | coll=fabric-brainchild
+
+  healthcare_dicom_modality: 2
+    - DICOM MRI_Brain | coll=fabric-brainchild
+    - DICOM Pathology | coll=fabric-brainchild
+
+======================================================================
+13. TERM domainId CHECK (governance domain links)
+======================================================================
+  ACMG-klassificering: domainId=prviewacc
+  ALAT/ASAT (Levertransaminaser): domainId=prviewacc
+  ALL (Akut Lymfatisk Leukemi): domainId=prviewacc
+  AML (Akut Myeloisk Leukemi): domainId=prviewacc
+  ATC (Anatomical Therapeutic Chemical Classification): domainId=prviewacc
+  ATC-klassificering: domainId=prviewacc
+  Akutmottagning: domainId=prviewacc
+  Apache Spark: domainId=prviewacc
+  BTB (Barntum├Ârbanken): domainId=prviewacc
+  Barncancerfonden: domainId=prviewacc
+  Behandlingsprotokoll: domainId=prviewacc
+  Biobank: domainId=prviewacc
+  Biobankslagen: domainId=prviewacc
+  Blodstatus (Hb, LPK, TPK): domainId=prviewacc
+  Bronze-lager: domainId=prviewacc
+  Brytpunktssamtal: domainId=prviewacc
+  CAR-T cellterapi: domainId=prviewacc
+  CDA (Clinical Document Architecture): domainId=prviewacc
+  CNS-tum├Âr: domainId=prviewacc
+  CRP (C-reaktivt protein): domainId=prviewacc
+  Terms with domainId (sample 20): 20
+
+======================================================================
+ISSUES SUMMARY
+======================================================================
+  1. Empty collection: Barncancerforskning
+  2. Classification SNOMED CT Code not applied to any entity
+  3. Classification OMOP Concept ID not applied to any entity
+
+Total issues: 3
+
+Diagnostic complete!

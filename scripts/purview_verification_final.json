@@ -1,0 +1,65 @@
+{
+  "timestamp": "2026-04-22T19:15:48.105439",
+  "status": "INCOMPLETE",
+  "score": {
+    "total": 3,
+    "max": 6,
+    "percentage": 50.0
+  },
+  "checks": {
+    "glossary": {
+      "glossary_exists": true,
+      "glossary_name": "Sjukvårdstermer",
+      "total_terms": 188,
+      "total_categories": 6,
+      "governance_category_exists": true,
+      "domain_terms_count": 0,
+      "domain_terms": []
+    },
+    "products": {
+      "total_products": 4,
+      "products": [
+        {
+          "name": "BrainChild Barncancerforskning",
+          "guid": "f8fe756c-6987-41ac-ab90-451237b946d5",
+          "has_domain": false,
+          "domain_name": null,
+          "has_meanings": true,
+          "meaning_count": 14
+        },
+        {
+          "name": "Klinisk Patientanalys",
+          "guid": "e7010e17-8987-4c31-af29-b06fcf4b2142",
+          "has_domain": false,
+          "domain_name": null,
+          "has_meanings": true,
+          "meaning_count": 12
+        },
+        {
+          "name": "ML Feature Store",
+          "guid": "68956c65-361b-4c55-afad-3fa1b7d87167",
+          "has_domain": false,
+          "domain_name": null,
+          "has_meanings": true,
+          "meaning_count": 12
+        },
+        {
+          "name": "OMOP Forskningsdata",
+          "guid": "0a034311-74c8-4ac1-9893-99c3f4a88d4a",
+          "has_domain": false,
+          "domain_name": null,
+          "has_meanings": true,
+          "meaning_count": 9
+        }
+      ]
+    },
+    "classifications": {
+      "total_classifications": 223,
+      "custom_classifications": 12
+    },
+    "fabric": {
+      "fabric_connected": false,
+      "fabric_error": "Access Denied - MI not configured"
+    }
+  }
+}

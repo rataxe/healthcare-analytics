@@ -1,0 +1,119 @@
+C:\Python313\Lib\site-packages\requests\__init__.py:113: RequestsDependencyWarning: urllib3 (2.5.0) or chardet (7.4.0.post2)/charset_normalizer (3.4.2) doesn't match a supported version!
+  warnings.warn(
+Building entity pool...
+  Entity pool: 155 entities
+  Unassigned terms: 99
+
+Creating term-entity relationships...
+  OK ALL (Akut Lymfatisk Leukemi) -> diagnoses, condition_occurrence
+  OK AML (Akut Myeloisk Leukemi) -> diagnoses, condition_occurrence
+  OK Neuroblastom -> diagnoses
+  OK Osteosarkom -> diagnoses
+  OK Retinoblastom -> diagnoses
+  OK CNS-tum├Âr -> diagnoses
+  OK Barncancerfonden -> patients
+  OK Behandlingsprotokoll -> medications, drug_exposure
+  OK Biobank -> silver_specimen
+  OK Kemoterapi -> medications, drug_exposure
+  OK Genomisk variant -> silver_specimen
+  OK Immunterapi -> medications, drug_exposure
+  OK Minimal Residual Disease (MRD) -> vitals_labs, measurement
+  OK Palliativ v├Ñrd -> encounters
+  OK Protonterapi -> medications
+  OK Stamcellstransplantation -> medications, drug_exposure
+  OK Str├Ñlbehandling -> medications
+  OK ├ûverlevnadsanalys -> silver_patient, person
+  OK ALAT/ASAT (Levertransaminaser) -> vitals_labs, measurement
+  OK Blodstatus (Hb, LPK, TPK) -> vitals_labs, measurement
+  OK CRP (C-reaktivt protein) -> vitals_labs, measurement
+  OK Kreatinin -> vitals_labs, measurement
+  OK eGFR (Estimerad Glomerul├ñr Filtration) -> vitals_labs, measurement
+  OK Akutmottagning -> encounters, visit_occurrence
+  OK Brytpunktssamtal -> encounters
+  OK Epikris -> encounters
+  OK Remiss -> encounters
+  OK V├Ñrdplan -> encounters
+  OK Triage -> encounters
+  OK Intensivv├Ñrd (IVA) -> encounters
+  OK Kontaktsjuksk├Âterska -> encounters
+  OK Multidisciplin├ñr konferens (MDK) -> encounters
+  OK Molekyl├ñr tum├Ârboard -> encounters
+  OK Troponin -> vitals_labs, measurement
+  OK GCS (Glasgow Coma Scale) -> vitals_labs
+  OK NEWS (National Early Warning Score) -> vitals_labs
+  OK VAS/NRS Sm├ñrtskattning -> vitals_labs
+  OK Ki-67 Proliferationsindex -> vitals_labs, measurement
+  OK Apache Spark -> lh_brainchild
+  OK Data Lakehouse -> lh_brainchild
+  OK Delta Lake -> lh_brainchild
+  OK Schema Evolution -> lh_brainchild
+  OK Feature Store -> measurement
+  OK Master Data Management (MDM) -> patients
+  OK Data Quality Score -> patients
+  OK Data Mesh -> patients
+  OK ATC (Anatomical Therapeutic Chemical Classification) -> medications, drug_exposure
+  OK DRG-klassificering -> diagnoses
+  OK ACMG-klassificering -> silver_specimen
+  OK NordDRG -> diagnoses
+  OK ICF (International Classification of Functioning) -> diagnoses
+  OK KV├à (Klassifikation av v├Ñrd├Ñtg├ñrder) -> encounters
+  OK HL7 v2 -> brainchild fhir server (r4)
+  OK IHE-profiler -> brainchild dicom server
+  OK Inera -> patients
+  OK Nationell Patient├Âversikt (NP├û) -> patients
+  OK openEHR -> brainchild fhir server (r4)
+  OK CDA (Clinical Document Architecture) -> brainchild fhir server (r4)
+  OK Terminologitj├ñnst -> brainchild fhir server (r4)
+  OK SITHS-kort -> patients
+  OK SBCR (Svenska Barncancerregistret) -> patients
+  OK NOPHO (Nordic Society of Paediatric Haematology and Oncology) -> patients
+  OK SIOP (International Society of Paediatric Oncology) -> patients
+  OK Hodgkins lymfom -> diagnoses, condition_occurrence
+  OK Non-Hodgkins lymfom (barn) -> diagnoses, condition_occurrence
+  OK Medulloblastom -> diagnoses
+  OK Ewing sarkom -> diagnoses
+  OK Rhabdomyosarkom -> diagnoses
+  OK Wilms tum├Âr (Nefroblastom) -> diagnoses
+  OK CAR-T cellterapi -> medications, drug_exposure
+  OK Seneffekter -> diagnoses
+  OK Seneffektsmottagning -> encounters
+  OK Rehabilitering (barn) -> encounters
+  OK Tum├Ârstadium -> diagnoses
+  OK Tum├Ârsite -> diagnoses
+  OK Tum├Ârmutationsb├Ârda (TMB) -> silver_specimen
+  OK MYCN-amplifiering -> silver_specimen
+  OK Liquid Biopsy (Flytande biopsi) -> silver_specimen
+  OK Fl├Âdescytometri -> vitals_labs, measurement
+  OK Immunhistokemi (IHK) -> silver_specimen
+  OK FFPE (Formalinfixerat paraffin) -> silver_specimen
+  OK RNA-sekvensering -> silver_specimen
+  OK VCF (Variant Call Format) -> silver_specimen
+  OK Whole Exome Sequencing (WES) -> silver_specimen
+  OK Whole Genome Sequencing (WGS) -> silver_specimen
+  OK OMOP Genomics -> silver_specimen
+  OK Personnummer -> patients
+  OK GDPR i v├Ñrden -> patients
+  OK Patientdatalagen (PDL) -> patients
+  OK Pseudonymisering -> patients
+  OK Informerat samtycke -> patients
+  OK Informerat samtycke (kliniskt) -> patients
+  OK Biobankslagen -> silver_specimen
+  OK Etikpr├Âvning -> patients
+  OK Etikpr├Âvningslagen -> patients
+  OK GCP (Good Clinical Practice) -> patients
+  OK Kvalitetsregister -> patients
+
+Linked: 97, Failed: 0, Skipped/no-entity: 2
+
+Verifying (sampling 10 terms)...
+  Genomisk variant: 1 entities
+  NordDRG: 1 entities
+  SITHS-kort: 1 entities
+  ATC (Anatomical Therapeutic Chemical Classification): 2 entities
+  Informerat samtycke: 1 entities
+  Barncancerfonden: 1 entities
+  Immunterapi: 2 entities
+  Behandlingsprotokoll: 2 entities
+  Immunhistokemi (IHK): 1 entities
+  GCS (Glasgow Coma Scale): 1 entities
+  Verified 10/10 sample terms have assignments

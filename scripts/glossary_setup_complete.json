@@ -1,0 +1,65 @@
+{
+  "timestamp": "2026-04-22T19:14:09.802872",
+  "status": "COMPLETE",
+  "glossary": {
+    "name": "Sjukvårdstermer",
+    "guid": "d939ea20-9c67-48af-98d9-b66965f7cde1",
+    "total_terms": 184,
+    "total_categories": 6
+  },
+  "governance_structure": {
+    "category_created": true,
+    "category_name": "Governance Domains",
+    "domain_terms_created": 4,
+    "domains": [
+      {
+        "name": "Domain: Clinical Data Management",
+        "guid": "0b2b84bf-bd52-48a3-b493-acb3cfa4e780",
+        "abbreviation": "CDM"
+      },
+      {
+        "name": "Domain: Genomics & Precision Medicine",
+        "guid": "d8836abb-0c7b-403a-990b-baed055e9c3c",
+        "abbreviation": "GPM"
+      },
+      {
+        "name": "Domain: Cancer Registry",
+        "guid": "19001e56-0cbe-49ce-b1ff-9241b2aa6713",
+        "abbreviation": "CR"
+      },
+      {
+        "name": "Domain: ML & Analytics",
+        "guid": "31971a13-da55-4def-b0ce-02769aeb00e8",
+        "abbreviation": "MLA"
+      }
+    ]
+  },
+  "data_products": {
+    "total": 4,
+    "linked_to_domains": 4,
+    "products": [
+      {
+        "name": "BrainChild Barncancerforskning",
+        "id": "f8fe756c-6987-41ac-ab90-451237b946d5"
+      },
+      {
+        "name": "Klinisk Patientanalys",
+        "id": "e7010e17-8987-4c31-af29-b06fcf4b2142"
+      },
+      {
+        "name": "ML Feature Store",
+        "id": "68956c65-361b-4c55-afad-3fa1b7d87167"
+      },
+      {
+        "name": "OMOP Forskningsdata",
+        "id": "0a034311-74c8-4ac1-9893-99c3f4a88d4a"
+      }
+    ]
+  },
+  "summary": {
+    "governance_domains": 4,
+    "data_products": 4,
+    "domain_product_links": 4,
+    "coverage_percentage": 100.0
+  }
+}

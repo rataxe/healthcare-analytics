@@ -1,0 +1,73 @@
+C:\Python313\Lib\site-packages\requests\__init__.py:113: RequestsDependencyWarning: urllib3 (2.5.0) or chardet (7.4.0.post2)/charset_normalizer (3.4.2) doesn't match a supported version!
+  warnings.warn(
+======================================================================
+STEP 1: FIND CUSTOM HEALTHCARE ENTITIES
+======================================================================
+  healthcare_data_product             | BrainChild Barncancerforskning                | coll=halsosjukvard
+  healthcare_dicom_modality           | DICOM MRI_Brain                               | coll=fabric-brainchild
+  healthcare_dicom_service            | BrainChild DICOM Server                       | coll=fabric-brainchild
+  healthcare_fhir_service             | BrainChild FHIR Server (R4)                   | coll=fabric-brainchild
+  healthcare_fhir_resource_type       | FHIR Condition                                | coll=fabric-brainchild
+  healthcare_fhir_resource_type       | FHIR Specimen                                 | coll=fabric-brainchild
+  healthcare_fhir_resource_type       | FHIR Observation                              | coll=fabric-brainchild
+  healthcare_fhir_resource_type       | FHIR DiagnosticReport                         | coll=fabric-brainchild
+  healthcare_fhir_resource_type       | FHIR Encounter                                | coll=fabric-brainchild
+  healthcare_fhir_resource_type       | FHIR Patient                                  | coll=fabric-brainchild
+  healthcare_fhir_resource_type       | FHIR MedicationRequest                        | coll=fabric-brainchild
+  healthcare_fhir_resource_type       | FHIR ImagingStudy                             | coll=fabric-brainchild
+  healthcare_dicom_modality           | DICOM Pathology                               | coll=fabric-brainchild
+  healthcare_data_product             | Klinisk Patientanalys                         | coll=halsosjukvard
+
+======================================================================
+STEP 2: MOVE TO BARNCANCER
+======================================================================
+  OK Moved BrainChild Barncancerforskning -> barncancer
+
+======================================================================
+STEP 3: LINK REMAINING TERMS
+======================================================================
+  Still unassigned: 99 terms
+  Entity pool: 155 entities
+  OK ACMG-klassificering -> silver_specimen
+  OK ALAT/ASAT (Levertransaminaser) -> vitals_labs, measurement
+  OK ALL (Akut Lymfatisk Leukemi) -> diagnoses
+  OK AML (Akut Myeloisk Leukemi) -> diagnoses
+  OK ATC (Anatomical Therapeutic Chemical Classification) -> medications, drug_exposure
+  OK Akutmottagning -> encounters, visit_occurrence
+  OK Behandlingsprotokoll -> medications, drug_exposure
+  OK Biobank -> silver_specimen
+  OK Blodstatus (Hb, LPK, TPK) -> vitals_labs, measurement
+  OK Brytpunktssamtal -> encounters
+  OK CRP (C-reaktivt protein) -> vitals_labs, measurement
+  OK DRG-klassificering -> diagnoses
+  OK Epikris -> encounters
+  OK Feature Store -> measurement
+  OK Genomisk variant -> silver_specimen
+  OK ICF (International Classification of Functioning) -> diagnoses
+  OK Immunterapi -> medications, drug_exposure
+  OK Inera -> patients
+  OK Kreatinin -> vitals_labs, measurement
+  OK Master Data Management (MDM) -> patients
+  OK Nationell Patient├Âversikt (NP├û) -> patients
+  OK Neuroblastom -> diagnoses
+  OK NordDRG -> diagnoses
+  OK Osteosarkom -> diagnoses
+  OK Palliativ v├Ñrd -> encounters
+  OK Remiss -> encounters
+  OK Retinoblastom -> diagnoses
+  OK SITHS-kort -> patients
+  OK Stamcellstransplantation -> medications, drug_exposure
+  OK Str├Ñlbehandling -> medications
+  OK V├Ñrdplan -> encounters
+
+  Newly linked: 31, Skipped: 68
+
+======================================================================
+STEP 4: VERIFICATION
+======================================================================
+  SNOMED CT Code: 6 entities
+  OMOP Concept ID: 11 entities
+  barncancer collection: 1 entities
+  Glossary terms assigned: 46/145
+
+  Total OK: 32, Total FAIL: 0

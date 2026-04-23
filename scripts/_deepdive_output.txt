@@ -1,0 +1,135 @@
+C:\Python313\Lib\site-packages\requests\__init__.py:113: RequestsDependencyWarning: urllib3 (2.5.0) or chardet (7.4.0.post2)/charset_normalizer (3.4.2) doesn't match a supported version!
+  warnings.warn(
+======================================================================
+A. FABRIC SCAN EXCEPTIONS - FULL DETAIL
+======================================================================
+  Status: CompletedWithExceptions
+  Start:  2026-04-21T18:49:04.3226084Z
+  End:    2026-04-21T19:04:51.0691307Z
+
+  Exception counts:
+
+  Notifications (0):
+
+======================================================================
+B. FABRIC ENTITY TYPES (discover actual types in fabric-analytics)
+======================================================================
+  Sample of 50 entities - type distribution:
+    fabric_lakehouse_table: 25
+    powerbi_dataset: 13
+    powerbi_report: 7
+    fabric_lakehouse_path: 5
+
+  Examples by type:
+    [fabric_lakehouse_table] measurement | qn=https://app.fabric.microsoft.com/groups/afda4639-34ce-4ee9-a82f-ab7b5cfd7334/lakehouses/8adebdbb-1cd
+    [powerbi_report] Student_Analytics_Model | qn=https://app.powerbi.com/groups/4a3b9940-63aa-4b79-8903-3f7fbfa49542/reports/75ff2e91-4ced-4b79-b754-
+    [fabric_lakehouse_path] 00000000000000000000.json | qn=https://app.fabric.microsoft.com/groups/9a866cc0-e003-4620-bb0b-0c05cdeb5cb4/lakehouses/1e242ef5-286
+    [powerbi_dataset] Fabric Capacity Metrics | qn=https://app.powerbi.com/groups/e5fd542a-cfc9-4a65-9871-4266034d33bc/datasets/7c04870d-347a-493c-a6e2
+
+  Searching specific Fabric/PowerBI types:
+    powerbi_dataset: 15
+    powerbi_report: 13
+    powerbi_workspace: 14
+
+======================================================================
+C. BARNCANCER COLLECTION - investigation
+======================================================================
+  fabric-brainchild entities (29):
+    fabric_lakehouse_table: 16
+    healthcare_fhir_resource_type: 8
+    healthcare_dicom_modality: 2
+    healthcare_dicom_service: 1
+    healthcare_fhir_service: 1
+    fabric_lake_warehouse: 1
+
+  'BrainChild Barncancerforskning' -> coll=halsosjukvard type=healthcare_data_product
+
+  'Barncancerfonden' -> coll=None type=None
+
+  'lh_brainchild' -> coll=fabric-brainchild type=fabric_lake_warehouse
+
+  'brainchild_silver_dicom_studies' -> coll=fabric-brainchild type=fabric_lakehouse_table
+
+  'brainchild_bronze_dicom_study' -> coll=fabric-brainchild type=fabric_lakehouse_table
+
+======================================================================
+D. SNOMED CT & OMOP - finding target columns
+======================================================================
+  SNOMED columns found: 0
+
+  concept_id columns found: 0
+
+  Total SQL columns: 0
+
+======================================================================
+E. TERM-ENTITY ASSIGNMENT GAPS
+======================================================================
+  Assigned: 46
+  Unassigned: 99
+
+  Unassigned by category:
+    Barncancerforskning: 45
+      - ALL (Akut Lymfatisk Leukemi)
+      - AML (Akut Myeloisk Leukemi)
+      - Barncancerfonden
+      - Behandlingsprotokoll
+      - Biobank
+      ... +40 more
+    Dataarkitektur: 11
+      - Apache Spark
+      - Data Lakehouse
+      - Data Lineage
+      - Data Mesh
+      - Data Quality Score
+      ... +6 more
+    Interoperabilitet: 8
+      - CDA (Clinical Document Architecture)
+      - HL7 v2
+      - IHE-profiler
+      - Inera
+      - Nationell Patient├Âversikt (NP├û)
+      ... +3 more
+    Klinisk Data: 25
+      - ALAT/ASAT (Levertransaminaser)
+      - Akutmottagning
+      - Blodstatus (Hb, LPK, TPK)
+      - Brytpunktssamtal
+      - CRP (C-reaktivt protein)
+      ... +20 more
+    Kliniska Standarder: 10
+      - ACMG-klassificering
+      - ATC (Anatomical Therapeutic Chemical Classification)
+      - Biobankslagen
+      - DRG-klassificering
+      - Etikpr├Âvningslagen
+      ... +5 more
+
+======================================================================
+F. ROOT COLLECTION (prviewacc) - what's there?
+======================================================================
+  Root entity types (sample 20):
+    ?: 20
+
+  NON-GLOSSARY entities still in root: 20
+    [None] Feature Store
+    [None] Data Lineage
+    [None] SITHS-kort
+    [None] Terminologitj├ñnst
+    [None] Data Lakehouse
+    [None] ETL-pipeline
+    [None] Delta Lake
+    [None] Data Mesh
+    [None] Apache Spark
+    [None] openEHR
+    [None] Data Quality Score
+    [None] Master Data Management (MDM)
+    [None] Schema Evolution
+    [None] Inera
+    [None] ICF (International Classification of Functioning)
+    [None] NordDRG
+    [None] CDA (Clinical Document Architecture)
+    [None] ATC (Anatomical Therapeutic Chemical Classification)
+    [None] Nationell Patient├Âversikt (NP├û)
+    [None] Etikpr├Âvningslagen
+
+Deep-dive complete!

@@ -1,0 +1,1139 @@
+{
+  "glossary_name": "Sjukvårdstermer",
+  "glossary_guid": "d939ea20-9c67-48af-98d9-b66965f7cde1",
+  "total_terms": 188,
+  "terms_by_category": {
+    "Okategoriserad": [
+      {
+        "name": "ACMG-klassificering",
+        "guid": "4ce6494f-41db-4e57-88f1-caa072d27a26",
+        "description": "",
+        "url": "https://purview.microsoft.com/catalog/glossary/4ce6494f-41db-4e57-88f1-caa072d27a26"
+      },
+      {
+        "name": "ALAT/ASAT (Levertransaminaser)",
+        "guid": "b4a217c9-149f-4125-9df3-3861cb27a42e",
+        "description": "Labvärde",
+        "url": "https://purview.microsoft.com/catalog/glossary/b4a217c9-149f-4125-9df3-3861cb27a42e"
+      },
+      {
+        "name": "ALL (Akut Lymfatisk Leukemi)",
+        "guid": "27b77d1c-4924-4cec-8548-fd7ea700f5ba",
+        "description": "Diagnos",
+        "url": "https://purview.microsoft.com/catalog/glossary/27b77d1c-4924-4cec-8548-fd7ea700f5ba"
+      },
+      {
+        "name": "AML (Akut Myeloisk Leukemi)",
+        "guid": "304fb4fe-fef6-4ae7-8d66-39bb5e8beebe",
+        "description": "Diagnos",
+        "url": "https://purview.microsoft.com/catalog/glossary/304fb4fe-fef6-4ae7-8d66-39bb5e8beebe"
+      },
+      {
+        "name": "ATC (Anatomical Therapeutic Chemical Classification)",
+        "guid": "29f7c680-75c5-4ff9-a2ce-8a6e5220aeea",
+        "description": "Kodverk",
+        "url": "https://purview.microsoft.com/catalog/glossary/29f7c680-75c5-4ff9-a2ce-8a6e5220aeea"
+      },
+      {
+        "name": "ATC-klassificering",
+        "guid": "59b21282-e7af-4210-9a13-83292ce4722a",
+        "description": "Anatomisk Terapeutisk Kemisk klassificering (WHO). Används i medications-tabellen (atc_code, drug_name).",
+        "url": "https://purview.microsoft.com/catalog/glossary/59b21282-e7af-4210-9a13-83292ce4722a"
+      },
+      {
+        "name": "Akutmottagning",
+        "guid": "f26dfecf-43e2-4d53-a1fd-b004c003b484",
+        "description": "Vårdprocess",
+        "url": "https://purview.microsoft.com/catalog/glossary/f26dfecf-43e2-4d53-a1fd-b004c003b484"
+      },
+      {
+        "name": "Apache Spark",
+        "guid": "27d67824-e54a-4f9a-b756-fc7e34b83449",
+        "description": "Teknologi",
+        "url": "https://purview.microsoft.com/catalog/glossary/27d67824-e54a-4f9a-b756-fc7e34b83449"
+      },
+      {
+        "name": "BTB (Barntumörbanken)",
+        "guid": "216c6d46-f42a-4b34-9c96-7c0ca8cf952a",
+        "description": "Nationell biobank för barncancerprover. BrainChild-modulen hanterar specimen (FHIR), VCF och metadata.",
+        "url": "https://purview.microsoft.com/catalog/glossary/216c6d46-f42a-4b34-9c96-7c0ca8cf952a"
+      },
+      {
+        "name": "Barncancerfonden",
+        "guid": "a25c6adb-c2b0-4f94-ae2e-28708ffddbda",
+        "description": "Organisation",
+        "url": "https://purview.microsoft.com/catalog/glossary/a25c6adb-c2b0-4f94-ae2e-28708ffddbda"
+      },
+      {
+        "name": "Behandlingsprotokoll",
+        "guid": "5e69c69a-cfd8-48c3-abe1-1ce25e5ce112",
+        "description": "Standardiserat behandlingsschema för cancerbehandling. Kolumn: protocol_name (SBCR treatments).",
+        "url": "https://purview.microsoft.com/catalog/glossary/5e69c69a-cfd8-48c3-abe1-1ce25e5ce112"
+      },
+      {
+        "name": "Biobank",
+        "guid": "7439ccf6-b35e-41e7-a335-f99fe5f16037",
+        "description": "",
+        "url": "https://purview.microsoft.com/catalog/glossary/7439ccf6-b35e-41e7-a335-f99fe5f16037"
+      },
+      {
+        "name": "Biobankslagen",
+        "guid": "66b9ee10-3b3b-4f4f-b3e8-391bff920dda",
+        "description": "Regelverk",
+        "url": "https://purview.microsoft.com/catalog/glossary/66b9ee10-3b3b-4f4f-b3e8-391bff920dda"
+      },
+      {
+        "name": "Blodstatus (Hb, LPK, TPK)",
+        "guid": "6778e158-2459-4eed-8583-56effc9dec68",
+        "description": "Labvärde",
+        "url": "https://purview.microsoft.com/catalog/glossary/6778e158-2459-4eed-8583-56effc9dec68"
+      },
+      {
+        "name": "BrainChild",
+        "guid": "bbd457b4-4f0f-4f1e-bdab-68daf0b9e7d3",
+        "description": "Barncancerforskningsprojekt för hjärntumörer",
+        "url": "https://purview.microsoft.com/catalog/glossary/bbd457b4-4f0f-4f1e-bdab-68daf0b9e7d3"
+      },
+      {
+        "name": "Bronze-lager",
+        "guid": "a6ecf41a-1eaa-4043-afd8-3f21e08c3b47",
+        "description": "Rådatalager — ingestion från SQL utan transformation. Lagras i bronze_lakehouse (Fabric).",
+        "url": "https://purview.microsoft.com/catalog/glossary/a6ecf41a-1eaa-4043-afd8-3f21e08c3b47"
+      },
+      {
+        "name": "Brytpunktssamtal",
+        "guid": "bb36d3e7-6099-4cdb-b070-2dc9b2ac3c53",
+        "description": "Vårdprocess",
+        "url": "https://purview.microsoft.com/catalog/glossary/bb36d3e7-6099-4cdb-b070-2dc9b2ac3c53"
+      },
+      {
+        "name": "CAR-T cellterapi",
+        "guid": "373d324b-05f9-4c1b-b863-054e4e790ffb",
+        "description": "Behandling",
+        "url": "https://purview.microsoft.com/catalog/glossary/373d324b-05f9-4c1b-b863-054e4e790ffb"
+      },
+      {
+        "name": "CDA (Clinical Document Architecture)",
+        "guid": "fa47641c-5a94-464e-bfee-b42356256e50",
+        "description": "Standard",
+        "url": "https://purview.microsoft.com/catalog/glossary/fa47641c-5a94-464e-bfee-b42356256e50"
+      },
+      {
+        "name": "CNS-tumör",
+        "guid": "e4ac5cfd-c1e0-4b57-9496-155f716d86da",
+        "description": "Diagnos",
+        "url": "https://purview.microsoft.com/catalog/glossary/e4ac5cfd-c1e0-4b57-9496-155f716d86da"
+      },
+      {
+        "name": "CRP (C-reaktivt protein)",
+        "guid": "0c8320ba-eac9-4ee9-b729-1117568be190",
+        "description": "Labvärde",
+        "url": "https://purview.microsoft.com/catalog/glossary/0c8320ba-eac9-4ee9-b729-1117568be190"
+      },
+      {
+        "name": "Charlson Comorbidity Index",
+        "guid": "09fd99aa-a30a-4064-918b-6ff1431ff310",
+        "description": "Komorbiditetsindex baserat på ICD-10-diagnoser. Beräknas i Silver feature engineering (cci_score).",
+        "url": "https://purview.microsoft.com/catalog/glossary/09fd99aa-a30a-4064-918b-6ff1431ff310"
+      },
+      {
+        "name": "Cohort",
+        "guid": "502cdf5b-1cd1-421d-9292-e44be9f3405a",
+        "description": "Definierad patientgrupp för forskning",
+        "url": "https://purview.microsoft.com/catalog/glossary/502cdf5b-1cd1-421d-9292-e44be9f3405a"
+      },
+      {
+        "name": "Condition Occurrence",
+        "guid": "ee7ad7b8-9c9e-4c70-9d29-6a9307bdc7a7",
+        "description": "OMOP-tabell för diagnoser och hälsotillstånd",
+        "url": "https://purview.microsoft.com/catalog/glossary/ee7ad7b8-9c9e-4c70-9d29-6a9307bdc7a7"
+      },
+      {
+        "name": "Condition",
+        "guid": "48eacfd1-0346-49be-963c-eaea0da714f0",
+        "description": "En klinisk diagnos, problem eller hälsotillstånd",
+        "url": "https://purview.microsoft.com/catalog/glossary/48eacfd1-0346-49be-963c-eaea0da714f0"
+      },
+      {
+        "name": "Copy Number Variation",
+        "guid": "bdffce14-db3e-40fd-a12d-ea1f02433b93",
+        "description": "CNV - förändringar i antal kopior av DNA-segment",
+        "url": "https://purview.microsoft.com/catalog/glossary/bdffce14-db3e-40fd-a12d-ea1f02433b93"
+      },
+      {
+        "name": "DICOM Study",
+        "guid": "42b119c9-d7ee-449a-afcf-c71b01306f8f",
+        "description": "En radiologisk undersökning i DICOM-format",
+        "url": "https://purview.microsoft.com/catalog/glossary/42b119c9-d7ee-449a-afcf-c71b01306f8f"
+      },
+      {
+        "name": "DICOM",
+        "guid": "14aa40aa-56e5-4f31-acd9-6a134f1e3e72",
+        "description": "",
+        "url": "https://purview.microsoft.com/catalog/glossary/14aa40aa-56e5-4f31-acd9-6a134f1e3e72"
+      },
+      {
+        "name": "DICOMweb",
+        "guid": "0f98fa2e-f0de-4169-a58c-54f8944503d0",
+        "description": "",
+        "url": "https://purview.microsoft.com/catalog/glossary/0f98fa2e-f0de-4169-a58c-54f8944503d0"
+      },
+      {
+        "name": "DNA Sequence",
+        "guid": "bc466736-6490-491d-9d3d-c4771a429ad5",
+        "description": "DNA-sekvensdata från NGS",
+        "url": "https://purview.microsoft.com/catalog/glossary/bc466736-6490-491d-9d3d-c4771a429ad5"
+      },
+      {
+        "name": "DRG-klassificering",
+        "guid": "a4d715f6-26eb-401f-9989-0ee755f1e151",
+        "description": "",
+        "url": "https://purview.microsoft.com/catalog/glossary/a4d715f6-26eb-401f-9989-0ee755f1e151"
+      },
+      {
+        "name": "Data Lakehouse",
+        "guid": "b3c076a2-5baf-4361-a4c2-f49c291b8030",
+        "description": "Arkitektur",
+        "url": "https://purview.microsoft.com/catalog/glossary/b3c076a2-5baf-4361-a4c2-f49c291b8030"
+      },
+      {
+        "name": "Data Lineage",
+        "guid": "a9528085-e999-493d-9d9b-8872dbcdbe35",
+        "description": "Kvalitet",
+        "url": "https://purview.microsoft.com/catalog/glossary/a9528085-e999-493d-9d9b-8872dbcdbe35"
+      },
+      {
+        "name": "Data Mesh",
+        "guid": "b50b2839-4c35-4898-bf8b-9d3df843f984",
+        "description": "Arkitektur",
+        "url": "https://purview.microsoft.com/catalog/glossary/b50b2839-4c35-4898-bf8b-9d3df843f984"
+      },
+      {
+        "name": "Data Quality Score",
+        "guid": "06a50e77-7d9e-4672-9ab6-fb6a9da5a10e",
+        "description": "Kvalitet",
+        "url": "https://purview.microsoft.com/catalog/glossary/06a50e77-7d9e-4672-9ab6-fb6a9da5a10e"
+      },
+      {
+        "name": "De-identification",
+        "guid": "126e0d2b-f26e-4871-a529-99197ac72c4d",
+        "description": "Avidentifiering av personuppgifter för forskningsändamål",
+        "url": "https://purview.microsoft.com/catalog/glossary/126e0d2b-f26e-4871-a529-99197ac72c4d"
+      },
+      {
+        "name": "Delta Lake",
+        "guid": "d915b8ad-d441-4d8d-93a4-88dda77ae369",
+        "description": "Teknologi",
+        "url": "https://purview.microsoft.com/catalog/glossary/d915b8ad-d441-4d8d-93a4-88dda77ae369"
+      },
+      {
+        "name": "Discharge Summary",
+        "guid": "0a35e714-4a6e-48ed-90d2-19f6e49d9939",
+        "description": "Utskrivningssammanfattning från vårdtillfälle",
+        "url": "https://purview.microsoft.com/catalog/glossary/0a35e714-4a6e-48ed-90d2-19f6e49d9939"
+      },
+      {
+        "name": "Drug Exposure",
+        "guid": "534c7272-37ab-4fc3-b27f-4439de1fb7a7",
+        "description": "OMOP-tabell för läkemedelsexponeringar",
+        "url": "https://purview.microsoft.com/catalog/glossary/534c7272-37ab-4fc3-b27f-4439de1fb7a7"
+      },
+      {
+        "name": "ETL-pipeline",
+        "guid": "34cfe5e0-5a5a-4470-ada1-2a1ef543b8d7",
+        "description": "Arkitektur",
+        "url": "https://purview.microsoft.com/catalog/glossary/34cfe5e0-5a5a-4470-ada1-2a1ef543b8d7"
+      },
+      {
+        "name": "Encounter",
+        "guid": "fa68e3bb-33c4-4761-8f0c-5059f0add797",
+        "description": "Ett vårdtillfälle eller interaktion mellan patient och vårdgivare",
+        "url": "https://purview.microsoft.com/catalog/glossary/fa68e3bb-33c4-4761-8f0c-5059f0add797"
+      },
+      {
+        "name": "Epikris",
+        "guid": "5fe58013-c794-4d81-bff6-4a2d2c6f5f95",
+        "description": "Vårdprocess",
+        "url": "https://purview.microsoft.com/catalog/glossary/5fe58013-c794-4d81-bff6-4a2d2c6f5f95"
+      },
+      {
+        "name": "Etikprövning",
+        "guid": "94010b2a-6a52-48ae-95e8-74e483235e9b",
+        "description": "",
+        "url": "https://purview.microsoft.com/catalog/glossary/94010b2a-6a52-48ae-95e8-74e483235e9b"
+      },
+      {
+        "name": "Etikprövningslagen",
+        "guid": "e47c27b5-fede-470d-9c30-b0b663ba22b0",
+        "description": "Regelverk",
+        "url": "https://purview.microsoft.com/catalog/glossary/e47c27b5-fede-470d-9c30-b0b663ba22b0"
+      },
+      {
+        "name": "Ewing sarkom",
+        "guid": "9c965382-d54d-4a54-99b2-b6318cc5900d",
+        "description": "Diagnos",
+        "url": "https://purview.microsoft.com/catalog/glossary/9c965382-d54d-4a54-99b2-b6318cc5900d"
+      },
+      {
+        "name": "FFPE (Formalinfixerat paraffin)",
+        "guid": "fc996204-a29a-4198-b2cf-57722eb31c11",
+        "description": "Fixeringsmetod för vävnadsprover i biobanken. Processing-typ i BTB Specimen.",
+        "url": "https://purview.microsoft.com/catalog/glossary/fc996204-a29a-4198-b2cf-57722eb31c11"
+      },
+      {
+        "name": "FHIR Condition",
+        "guid": "cf8d1d64-160f-42e2-8537-43cd8a03bfc8",
+        "description": "FHIR-resurs för diagnoser. Mappas till diagnoses-tabellen.",
+        "url": "https://purview.microsoft.com/catalog/glossary/cf8d1d64-160f-42e2-8537-43cd8a03bfc8"
+      },
+      {
+        "name": "FHIR DiagnosticReport",
+        "guid": "5750a629-4984-4854-b3be-7c86ab6fa6bd",
+        "description": "FHIR-resurs för diagnostiska rapporter. Används i GMS-modulen med LOINC 51969-4 (Genetic analysis report).",
+        "url": "https://purview.microsoft.com/catalog/glossary/5750a629-4984-4854-b3be-7c86ab6fa6bd"
+      },
+      {
+        "name": "FHIR Encounter",
+        "guid": "a52d4b72-3133-4f23-ab30-9b3bd9f6b183",
+        "description": "FHIR-resurs för vårdkontakter. Mappas till encounters-tabellen.",
+        "url": "https://purview.microsoft.com/catalog/glossary/a52d4b72-3133-4f23-ab30-9b3bd9f6b183"
+      },
+      {
+        "name": "FHIR ImagingStudy",
+        "guid": "979ffb84-b3c4-4f9e-bc42-b933eab3107b",
+        "description": "FHIR-resurs som refererar till DICOM-bildstudier (MR, patologi). Används i BrainChild-plattformen.",
+        "url": "https://purview.microsoft.com/catalog/glossary/979ffb84-b3c4-4f9e-bc42-b933eab3107b"
+      },
+      {
+        "name": "FHIR MedicationRequest",
+        "guid": "06e879ff-bd7f-40de-998d-d8080400a955",
+        "description": "FHIR-resurs för läkemedelsförskrivningar. Mappas till medications-tabellen.",
+        "url": "https://purview.microsoft.com/catalog/glossary/06e879ff-bd7f-40de-998d-d8080400a955"
+      },
+      {
+        "name": "FHIR Observation",
+        "guid": "c119fd8f-477a-4177-9b5d-1d6233f80d85",
+        "description": "FHIR-resurs för mätvärden och labresultat. Mappas till vitals_labs-tabellen.",
+        "url": "https://purview.microsoft.com/catalog/glossary/c119fd8f-477a-4177-9b5d-1d6233f80d85"
+      },
+      {
+        "name": "FHIR Patient",
+        "guid": "07a5842b-f8bb-436f-afe0-e61b9155090f",
+        "description": "FHIR-resurs som representerar patientdemografi. Mappas till patients-tabellen.",
+        "url": "https://purview.microsoft.com/catalog/glossary/07a5842b-f8bb-436f-afe0-e61b9155090f"
+      },
+      {
+        "name": "FHIR R4",
+        "guid": "83365b1e-990c-49e2-a37e-213b32beefdf",
+        "description": "Fast Healthcare Interoperability Resources Release 4. HL7-standarden för hälsodatautbyte. Mappas till alla 5 SQL-tabeller.",
+        "url": "https://purview.microsoft.com/catalog/glossary/83365b1e-990c-49e2-a37e-213b32beefdf"
+      },
+      {
+        "name": "FHIR Specimen",
+        "guid": "338cf31c-bad7-49fa-8e94-5a505b3c3622",
+        "description": "FHIR-resurs för biologiska prover. Används i BrainChild BTB-modulen.",
+        "url": "https://purview.microsoft.com/catalog/glossary/338cf31c-bad7-49fa-8e94-5a505b3c3622"
+      },
+      {
+        "name": "FLAIR",
+        "guid": "9506a5f9-af7c-4f08-ae72-8e9e7d5f9a4e",
+        "description": "",
+        "url": "https://purview.microsoft.com/catalog/glossary/9506a5f9-af7c-4f08-ae72-8e9e7d5f9a4e"
+      },
+      {
+        "name": "Feature Engineering",
+        "guid": "4af80658-d523-4883-88c6-5f21a463a543",
+        "description": "Processen att skapa ML-features från rådata. Silver-lagret beräknar CCI-score, prior_admissions, medication_count etc.",
+        "url": "https://purview.microsoft.com/catalog/glossary/4af80658-d523-4883-88c6-5f21a463a543"
+      },
+      {
+        "name": "Feature Store",
+        "guid": "d3e59131-ee2a-455f-b409-1487630fc93b",
+        "description": "ML",
+        "url": "https://purview.microsoft.com/catalog/glossary/d3e59131-ee2a-455f-b409-1487630fc93b"
+      },
+      {
+        "name": "Flödescytometri",
+        "guid": "78d01a13-5821-4b64-97ed-802cdb838d8b",
+        "description": "Forskningsmetod",
+        "url": "https://purview.microsoft.com/catalog/glossary/78d01a13-5821-4b64-97ed-802cdb838d8b"
+      },
+      {
+        "name": "GCP (Good Clinical Practice)",
+        "guid": "b2c91bc1-2c20-4588-8f06-1afb3e79dd81",
+        "description": "Regelverk",
+        "url": "https://purview.microsoft.com/catalog/glossary/b2c91bc1-2c20-4588-8f06-1afb3e79dd81"
+      },
+      {
+        "name": "GCS (Glasgow Coma Scale)",
+        "guid": "c497271b-35ac-4c73-904d-ff50c101b282",
+        "description": "Klinisk skala",
+        "url": "https://purview.microsoft.com/catalog/glossary/c497271b-35ac-4c73-904d-ff50c101b282"
+      },
+      {
+        "name": "GDPR i vården",
+        "guid": "7f6d93eb-a9b9-45a4-ac6d-c6b552a856cf",
+        "description": "Regelverk",
+        "url": "https://purview.microsoft.com/catalog/glossary/7f6d93eb-a9b9-45a4-ac6d-c6b552a856cf"
+      },
+      {
+        "name": "Genomic Medicine Sweden (GMS)",
+        "guid": "32219f81-63f3-4c47-8a86-0b673ae065b3",
+        "description": "Nationell infrastruktur för genomisk medicin. GMS-modulen i BrainChild hanterar DiagnosticReport, Observation och Patient (FHIR-format).",
+        "url": "https://purview.microsoft.com/catalog/glossary/32219f81-63f3-4c47-8a86-0b673ae065b3"
+      },
+      {
+        "name": "Genomic Variant",
+        "guid": "cfe2a3f3-cff2-476d-b9b2-1e6afd1a43c7",
+        "description": "En genetisk variation i DNA-sekvens",
+        "url": "https://purview.microsoft.com/catalog/glossary/cfe2a3f3-cff2-476d-b9b2-1e6afd1a43c7"
+      },
+      {
+        "name": "Genomisk variant",
+        "guid": "507224d1-fbec-4b22-8a38-46a18ec881d7",
+        "description": "DNA-sekvensavvikelse identifierad genom sekvensering. Klassificeras enligt ACMG-riktlinjer. Lagras i VCF-format.",
+        "url": "https://purview.microsoft.com/catalog/glossary/507224d1-fbec-4b22-8a38-46a18ec881d7"
+      },
+      {
+        "name": "Germline Variant",
+        "guid": "d80eeb8c-a8a0-47bc-9d3a-c6e45722ac84",
+        "description": "Ärftlig genetisk variant",
+        "url": "https://purview.microsoft.com/catalog/glossary/d80eeb8c-a8a0-47bc-9d3a-c6e45722ac84"
+      },
+      {
+        "name": "Gold-lager",
+        "guid": "2d738fbe-0a43-487e-affa-66a9d56ba553",
+        "description": "Affärsoptimerat lager med ML-features och aggregeringar. Lagras i gold_lakehouse (Fabric) och vw_ml_encounters (SQL).",
+        "url": "https://purview.microsoft.com/catalog/glossary/2d738fbe-0a43-487e-affa-66a9d56ba553"
+      },
+      {
+        "name": "HGVS-nomenklatur",
+        "guid": "0fb711ac-0141-4ef4-abda-f27814a1fd21",
+        "description": "Human Genome Variation Society-nomenklatur för DNA/protein-varianter (c.HGVS, p.HGVS). Används i GMS Observation och VCF.",
+        "url": "https://purview.microsoft.com/catalog/glossary/0fb711ac-0141-4ef4-abda-f27814a1fd21"
+      },
+      {
+        "name": "HL7 v2",
+        "guid": "261bae00-f8f6-4cb0-8445-1f85ead2193e",
+        "description": "Standard",
+        "url": "https://purview.microsoft.com/catalog/glossary/261bae00-f8f6-4cb0-8445-1f85ead2193e"
+      },
+      {
+        "name": "Histopatologi",
+        "guid": "ef19ae51-ec31-4d10-ada4-b0698e32fcbc",
+        "description": "",
+        "url": "https://purview.microsoft.com/catalog/glossary/ef19ae51-ec31-4d10-ada4-b0698e32fcbc"
+      },
+      {
+        "name": "Hodgkins lymfom",
+        "guid": "764ed64c-e04e-4852-9e71-7725ae180d45",
+        "description": "Diagnos",
+        "url": "https://purview.microsoft.com/catalog/glossary/764ed64c-e04e-4852-9e71-7725ae180d45"
+      },
+      {
+        "name": "ICD-10",
+        "guid": "c61a86e0-ef4a-43e6-96ba-f942dd5c8878",
+        "description": "International Classification of Diseases, 10th Revision. WHO:s diagnoskodssystem. Används i diagnoses-tabellen (icd10_code, icd10_description).",
+        "url": "https://purview.microsoft.com/catalog/glossary/c61a86e0-ef4a-43e6-96ba-f942dd5c8878"
+      },
+      {
+        "name": "ICD-O-3",
+        "guid": "a837321b-9801-414a-8c56-72afe748d4f3",
+        "description": "",
+        "url": "https://purview.microsoft.com/catalog/glossary/a837321b-9801-414a-8c56-72afe748d4f3"
+      },
+      {
+        "name": "ICF (International Classification of Functioning)",
+        "guid": "9741b9ee-6c1f-4e00-9a8f-25a8067de936",
+        "description": "Kodverk",
+        "url": "https://purview.microsoft.com/catalog/glossary/9741b9ee-6c1f-4e00-9a8f-25a8067de936"
+      },
+      {
+        "name": "IHE-profiler",
+        "guid": "cb347aad-561b-41b3-881e-43b1c60faf56",
+        "description": "Standard",
+        "url": "https://purview.microsoft.com/catalog/glossary/cb347aad-561b-41b3-881e-43b1c60faf56"
+      },
+      {
+        "name": "Immunhistokemi (IHK)",
+        "guid": "380a6777-da27-4852-bfd3-fc5c61de4059",
+        "description": "Forskningsmetod",
+        "url": "https://purview.microsoft.com/catalog/glossary/380a6777-da27-4852-bfd3-fc5c61de4059"
+      },
+      {
+        "name": "Immunterapi",
+        "guid": "a6e6ad1b-bbe6-4998-8eaa-a2c20929672a",
+        "description": "Behandling",
+        "url": "https://purview.microsoft.com/catalog/glossary/a6e6ad1b-bbe6-4998-8eaa-a2c20929672a"
+      },
+      {
+        "name": "Inera",
+        "guid": "ff4c3a06-594a-4afe-ac7e-4b966254d6f0",
+        "description": "Organisation",
+        "url": "https://purview.microsoft.com/catalog/glossary/ff4c3a06-594a-4afe-ac7e-4b966254d6f0"
+      },
+      {
+        "name": "Informerat samtycke (kliniskt)",
+        "guid": "ff54131c-389f-4a73-a9ef-29d5e4f99164",
+        "description": "Regelverk",
+        "url": "https://purview.microsoft.com/catalog/glossary/ff54131c-389f-4a73-a9ef-29d5e4f99164"
+      },
+      {
+        "name": "Informerat samtycke",
+        "guid": "c0daf14e-e9c4-4165-93a8-b467fe58625f",
+        "description": "",
+        "url": "https://purview.microsoft.com/catalog/glossary/c0daf14e-e9c4-4165-93a8-b467fe58625f"
+      },
+      {
+        "name": "Intensivvård (IVA)",
+        "guid": "df4b3472-bda0-4e65-9719-5e03d4cee04e",
+        "description": "Vårdnivå",
+        "url": "https://purview.microsoft.com/catalog/glossary/df4b3472-bda0-4e65-9719-5e03d4cee04e"
+      },
+      {
+        "name": "KVÅ (Klassifikation av vårdåtgärder)",
+        "guid": "9d99336d-2ac9-4859-a585-2db614cf5580",
+        "description": "Kodverk",
+        "url": "https://purview.microsoft.com/catalog/glossary/9d99336d-2ac9-4859-a585-2db614cf5580"
+      },
+      {
+        "name": "Kemoterapi",
+        "guid": "c71a72b4-5f61-4eac-a114-959915d5f8b0",
+        "description": "Behandling",
+        "url": "https://purview.microsoft.com/catalog/glossary/c71a72b4-5f61-4eac-a114-959915d5f8b0"
+      },
+      {
+        "name": "Ki-67 Proliferationsindex",
+        "guid": "5fea1b32-8611-493e-9774-ddfbb25180e2",
+        "description": "Biomarkör",
+        "url": "https://purview.microsoft.com/catalog/glossary/5fea1b32-8611-493e-9774-ddfbb25180e2"
+      },
+      {
+        "name": "Kontaktsjuksköterska",
+        "guid": "579291ab-2ee5-4864-b274-39095dd268cb",
+        "description": "Vårdprocess",
+        "url": "https://purview.microsoft.com/catalog/glossary/579291ab-2ee5-4864-b274-39095dd268cb"
+      },
+      {
+        "name": "Kreatinin",
+        "guid": "5bdc4f1d-c109-499b-b958-f7711a38bf23",
+        "description": "Labvärde",
+        "url": "https://purview.microsoft.com/catalog/glossary/5bdc4f1d-c109-499b-b958-f7711a38bf23"
+      },
+      {
+        "name": "Kvalitetsregister",
+        "guid": "bb11b117-d9be-47e4-a6c8-9a1fc394f8e3",
+        "description": "Regelverk",
+        "url": "https://purview.microsoft.com/catalog/glossary/bb11b117-d9be-47e4-a6c8-9a1fc394f8e3"
+      },
+      {
+        "name": "LOINC",
+        "guid": "c45bb24e-77eb-499c-b407-d62e37167c5b",
+        "description": "Logical Observation Identifiers Names and Codes. Används i GMS DiagnosticReport (51969-4) och Observation (69548-6).",
+        "url": "https://purview.microsoft.com/catalog/glossary/c45bb24e-77eb-499c-b407-d62e37167c5b"
+      },
+      {
+        "name": "Lab Result",
+        "guid": "7f9cbdb5-080d-442a-a8be-06a2d5604874",
+        "description": "Laboratorieprovsvar",
+        "url": "https://purview.microsoft.com/catalog/glossary/7f9cbdb5-080d-442a-a8be-06a2d5604874"
+      },
+      {
+        "name": "Labresultat",
+        "guid": "773e5cba-67fa-41de-9f2c-6dea337d74fd",
+        "description": "Laboratorieanalyser: hemoglobin_g, wbc_count, glucose_mmol, creatinine_umol, bmi, weight_kg. Lagras i vitals_labs.",
+        "url": "https://purview.microsoft.com/catalog/glossary/773e5cba-67fa-41de-9f2c-6dea337d74fd"
+      },
+      {
+        "name": "Liquid Biopsy (Flytande biopsi)",
+        "guid": "f6553ab4-31ab-4bd1-ba5f-6e85642437a2",
+        "description": "Forskningsmetod",
+        "url": "https://purview.microsoft.com/catalog/glossary/f6553ab4-31ab-4bd1-ba5f-6e85642437a2"
+      },
+      {
+        "name": "ML-prediktion",
+        "guid": "dca3c536-2adb-4def-aa78-ef4fcc2a9747",
+        "description": "",
+        "url": "https://purview.microsoft.com/catalog/glossary/dca3c536-2adb-4def-aa78-ef4fcc2a9747"
+      },
+      {
+        "name": "MR (Magnetresonanstomografi)",
+        "guid": "240e4c80-6694-463c-a2de-282984c9f07e",
+        "description": "",
+        "url": "https://purview.microsoft.com/catalog/glossary/240e4c80-6694-463c-a2de-282984c9f07e"
+      },
+      {
+        "name": "MYCN-amplifiering",
+        "guid": "9481783c-5c64-4e0e-9ecc-9b7a67982591",
+        "description": "Biomarkör",
+        "url": "https://purview.microsoft.com/catalog/glossary/9481783c-5c64-4e0e-9ecc-9b7a67982591"
+      },
+      {
+        "name": "Master Data Management (MDM)",
+        "guid": "643956cd-be5e-4e34-8e8e-76aea2617e71",
+        "description": "Arkitektur",
+        "url": "https://purview.microsoft.com/catalog/glossary/643956cd-be5e-4e34-8e8e-76aea2617e71"
+      },
+      {
+        "name": "Measurement",
+        "guid": "c88a72d0-c984-4ff3-b7f5-6750c1172e2a",
+        "description": "OMOP-tabell för laboratorieprover och mätningar",
+        "url": "https://purview.microsoft.com/catalog/glossary/c88a72d0-c984-4ff3-b7f5-6750c1172e2a"
+      },
+      {
+        "name": "Medallion-arkitektur",
+        "guid": "14f54db4-1f24-4c6d-bf32-13c59c5535bb",
+        "description": "Bronze → Silver → Gold datalagerskikt. Implementerad i Fabric Lakehouse med notebooks. Gold-lagret exponeras via vw_ml_encounters.",
+        "url": "https://purview.microsoft.com/catalog/glossary/14f54db4-1f24-4c6d-bf32-13c59c5535bb"
+      },
+      {
+        "name": "Medication",
+        "guid": "41844115-1964-4064-af46-e07ae0bb01bd",
+        "description": "Ett läkemedel eller farmaceutisk produkt",
+        "url": "https://purview.microsoft.com/catalog/glossary/41844115-1964-4064-af46-e07ae0bb01bd"
+      },
+      {
+        "name": "Medulloblastom",
+        "guid": "fc1e6dc0-030e-43ee-8fce-86e8112ed52f",
+        "description": "Diagnos",
+        "url": "https://purview.microsoft.com/catalog/glossary/fc1e6dc0-030e-43ee-8fce-86e8112ed52f"
+      },
+      {
+        "name": "Minimal Residual Disease (MRD)",
+        "guid": "66a27c29-3a20-4711-9fdc-e3d7fa02d546",
+        "description": "Forskningsmetod",
+        "url": "https://purview.microsoft.com/catalog/glossary/66a27c29-3a20-4711-9fdc-e3d7fa02d546"
+      },
+      {
+        "name": "Molekylär tumörboard",
+        "guid": "3ead8016-87ab-48e6-bf94-c6d89a2d811c",
+        "description": "Klinisk process",
+        "url": "https://purview.microsoft.com/catalog/glossary/3ead8016-87ab-48e6-bf94-c6d89a2d811c"
+      },
+      {
+        "name": "Multidisciplinär konferens (MDK)",
+        "guid": "f1423c6a-b183-407d-9abe-d9cbde892576",
+        "description": "Vårdprocess",
+        "url": "https://purview.microsoft.com/catalog/glossary/f1423c6a-b183-407d-9abe-d9cbde892576"
+      },
+      {
+        "name": "Mutation",
+        "guid": "bddc356e-d054-47df-ade4-9760ddb1550b",
+        "description": "Genetisk förändring i DNA",
+        "url": "https://purview.microsoft.com/catalog/glossary/bddc356e-d054-47df-ade4-9760ddb1550b"
+      },
+      {
+        "name": "NEWS (National Early Warning Score)",
+        "guid": "1d414fae-aeff-4377-b93c-881eb6a4010e",
+        "description": "Klinisk skala",
+        "url": "https://purview.microsoft.com/catalog/glossary/1d414fae-aeff-4377-b93c-881eb6a4010e"
+      },
+      {
+        "name": "NGS",
+        "guid": "0a59eb13-84ac-4a89-8f17-a1d300aeae44",
+        "description": "Next-Generation Sequencing",
+        "url": "https://purview.microsoft.com/catalog/glossary/0a59eb13-84ac-4a89-8f17-a1d300aeae44"
+      },
+      {
+        "name": "NOPHO (Nordic Society of Paediatric Haematology and Oncology)",
+        "guid": "c311c6b3-7ba0-4021-a29f-0aa4a80d4fd2",
+        "description": "Organisation",
+        "url": "https://purview.microsoft.com/catalog/glossary/c311c6b3-7ba0-4021-a29f-0aa4a80d4fd2"
+      },
+      {
+        "name": "Nationell Patientöversikt (NPÖ)",
+        "guid": "adf59263-a7b3-4876-8290-4711e9f89e70",
+        "description": "Sverige",
+        "url": "https://purview.microsoft.com/catalog/glossary/adf59263-a7b3-4876-8290-4711e9f89e70"
+      },
+      {
+        "name": "Neuroblastom",
+        "guid": "753bdc4f-9660-4e95-a970-b13e188d57cf",
+        "description": "Diagnos",
+        "url": "https://purview.microsoft.com/catalog/glossary/753bdc4f-9660-4e95-a970-b13e188d57cf"
+      },
+      {
+        "name": "Non-Hodgkins lymfom (barn)",
+        "guid": "bb135b07-4677-4c34-82d4-a4b8f14eb994",
+        "description": "Diagnos",
+        "url": "https://purview.microsoft.com/catalog/glossary/bb135b07-4677-4c34-82d4-a4b8f14eb994"
+      },
+      {
+        "name": "NordDRG",
+        "guid": "5ce13ea3-686b-4e07-bf90-d956a0092ecb",
+        "description": "Kodverk",
+        "url": "https://purview.microsoft.com/catalog/glossary/5ce13ea3-686b-4e07-bf90-d956a0092ecb"
+      },
+      {
+        "name": "OMOP CDM",
+        "guid": "5dcadb4f-cf18-427e-8923-ebb8009ee0b4",
+        "description": "",
+        "url": "https://purview.microsoft.com/catalog/glossary/5dcadb4f-cf18-427e-8923-ebb8009ee0b4"
+      },
+      {
+        "name": "OMOP Concept",
+        "guid": "6b255428-4e2e-45be-aebc-221c50128aac",
+        "description": "Standardiserat begrepp i OMOP CDM-vokabulär",
+        "url": "https://purview.microsoft.com/catalog/glossary/6b255428-4e2e-45be-aebc-221c50128aac"
+      },
+      {
+        "name": "OMOP Condition Occurrence",
+        "guid": "d58e338d-ccac-4b19-a31a-79b33553f41a",
+        "description": "",
+        "url": "https://purview.microsoft.com/catalog/glossary/d58e338d-ccac-4b19-a31a-79b33553f41a"
+      },
+      {
+        "name": "OMOP Drug Exposure",
+        "guid": "874b4551-203b-4242-91d4-becae81339bb",
+        "description": "",
+        "url": "https://purview.microsoft.com/catalog/glossary/874b4551-203b-4242-91d4-becae81339bb"
+      },
+      {
+        "name": "OMOP Genomics",
+        "guid": "f315d8cf-f292-42ec-80c7-430ae3c56a23",
+        "description": "",
+        "url": "https://purview.microsoft.com/catalog/glossary/f315d8cf-f292-42ec-80c7-430ae3c56a23"
+      },
+      {
+        "name": "OMOP Measurement",
+        "guid": "69b08b3f-5d66-417b-bce5-eaece92e0367",
+        "description": "",
+        "url": "https://purview.microsoft.com/catalog/glossary/69b08b3f-5d66-417b-bce5-eaece92e0367"
+      },
+      {
+        "name": "OMOP Person",
+        "guid": "e9ccf01e-52a6-4f44-86e5-8dba2fd74b52",
+        "description": "",
+        "url": "https://purview.microsoft.com/catalog/glossary/e9ccf01e-52a6-4f44-86e5-8dba2fd74b52"
+      },
+      {
+        "name": "OMOP Specimen",
+        "guid": "5da03bc9-31d1-46b0-884e-238bf327f6c2",
+        "description": "",
+        "url": "https://purview.microsoft.com/catalog/glossary/5da03bc9-31d1-46b0-884e-238bf327f6c2"
+      },
+      {
+        "name": "OMOP Visit Occurrence",
+        "guid": "db4303f8-3358-4b27-b818-f64fa909548b",
+        "description": "",
+        "url": "https://purview.microsoft.com/catalog/glossary/db4303f8-3358-4b27-b818-f64fa909548b"
+      },
+      {
+        "name": "Observation",
+        "guid": "db6cead9-f161-468d-8d0f-2b162509deb4",
+        "description": "Kliniska observationer, mätningar och bedömningar",
+        "url": "https://purview.microsoft.com/catalog/glossary/db6cead9-f161-468d-8d0f-2b162509deb4"
+      },
+      {
+        "name": "Osteosarkom",
+        "guid": "5707ae42-a623-46e6-8b5d-192cf4507456",
+        "description": "Diagnos",
+        "url": "https://purview.microsoft.com/catalog/glossary/5707ae42-a623-46e6-8b5d-192cf4507456"
+      },
+      {
+        "name": "Palliativ vård",
+        "guid": "15b8e1d1-37cd-4e4c-9eb1-57ed36e83cd3",
+        "description": "Vårdnivå",
+        "url": "https://purview.microsoft.com/catalog/glossary/15b8e1d1-37cd-4e4c-9eb1-57ed36e83cd3"
+      },
+      {
+        "name": "Patient",
+        "guid": "880809c3-7bf7-4fc1-bef2-968083285469",
+        "description": "En person som tar emot eller har tagit emot hälso- och sjukvård",
+        "url": "https://purview.microsoft.com/catalog/glossary/880809c3-7bf7-4fc1-bef2-968083285469"
+      },
+      {
+        "name": "Patientdatalagen (PDL)",
+        "guid": "c4a1f9a6-983e-476b-bec3-550c6ee6f5ea",
+        "description": "Regelverk",
+        "url": "https://purview.microsoft.com/catalog/glossary/c4a1f9a6-983e-476b-bec3-550c6ee6f5ea"
+      },
+      {
+        "name": "Patientdemografi",
+        "guid": "1171c25a-0db9-43e4-8e80-8c965054ab5e",
+        "description": "",
+        "url": "https://purview.microsoft.com/catalog/glossary/1171c25a-0db9-43e4-8e80-8c965054ab5e"
+      },
+      {
+        "name": "Personnummer",
+        "guid": "39fc021b-ec7e-4714-8e7c-9646c76f33a5",
+        "description": "",
+        "url": "https://purview.microsoft.com/catalog/glossary/39fc021b-ec7e-4714-8e7c-9646c76f33a5"
+      },
+      {
+        "name": "Practitioner",
+        "guid": "c0a3c4a2-a846-4f0d-9cbd-dda57bf0195e",
+        "description": "Legitimerad vårdpersonal",
+        "url": "https://purview.microsoft.com/catalog/glossary/c0a3c4a2-a846-4f0d-9cbd-dda57bf0195e"
+      },
+      {
+        "name": "Protonterapi",
+        "guid": "036ec5b9-344f-4093-b914-c7fa00f1d82f",
+        "description": "Behandling",
+        "url": "https://purview.microsoft.com/catalog/glossary/036ec5b9-344f-4093-b914-c7fa00f1d82f"
+      },
+      {
+        "name": "Pseudonymisering",
+        "guid": "676e244e-8880-400a-b107-9b9c87e078e8",
+        "description": "",
+        "url": "https://purview.microsoft.com/catalog/glossary/676e244e-8880-400a-b107-9b9c87e078e8"
+      },
+      {
+        "name": "RNA-sekvensering",
+        "guid": "e8d63c14-ea91-4d1a-9958-9dacef744099",
+        "description": "Forskningsmetod",
+        "url": "https://purview.microsoft.com/catalog/glossary/e8d63c14-ea91-4d1a-9958-9dacef744099"
+      },
+      {
+        "name": "Radiology Order",
+        "guid": "e8089636-1798-4e86-92f3-0dc0b440f215",
+        "description": "Remiss för radiologisk undersökning",
+        "url": "https://purview.microsoft.com/catalog/glossary/e8089636-1798-4e86-92f3-0dc0b440f215"
+      },
+      {
+        "name": "Rehabilitering (barn)",
+        "guid": "df76e8c8-16d6-409d-b346-d2ddff942bb2",
+        "description": "Vårdprocess",
+        "url": "https://purview.microsoft.com/catalog/glossary/df76e8c8-16d6-409d-b346-d2ddff942bb2"
+      },
+      {
+        "name": "Remiss",
+        "guid": "822f3899-8392-4c1b-9f4f-5778b3333c90",
+        "description": "Vårdprocess",
+        "url": "https://purview.microsoft.com/catalog/glossary/822f3899-8392-4c1b-9f4f-5778b3333c90"
+      },
+      {
+        "name": "Retinoblastom",
+        "guid": "9bee4c5c-7f26-408b-8d47-88fee8820936",
+        "description": "Diagnos",
+        "url": "https://purview.microsoft.com/catalog/glossary/9bee4c5c-7f26-408b-8d47-88fee8820936"
+      },
+      {
+        "name": "Rhabdomyosarkom",
+        "guid": "5f43fb41-94c2-4076-8faf-0dc1b627e9ff",
+        "description": "Diagnos",
+        "url": "https://purview.microsoft.com/catalog/glossary/5f43fb41-94c2-4076-8faf-0dc1b627e9ff"
+      },
+      {
+        "name": "SBCR (Svenska Barncancerregistret)",
+        "guid": "c5796562-19bb-4480-bd22-3faef3dcd8a9",
+        "description": "Nationellt kvalitetsregister för barncancer. BrainChild SBCR-modulen hanterar registrerings-, behandlings- och uppföljningsdata.",
+        "url": "https://purview.microsoft.com/catalog/glossary/c5796562-19bb-4480-bd22-3faef3dcd8a9"
+      },
+      {
+        "name": "SIOP (International Society of Paediatric Oncology)",
+        "guid": "788fcbbe-5e91-47d7-ab99-b2b911d36dda",
+        "description": "Organisation",
+        "url": "https://purview.microsoft.com/catalog/glossary/788fcbbe-5e91-47d7-ab99-b2b911d36dda"
+      },
+      {
+        "name": "SITHS-kort",
+        "guid": "7ccaeb47-060b-4b25-a94a-df28fc590444",
+        "description": "Infrastruktur",
+        "url": "https://purview.microsoft.com/catalog/glossary/7ccaeb47-060b-4b25-a94a-df28fc590444"
+      },
+      {
+        "name": "SNOMED-CT",
+        "guid": "cad7da7d-6201-4686-9201-d85d4dc545d5",
+        "description": "Systematized Nomenclature of Medicine — Clinical Terms. Används i BTB specimen.type och GMS-resurser.",
+        "url": "https://purview.microsoft.com/catalog/glossary/cad7da7d-6201-4686-9201-d85d4dc545d5"
+      },
+      {
+        "name": "Schema Evolution",
+        "guid": "3962850d-bcd4-426b-b005-69e2a8cbb671",
+        "description": "Teknologi",
+        "url": "https://purview.microsoft.com/catalog/glossary/3962850d-bcd4-426b-b005-69e2a8cbb671"
+      },
+      {
+        "name": "Seneffekter",
+        "guid": "82291cb9-4778-4c73-869b-38bd92489887",
+        "description": "Långtidsbiverkningar efter cancerbehandling. Kolumn: late_effects (SBCR followup).",
+        "url": "https://purview.microsoft.com/catalog/glossary/82291cb9-4778-4c73-869b-38bd92489887"
+      },
+      {
+        "name": "Seneffektsmottagning",
+        "guid": "c580b319-02b1-49c1-9793-f495afa1f2d2",
+        "description": "Klinisk process",
+        "url": "https://purview.microsoft.com/catalog/glossary/c580b319-02b1-49c1-9793-f495afa1f2d2"
+      },
+      {
+        "name": "Silver-lager",
+        "guid": "378ca7a8-eb86-4c31-b359-6e43f47e7704",
+        "description": "Renat och normaliserat datalager med feature engineering. Lagras i silver_lakehouse (Fabric).",
+        "url": "https://purview.microsoft.com/catalog/glossary/378ca7a8-eb86-4c31-b359-6e43f47e7704"
+      },
+      {
+        "name": "Skyddad hälsoinformation (PHI)",
+        "guid": "b9cb5130-dc6d-417f-a2c2-60b12907caad",
+        "description": "",
+        "url": "https://purview.microsoft.com/catalog/glossary/b9cb5130-dc6d-417f-a2c2-60b12907caad"
+      },
+      {
+        "name": "Somatic Variant",
+        "guid": "b4f8afdd-6d19-435d-8064-c0cc8258de36",
+        "description": "Förvärvad mutation i tumör",
+        "url": "https://purview.microsoft.com/catalog/glossary/b4f8afdd-6d19-435d-8064-c0cc8258de36"
+      },
+      {
+        "name": "Specimen",
+        "guid": "bce72d35-8c6c-45c2-b704-d381ed428440",
+        "description": "Biologiskt prov för analys",
+        "url": "https://purview.microsoft.com/catalog/glossary/bce72d35-8c6c-45c2-b704-d381ed428440"
+      },
+      {
+        "name": "Stamcellstransplantation",
+        "guid": "1e2fb1d6-0fc3-458f-8e69-a43cc62e231d",
+        "description": "Behandling",
+        "url": "https://purview.microsoft.com/catalog/glossary/1e2fb1d6-0fc3-458f-8e69-a43cc62e231d"
+      },
+      {
+        "name": "Structural Variant",
+        "guid": "9fac95f3-4d21-4389-a0aa-21eb249f5743",
+        "description": "Stora genomiska omlagringar",
+        "url": "https://purview.microsoft.com/catalog/glossary/9fac95f3-4d21-4389-a0aa-21eb249f5743"
+      },
+      {
+        "name": "Strålbehandling",
+        "guid": "a975b2a3-0956-4e45-baac-d308eb8d6223",
+        "description": "Behandling",
+        "url": "https://purview.microsoft.com/catalog/glossary/a975b2a3-0956-4e45-baac-d308eb8d6223"
+      },
+      {
+        "name": "Svenskt personnummer",
+        "guid": "0dbaa0e2-513f-4957-a6d5-cc9312216b72",
+        "description": "",
+        "url": "https://purview.microsoft.com/catalog/glossary/0dbaa0e2-513f-4957-a6d5-cc9312216b72"
+      },
+      {
+        "name": "T1-viktad MR",
+        "guid": "fc5ce015-a401-46c6-a96f-ba07b6e0eaa8",
+        "description": "",
+        "url": "https://purview.microsoft.com/catalog/glossary/fc5ce015-a401-46c6-a96f-ba07b6e0eaa8"
+      },
+      {
+        "name": "T2-viktad MR",
+        "guid": "2f9840de-f814-4acf-ac88-7677961630a1",
+        "description": "",
+        "url": "https://purview.microsoft.com/catalog/glossary/2f9840de-f814-4acf-ac88-7677961630a1"
+      },
+      {
+        "name": "Terminologitjänst",
+        "guid": "fa065554-fd7b-40fe-8320-c838e5b2cb0d",
+        "description": "Infrastruktur",
+        "url": "https://purview.microsoft.com/catalog/glossary/fa065554-fd7b-40fe-8320-c838e5b2cb0d"
+      },
+      {
+        "name": "Triage",
+        "guid": "28e36432-5d06-477d-b986-7657f0e0cc0a",
+        "description": "Vårdprocess",
+        "url": "https://purview.microsoft.com/catalog/glossary/28e36432-5d06-477d-b986-7657f0e0cc0a"
+      },
+      {
+        "name": "Troponin",
+        "guid": "03ba74ce-dcd1-411c-ad03-82851fdd0a66",
+        "description": "Labvärde",
+        "url": "https://purview.microsoft.com/catalog/glossary/03ba74ce-dcd1-411c-ad03-82851fdd0a66"
+      },
+      {
+        "name": "Tumor Sample",
+        "guid": "54b0b73d-1365-480a-8b43-5ad394e09516",
+        "description": "Tumörvävnadsprov för molekylär analys",
+        "url": "https://purview.microsoft.com/catalog/glossary/54b0b73d-1365-480a-8b43-5ad394e09516"
+      },
+      {
+        "name": "Tumörmutationsbörda (TMB)",
+        "guid": "06e40048-f228-4d20-ac39-7e1c28019f11",
+        "description": "Biomarkör",
+        "url": "https://purview.microsoft.com/catalog/glossary/06e40048-f228-4d20-ac39-7e1c28019f11"
+      },
+      {
+        "name": "Tumörsite",
+        "guid": "c40fbcf9-d030-49d0-b8ce-f9200fd8d75c",
+        "description": "Anatomisk lokalisation av tumör. Kolumner: tumor_site (patients_master, SBCR registrations), BodyPartExamined (DICOM).",
+        "url": "https://purview.microsoft.com/catalog/glossary/c40fbcf9-d030-49d0-b8ce-f9200fd8d75c"
+      },
+      {
+        "name": "Tumörstadium",
+        "guid": "89e480fe-0853-42d4-b831-dd273761329d",
+        "description": "",
+        "url": "https://purview.microsoft.com/catalog/glossary/89e480fe-0853-42d4-b831-dd273761329d"
+      },
+      {
+        "name": "VAS/NRS Smärtskattning",
+        "guid": "98e35c3e-84b0-466e-91e0-6fcc4c07ebb2",
+        "description": "Klinisk skala",
+        "url": "https://purview.microsoft.com/catalog/glossary/98e35c3e-84b0-466e-91e0-6fcc4c07ebb2"
+      },
+      {
+        "name": "VCF (Variant Call Format)",
+        "guid": "2f1758de-765b-4674-9563-bc7dfd0629c6",
+        "description": "Standardformat för genomiska varianter. Lagras i BrainChild BTB-modulen med tillhörande metadata.",
+        "url": "https://purview.microsoft.com/catalog/glossary/2f1758de-765b-4674-9563-bc7dfd0629c6"
+      },
+      {
+        "name": "VCF",
+        "guid": "43ed479f-f376-44e8-ac4e-b1eac12fc616",
+        "description": "Variant Call Format - standardformat för genomiska varianter",
+        "url": "https://purview.microsoft.com/catalog/glossary/43ed479f-f376-44e8-ac4e-b1eac12fc616"
+      },
+      {
+        "name": "Visit Occurrence",
+        "guid": "065c1866-1453-44dc-a739-4de2d1fffe02",
+        "description": "OMOP-tabell för vårdtillfällen",
+        "url": "https://purview.microsoft.com/catalog/glossary/065c1866-1453-44dc-a739-4de2d1fffe02"
+      },
+      {
+        "name": "Vital Signs",
+        "guid": "fcc93430-c733-420f-ab7e-97df0274bf3b",
+        "description": "Vitala parametrar (puls, blodtryck, temperatur, andning, saturation)",
+        "url": "https://purview.microsoft.com/catalog/glossary/fcc93430-c733-420f-ab7e-97df0274bf3b"
+      },
+      {
+        "name": "Vitalparametrar",
+        "guid": "b62e8eea-da75-4a4a-b914-3cd9add971a5",
+        "description": "Fysiologiska mätvärden: systolic_bp, diastolic_bp, heart_rate, oxygen_saturation, temperature. Lagras i vitals_labs.",
+        "url": "https://purview.microsoft.com/catalog/glossary/b62e8eea-da75-4a4a-b914-3cd9add971a5"
+      },
+      {
+        "name": "Vårdkontakt",
+        "guid": "b4dbd8bc-d4c8-407d-bd7c-0a2c8c76f70d",
+        "description": "",
+        "url": "https://purview.microsoft.com/catalog/glossary/b4dbd8bc-d4c8-407d-bd7c-0a2c8c76f70d"
+      },
+      {
+        "name": "Vårdplan",
+        "guid": "d1648ee8-003c-4582-a85c-c431fc40d9a2",
+        "description": "Vårdprocess",
+        "url": "https://purview.microsoft.com/catalog/glossary/d1648ee8-003c-4582-a85c-c431fc40d9a2"
+      },
+      {
+        "name": "Vårdtid (LOS)",
+        "guid": "f42d8006-81de-4b51-9e8d-0f8beda1e6e7",
+        "description": "Length of Stay — antal dagar per vårdbesök. Beräknas som DATEDIFF(admission_date, discharge_date). Kolumn: encounters.los_days.",
+        "url": "https://purview.microsoft.com/catalog/glossary/f42d8006-81de-4b51-9e8d-0f8beda1e6e7"
+      },
+      {
+        "name": "Whole Exome Sequencing (WES)",
+        "guid": "39bfe34a-c112-4de1-9425-93acb893a36a",
+        "description": "Forskningsmetod",
+        "url": "https://purview.microsoft.com/catalog/glossary/39bfe34a-c112-4de1-9425-93acb893a36a"
+      },
+      {
+        "name": "Whole Genome Sequencing (WGS)",
+        "guid": "905c5d70-4ec2-4b26-a65a-5a61ae3d2a43",
+        "description": "Forskningsmetod",
+        "url": "https://purview.microsoft.com/catalog/glossary/905c5d70-4ec2-4b26-a65a-5a61ae3d2a43"
+      },
+      {
+        "name": "Wilms tumör (Nefroblastom)",
+        "guid": "963561a6-064b-4c44-8399-60b616d08eb3",
+        "description": "Diagnos",
+        "url": "https://purview.microsoft.com/catalog/glossary/963561a6-064b-4c44-8399-60b616d08eb3"
+      },
+      {
+        "name": "eGFR (Estimerad Glomerulär Filtration)",
+        "guid": "58f37507-032f-45e1-8b9a-7db770ada571",
+        "description": "Labvärde",
+        "url": "https://purview.microsoft.com/catalog/glossary/58f37507-032f-45e1-8b9a-7db770ada571"
+      },
+      {
+        "name": "openEHR",
+        "guid": "b124f188-46d0-43cd-8f94-26f6d2d5912e",
+        "description": "Standard",
+        "url": "https://purview.microsoft.com/catalog/glossary/b124f188-46d0-43cd-8f94-26f6d2d5912e"
+      },
+      {
+        "name": "Återinläggningsrisk",
+        "guid": "cf004962-8a85-4942-b42f-db959d8a102a",
+        "description": "Risk för återinläggning inom 30 dagar. Kolumn: encounters.readmission_30d. Målvariabel i ML-modellen.",
+        "url": "https://purview.microsoft.com/catalog/glossary/cf004962-8a85-4942-b42f-db959d8a102a"
+      },
+      {
+        "name": "Överlevnadsanalys",
+        "guid": "9d92205c-eee5-4aac-bf78-8be7c896c035",
+        "description": "Forskningsmetod",
+        "url": "https://purview.microsoft.com/catalog/glossary/9d92205c-eee5-4aac-bf78-8be7c896c035"
+      }
+    ],
+    "Ingen kategori": [
+      {
+        "name": "Batch Scoring",
+        "guid": "6a6418b8-b87d-45a4-a961-ad89ebc01d0a",
+        "description": "Batch-prediktion på stora dataset",
+        "url": "https://purview.microsoft.com/catalog/glossary/6a6418b8-b87d-45a4-a961-ad89ebc01d0a"
+      },
+      {
+        "name": "CDM",
+        "guid": "0b2b84bf-bd52-48a3-b493-acb3cfa4e780",
+        "description": "Governance domain för kliniska patientdata, EHR, besök och diagnoser (OMOP CDM)",
+        "url": "https://purview.microsoft.com/catalog/glossary/0b2b84bf-bd52-48a3-b493-acb3cfa4e780"
+      },
+      {
+        "name": "CR",
+        "guid": "19001e56-0cbe-49ce-b1ff-9241b2aa6713",
+        "description": "Governance domain för cancer registry data (SBCR), behandlingar och uppföljning",
+        "url": "https://purview.microsoft.com/catalog/glossary/19001e56-0cbe-49ce-b1ff-9241b2aa6713"
+      },
+      {
+        "name": "Feature Drift",
+        "guid": "51161d96-30fa-4e27-9460-3a183a3b80a0",
+        "description": "Förändring i feature-distribution över tid",
+        "url": "https://purview.microsoft.com/catalog/glossary/51161d96-30fa-4e27-9460-3a183a3b80a0"
+      },
+      {
+        "name": "GPM",
+        "guid": "d8836abb-0c7b-403a-990b-baed055e9c3c",
+        "description": "Governance domain för genomisk data, sekvenseringsdata och precision medicine (BTB, VCF)",
+        "url": "https://purview.microsoft.com/catalog/glossary/d8836abb-0c7b-403a-990b-baed055e9c3c"
+      },
+      {
+        "name": "ML Feature",
+        "guid": "81cf0e20-009e-4137-880c-e94a30376cb0",
+        "description": "En variabel eller attribut i maskininlärningsmodell",
+        "url": "https://purview.microsoft.com/catalog/glossary/81cf0e20-009e-4137-880c-e94a30376cb0"
+      },
+      {
+        "name": "ML Model",
+        "guid": "681f285a-2525-4978-995e-d8d584b9e1cd",
+        "description": "Tränad maskininlärningsmodell",
+        "url": "https://purview.microsoft.com/catalog/glossary/681f285a-2525-4978-995e-d8d584b9e1cd"
+      },
+      {
+        "name": "MLA",
+        "guid": "31971a13-da55-4def-b0ce-02769aeb00e8",
+        "description": "Governance domain för ML feature stores, analytics och datamodeller",
+        "url": "https://purview.microsoft.com/catalog/glossary/31971a13-da55-4def-b0ce-02769aeb00e8"
+      },
+      {
+        "name": "MLflow Model",
+        "guid": "6b03e862-09c1-4207-a18b-47c4b1d7029f",
+        "description": "Modell registrerad i MLflow",
+        "url": "https://purview.microsoft.com/catalog/glossary/6b03e862-09c1-4207-a18b-47c4b1d7029f"
+      },
+      {
+        "name": "Model Monitoring",
+        "guid": "3b9b2e8f-1618-45c8-a651-b7d9aba33ad2",
+        "description": "Övervakning av modellprestanda i produktion",
+        "url": "https://purview.microsoft.com/catalog/glossary/3b9b2e8f-1618-45c8-a651-b7d9aba33ad2"
+      },
+      {
+        "name": "Model Registry",
+        "guid": "91df60d3-447c-4137-b0d4-c3545a668756",
+        "description": "Central repository för ML-modeller",
+        "url": "https://purview.microsoft.com/catalog/glossary/91df60d3-447c-4137-b0d4-c3545a668756"
+      },
+      {
+        "name": "Prediction",
+        "guid": "47de3d9b-4003-4614-b82a-36c942e6eaef",
+        "description": "Modellgenererad prediktion eller riskscore",
+        "url": "https://purview.microsoft.com/catalog/glossary/47de3d9b-4003-4614-b82a-36c942e6eaef"
+      },
+      {
+        "name": "Risk Score",
+        "guid": "fa8f727d-4a98-4f13-93b3-38d72f30a53a",
+        "description": "Numerisk riskvärdering för kliniskt utfall",
+        "url": "https://purview.microsoft.com/catalog/glossary/fa8f727d-4a98-4f13-93b3-38d72f30a53a"
+      }
+    ]
+  }
+}

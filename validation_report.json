@@ -1,0 +1,89 @@
+{
+  "timestamp": "2026-04-22T00:00:03",
+  "stats": {
+    "ok": 50,
+    "fixed": 0,
+    "warn": 2,
+    "errors": 0
+  },
+  "sections": [
+    {
+      "name": "Collections",
+      "ok": 5,
+      "issues": []
+    },
+    {
+      "name": "Data Sources",
+      "ok": 2,
+      "issues": []
+    },
+    {
+      "name": "Scans",
+      "ok": 3,
+      "issues": []
+    },
+    {
+      "name": "Entity Counts",
+      "ok": 8,
+      "issues": []
+    },
+    {
+      "name": "BrainChild Collection",
+      "ok": 1,
+      "issues": []
+    },
+    {
+      "name": "Glossary",
+      "ok": 2,
+      "issues": []
+    },
+    {
+      "name": "Term-Entity Links (FHIR/DICOM)",
+      "ok": 21,
+      "issues": [
+        "FHIR ImagingStudy link failed",
+        "VCF (Variant Call Format) link failed"
+      ]
+    },
+    {
+      "name": "Term-Entity Links (Fabric)",
+      "ok": 8,
+      "issues": []
+    },
+    {
+      "name": "Term-Entity Links (SQL)",
+      "ok": 16,
+      "issues": []
+    },
+    {
+      "name": "Classification",
+      "ok": 8,
+      "issues": []
+    },
+    {
+      "name": "Governance Domains",
+      "ok": 0,
+      "issues": []
+    },
+    {
+      "name": "Data Products",
+      "ok": 0,
+      "issues": []
+    },
+    {
+      "name": "Search",
+      "ok": 14,
+      "issues": []
+    },
+    {
+      "name": "FHIR/DICOM Details",
+      "ok": 4,
+      "issues": []
+    },
+    {
+      "name": "Scan Trigger",
+      "ok": 0,
+      "issues": []
+    }
+  ]
+}

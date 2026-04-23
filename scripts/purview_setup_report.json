@@ -1,0 +1,41 @@
+{
+  "timestamp": "2026-04-22T19:09:11.328263",
+  "purview_account": "https://prviewacc.purview.azure.com",
+  "summary": {
+    "governance_domains": 0,
+    "data_products": 4,
+    "glossary_terms": 184,
+    "domain_product_links": 0,
+    "fabric_connection": "FAILED"
+  },
+  "domains": [],
+  "products": [
+    "BrainChild Barncancerforskning",
+    "Klinisk Patientanalys",
+    "ML Feature Store",
+    "OMOP Forskningsdata"
+  ],
+  "status": {
+    "managed_identity": "mi-purview exists (User-Assigned)",
+    "atlas_api": "Working",
+    "search_api": "Working",
+    "fabric_onelake": "NEEDS SETUP"
+  },
+  "next_steps": [
+    {
+      "priority": "HIGH",
+      "action": "Add mi-purview to Fabric workspace",
+      "details": "Workspace ID: afda4639-34ce-4ee9-a82f-ab7b5cfd7334, Role: Contributor"
+    },
+    {
+      "priority": "HIGH",
+      "action": "Configure Purview Self-Serve Analytics",
+      "details": "Portal → Self-serve analytics → Edit storage → Authentication: User-assigned MI"
+    },
+    {
+      "priority": "MEDIUM",
+      "action": "Review domain-product mappings",
+      "details": "Only 0/4 products linked"
+    }
+  ]
+}

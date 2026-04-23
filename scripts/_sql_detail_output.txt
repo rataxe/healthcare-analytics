@@ -1,0 +1,389 @@
+C:\Python313\Lib\site-packages\requests\__init__.py:113: RequestsDependencyWarning: urllib3 (2.5.0) or chardet (7.4.0.post2)/charset_normalizer (3.4.2) doesn't match a supported version!
+  warnings.warn(
+======================================================================
+1. SQL ENTITIES IN sql-databases COLLECTION
+======================================================================
+  Total: 21
+  [azure_sql_db] ladok_demo_db
+       classifications: ['Swedish Personnummer']
+  [azure_sql_db] HealthcareAnalyticsDB
+  [azure_sql_schema] hca
+  [azure_sql_schema] hca
+  [azure_sql_schema] sys
+  [azure_sql_schema] dbo
+  [azure_sql_server] sql-hca-demo.database.windows.net
+  [azure_sql_stored_procedure] [dbo].[sp_executesql]
+  [azure_sql_table] encounters
+       classifications: ['MICROSOFT.PERSONAL.NAME']
+       terms: ['?', '?', '?', '?', '?', '?', '?']
+  [azure_sql_table] patients
+       classifications: ['MICROSOFT.PERSONAL.GENDER', 'MICROSOFT.PERSONAL.NAME']
+       terms: ['?', '?', '?', '?', '?', '?']
+  [azure_sql_table] encounters
+       classifications: ['Swedish Personnummer', 'FHIR Resource ID']
+       terms: ['?', '?', '?', '?', '?']
+  [azure_sql_table] vitals_labs
+       classifications: ['FHIR Resource ID']
+       terms: ['?', '?', '?', '?']
+  [azure_sql_table] patients
+       classifications: ['MICROSOFT.PERSONAL.GENDER', 'Swedish Personnummer', 'FHIR Resource ID', 'Patient Name PHI', 'MICROSOFT.GOVERNMENT.US.ZIP_CODE', 'MICROSOFT.PERSONAL.DATE_OF_BIRTH']
+       terms: ['?', '?', '?']
+  [azure_sql_table] vitals_labs
+       terms: ['?', '?', '?', '?', '?', '?']
+  [azure_sql_table] medications
+       terms: ['?', '?', '?', '?', '?']
+  [azure_sql_table] diagnoses
+       terms: ['?', '?', '?', '?', '?']
+  [azure_sql_table] diagnoses
+       classifications: ['ICD10 Diagnosis Code', 'FHIR Resource ID']
+       terms: ['?', '?', '?']
+  [azure_sql_table] medications
+       classifications: ['FHIR Resource ID']
+       terms: ['?', '?', '?']
+  [azure_sql_table] dm_db_resource_stats
+  [azure_sql_view] vw_ml_encounters
+       terms: ['?', '?', '?', '?', '?']
+  [azure_sql_view] vw_ml_encounters
+       classifications: ['ICD10 Diagnosis Code', 'MICROSOFT.PERSONAL.GENDER', 'MICROSOFT.PERSONAL.AGE', 'Swedish Personnummer', 'FHIR Resource ID']
+
+======================================================================
+2. OMOP TABLE ENTITIES - columns and classifications
+======================================================================
+
+  TABLE: diagnoses (guid=d4f88b9a-7676-42f0-a5d6-13f6f6f60000)
+    columns count: 6
+      - diagnosis_type (guid=76473d8d-8433-4df5-b343-c0937d264542)
+      - diagnosis_id (guid=40929988-ba77-43ea-b371-eca193d6796d)
+      - icd10_description (guid=6a6878fe-5991-48fc-a717-81057307b8c1)
+      - encounter_id (guid=b47f3a48-ab62-430d-b962-4f900bd9319e)
+      - confirmed_date (guid=0ab5828d-c920-42f1-aef7-145955a9a25c)
+      - icd10_code (guid=79a9c6fa-69e5-42a7-a2e9-896507c51aff)
+
+  TABLE: encounters (guid=d86a7adf-713f-47d3-b613-b6f6f6f60000)
+    columns count: 10
+      - admission_date (guid=dd2baae2-3315-47d7-b3a1-1a178d95305d)
+      - los_days (guid=ec693ee7-5796-440d-87a7-1dd0b2388e38)
+      - readmission_30d (guid=bd630ff9-8503-44e1-a06b-1712d9a9532b)
+      - admission_source (guid=83090acc-76fc-4a31-9a47-741a3bca844a)
+      - encounter_id (guid=f5bdcbae-4f41-4265-b8e9-e4621a98b393)
+      - department (guid=f44ce33f-528e-483e-9c99-88d27521b772)
+      - created_at (guid=ccbe0700-ed79-43ef-950d-34a975f72239)
+      - patient_id (guid=8cd78c4a-1309-4acb-81e4-9cd35fb00cf2)
+      - discharge_date (guid=5cfb8d8a-e29a-405b-8987-d375432a4a12)
+      - discharge_disposition (guid=f51b5090-5a88-46dd-a11e-ab4f3c8a579b)
+
+  TABLE: diagnoses (guid=a3aaeb32-7928-403c-806b-14f6f6f60000)
+    columns count: 6
+      - diagnosis_id (guid=a3aaeb32-7928-403c-806b-14f6f6f60005)
+      - encounter_id (guid=a3aaeb32-7928-403c-806b-14f6f6f60003)
+      - icd10_code (guid=a3aaeb32-7928-403c-806b-14f6f6f60002)
+      - icd10_description (guid=a3aaeb32-7928-403c-806b-14f6f6f60001)
+      - diagnosis_type (guid=a3aaeb32-7928-403c-806b-14f6f6f60006)
+      - confirmed_date (guid=a3aaeb32-7928-403c-806b-14f6f6f60004)
+
+  TABLE: medications (guid=eb7a580f-fa4c-440a-9e2c-3ff6f6f60000)
+    columns count: 9
+      - encounter_id (guid=85bd8830-7659-4df4-9155-d37024725b8b)
+      - route (guid=90e271a5-1c94-44ac-bddc-3ad04046a012)
+      - atc_code (guid=ccf5eb27-a4f9-4524-9bfa-1251f8497af5)
+      - start_date (guid=6b526d0b-56ac-45ae-be28-4e131328ed16)
+      - frequency (guid=9729488c-afde-462e-aa95-c9a73b69e9a5)
+      - end_date (guid=b210b705-5de2-415b-b962-765d09478fdf)
+      - dose_mg (guid=e4d54da3-cc61-4c6c-abc3-985f8d31a3ec)
+      - drug_name (guid=fec91f5a-55a1-46e8-be4d-7b276bbe739b)
+      - medication_id (guid=aede8f45-0296-413b-ba55-bf990563f5d5)
+
+  TABLE: medications (guid=8470e93b-4dbe-4a0c-8dbe-c0f6f6f60000)
+    columns count: 9
+      - medication_id (guid=8470e93b-4dbe-4a0c-8dbe-c0f6f6f60008)
+      - encounter_id (guid=8470e93b-4dbe-4a0c-8dbe-c0f6f6f60002)
+      - atc_code (guid=8470e93b-4dbe-4a0c-8dbe-c0f6f6f60004)
+      - drug_name (guid=8470e93b-4dbe-4a0c-8dbe-c0f6f6f60007)
+      - dose_mg (guid=8470e93b-4dbe-4a0c-8dbe-c0f6f6f60001)
+      - frequency (guid=8470e93b-4dbe-4a0c-8dbe-c0f6f6f60005)
+      - route (guid=8470e93b-4dbe-4a0c-8dbe-c0f6f6f60006)
+      - start_date (guid=8470e93b-4dbe-4a0c-8dbe-c0f6f6f60009)
+      - end_date (guid=8470e93b-4dbe-4a0c-8dbe-c0f6f6f60003)
+
+  TABLE: vitals_labs (guid=319942ea-a30f-4b8d-be5b-4af6f6f60000)
+    columns count: 15
+      - weight_kg (guid=e7ab1109-0ebc-48bc-a71e-b62632387efd)
+      - creatinine_umol (guid=4b872158-d3c4-44c7-ac19-a25bbb596be6)
+      - glucose_mmol (guid=f4c3d92b-2bf0-443a-ba46-34c22f286828)
+      - sodium_mmol (guid=b6c158c5-3758-40d6-952a-17f6bc985bbc)
+      - oxygen_saturation (guid=4aa76279-b7a5-48a9-8cad-675d7ef9e75e)
+      - systolic_bp (guid=543d3c53-8ff5-4995-b36c-da39b231c48d)
+      - bmi (guid=d4c0dcfb-2c18-4e4b-b8de-f3ec2ea8dce4)
+      - encounter_id (guid=1d41166b-9603-4638-9969-e5dd7be22f3b)
+      - heart_rate (guid=7ac47b0a-6794-442d-b8ff-599e70d9ff34)
+      - diastolic_bp (guid=1981c03b-deba-4379-80db-f7a9c47350ed)
+      - potassium_mmol (guid=786a81ee-4de1-4400-a1ca-357425d32bb2)
+      - temperature_c (guid=a6a7f28b-ccb6-41c0-b9c1-d83217fd2b77)
+      - measured_at (guid=8cde24a4-8634-4ee4-b278-df12abf90a8f)
+      - hemoglobin_g (guid=34e460c5-eb37-45d6-af9b-b29a0c06c237)
+      - measurement_id (guid=e646cb56-af87-4637-b05f-6290bcde2555)
+
+  TABLE: vitals_labs (guid=892f4c6b-8bee-4d40-8974-e0f6f6f60000)
+    columns count: 15
+      - measurement_id (guid=892f4c6b-8bee-4d40-8974-e0f6f6f60003)
+      - encounter_id (guid=892f4c6b-8bee-4d40-8974-e0f6f6f60002)
+      - measured_at (guid=892f4c6b-8bee-4d40-8974-e0f6f6f6000d)
+      - systolic_bp (guid=892f4c6b-8bee-4d40-8974-e0f6f6f6000f)
+      - diastolic_bp (guid=892f4c6b-8bee-4d40-8974-e0f6f6f60007)
+      - heart_rate (guid=892f4c6b-8bee-4d40-8974-e0f6f6f60004)
+      - temperature_c (guid=892f4c6b-8bee-4d40-8974-e0f6f6f60009)
+      - oxygen_saturation (guid=892f4c6b-8bee-4d40-8974-e0f6f6f6000e)
+      - glucose_mmol (guid=892f4c6b-8bee-4d40-8974-e0f6f6f6000c)
+      - creatinine_umol (guid=892f4c6b-8bee-4d40-8974-e0f6f6f60001)
+      - hemoglobin_g (guid=892f4c6b-8bee-4d40-8974-e0f6f6f60008)
+      - sodium_mmol (guid=892f4c6b-8bee-4d40-8974-e0f6f6f6000a)
+      - potassium_mmol (guid=892f4c6b-8bee-4d40-8974-e0f6f6f60005)
+      - bmi (guid=892f4c6b-8bee-4d40-8974-e0f6f6f60006)
+      - weight_kg (guid=892f4c6b-8bee-4d40-8974-e0f6f6f6000b)
+
+  TABLE: patients (guid=aa926266-95cd-4a3a-98e2-46f6f6f60000)
+    columns count: 8
+      - gender (guid=59c9c81a-6a8c-4d56-b556-56e0c8a19456)
+      - ses_level (guid=a46c4aaf-45a3-4ab0-98c0-75f69c89f9d9)
+      - region (guid=039c4c43-9d40-4700-96fd-d134bcc6789b)
+      - created_at (guid=506fbb97-8077-485c-b328-d492f13991ee)
+      - postal_code (guid=38add7d3-814b-45a4-984a-5e60855c9bec)
+      - patient_id (guid=83e7fdb7-a1d9-4460-a23f-4334df2d4e32)
+      - birth_date (guid=ddee01ac-95fc-43a9-af2c-2893bb68c97f)
+      - smoking_status (guid=64310db2-6f56-40d0-a886-6605ce9da257)
+
+  TABLE: patients (guid=3b3299c0-dc94-4680-a533-2cf6f6f60000)
+    columns count: 8
+      - patient_id (guid=3b3299c0-dc94-4680-a533-2cf6f6f60006)
+      - birth_date (guid=3b3299c0-dc94-4680-a533-2cf6f6f60007)
+      - gender (guid=3b3299c0-dc94-4680-a533-2cf6f6f60002)
+      - ses_level (guid=3b3299c0-dc94-4680-a533-2cf6f6f60003)
+      - postal_code (guid=3b3299c0-dc94-4680-a533-2cf6f6f60008)
+      - region (guid=3b3299c0-dc94-4680-a533-2cf6f6f60001)
+      - smoking_status (guid=3b3299c0-dc94-4680-a533-2cf6f6f60005)
+      - created_at (guid=3b3299c0-dc94-4680-a533-2cf6f6f60004)
+
+  TABLE: encounters (guid=d86a7adf-713f-47d3-b613-b6f6f6f60000)
+    columns count: 10
+      - encounter_id (guid=f5bdcbae-4f41-4265-b8e9-e4621a98b393)
+      - discharge_date (guid=5cfb8d8a-e29a-405b-8987-d375432a4a12)
+      - los_days (guid=ec693ee7-5796-440d-87a7-1dd0b2388e38)
+      - admission_source (guid=83090acc-76fc-4a31-9a47-741a3bca844a)
+      - department (guid=f44ce33f-528e-483e-9c99-88d27521b772)
+      - patient_id (guid=8cd78c4a-1309-4acb-81e4-9cd35fb00cf2)
+      - admission_date (guid=dd2baae2-3315-47d7-b3a1-1a178d95305d)
+      - created_at (guid=ccbe0700-ed79-43ef-950d-34a975f72239)
+      - discharge_disposition (guid=f51b5090-5a88-46dd-a11e-ab4f3c8a579b)
+      - readmission_30d (guid=bd630ff9-8503-44e1-a06b-1712d9a9532b)
+
+  TABLE: diagnoses (guid=d4f88b9a-7676-42f0-a5d6-13f6f6f60000)
+    columns count: 6
+      - confirmed_date (guid=0ab5828d-c920-42f1-aef7-145955a9a25c)
+      - icd10_description (guid=6a6878fe-5991-48fc-a717-81057307b8c1)
+      - encounter_id (guid=b47f3a48-ab62-430d-b962-4f900bd9319e)
+      - icd10_code (guid=79a9c6fa-69e5-42a7-a2e9-896507c51aff)
+      - diagnosis_type (guid=76473d8d-8433-4df5-b343-c0937d264542)
+      - diagnosis_id (guid=40929988-ba77-43ea-b371-eca193d6796d)
+
+  TABLE: encounters (guid=cdd693d3-c441-4743-8ef2-70f6f6f60000)
+    columns count: 10
+      - encounter_id (guid=cdd693d3-c441-4743-8ef2-70f6f6f60002)
+      - patient_id (guid=cdd693d3-c441-4743-8ef2-70f6f6f60003)
+      - admission_date (guid=cdd693d3-c441-4743-8ef2-70f6f6f60007)
+      - discharge_date (guid=cdd693d3-c441-4743-8ef2-70f6f6f6000a)
+      - department (guid=cdd693d3-c441-4743-8ef2-70f6f6f60004)
+      - admission_source (guid=cdd693d3-c441-4743-8ef2-70f6f6f60001)
+      - discharge_disposition (guid=cdd693d3-c441-4743-8ef2-70f6f6f60008)
+      - los_days (guid=cdd693d3-c441-4743-8ef2-70f6f6f60005)
+      - readmission_30d (guid=cdd693d3-c441-4743-8ef2-70f6f6f60006)
+      - created_at (guid=cdd693d3-c441-4743-8ef2-70f6f6f60009)
+
+  TABLE: diagnoses (guid=d4f88b9a-7676-42f0-a5d6-13f6f6f60000)
+    columns count: 6
+      - diagnosis_id (guid=40929988-ba77-43ea-b371-eca193d6796d)
+      - diagnosis_type (guid=76473d8d-8433-4df5-b343-c0937d264542)
+      - confirmed_date (guid=0ab5828d-c920-42f1-aef7-145955a9a25c)
+      - encounter_id (guid=b47f3a48-ab62-430d-b962-4f900bd9319e)
+      - icd10_description (guid=6a6878fe-5991-48fc-a717-81057307b8c1)
+      - icd10_code (guid=79a9c6fa-69e5-42a7-a2e9-896507c51aff)
+
+  TABLE: diagnoses (guid=a3aaeb32-7928-403c-806b-14f6f6f60000)
+    columns count: 6
+      - diagnosis_id (guid=a3aaeb32-7928-403c-806b-14f6f6f60005)
+      - encounter_id (guid=a3aaeb32-7928-403c-806b-14f6f6f60003)
+      - icd10_code (guid=a3aaeb32-7928-403c-806b-14f6f6f60002)
+      - icd10_description (guid=a3aaeb32-7928-403c-806b-14f6f6f60001)
+      - diagnosis_type (guid=a3aaeb32-7928-403c-806b-14f6f6f60006)
+      - confirmed_date (guid=a3aaeb32-7928-403c-806b-14f6f6f60004)
+
+  TABLE: encounters (guid=d86a7adf-713f-47d3-b613-b6f6f6f60000)
+    columns count: 10
+      - readmission_30d (guid=bd630ff9-8503-44e1-a06b-1712d9a9532b)
+      - department (guid=f44ce33f-528e-483e-9c99-88d27521b772)
+      - admission_source (guid=83090acc-76fc-4a31-9a47-741a3bca844a)
+      - discharge_date (guid=5cfb8d8a-e29a-405b-8987-d375432a4a12)
+      - encounter_id (guid=f5bdcbae-4f41-4265-b8e9-e4621a98b393)
+      - admission_date (guid=dd2baae2-3315-47d7-b3a1-1a178d95305d)
+      - patient_id (guid=8cd78c4a-1309-4acb-81e4-9cd35fb00cf2)
+      - los_days (guid=ec693ee7-5796-440d-87a7-1dd0b2388e38)
+      - discharge_disposition (guid=f51b5090-5a88-46dd-a11e-ab4f3c8a579b)
+      - created_at (guid=ccbe0700-ed79-43ef-950d-34a975f72239)
+
+  TABLE: medications (guid=eb7a580f-fa4c-440a-9e2c-3ff6f6f60000)
+    columns count: 9
+      - start_date (guid=6b526d0b-56ac-45ae-be28-4e131328ed16)
+      - encounter_id (guid=85bd8830-7659-4df4-9155-d37024725b8b)
+      - end_date (guid=b210b705-5de2-415b-b962-765d09478fdf)
+      - frequency (guid=9729488c-afde-462e-aa95-c9a73b69e9a5)
+      - route (guid=90e271a5-1c94-44ac-bddc-3ad04046a012)
+      - medication_id (guid=aede8f45-0296-413b-ba55-bf990563f5d5)
+      - dose_mg (guid=e4d54da3-cc61-4c6c-abc3-985f8d31a3ec)
+      - drug_name (guid=fec91f5a-55a1-46e8-be4d-7b276bbe739b)
+      - atc_code (guid=ccf5eb27-a4f9-4524-9bfa-1251f8497af5)
+
+  TABLE: medications (guid=8470e93b-4dbe-4a0c-8dbe-c0f6f6f60000)
+    columns count: 9
+      - medication_id (guid=8470e93b-4dbe-4a0c-8dbe-c0f6f6f60008)
+      - encounter_id (guid=8470e93b-4dbe-4a0c-8dbe-c0f6f6f60002)
+      - atc_code (guid=8470e93b-4dbe-4a0c-8dbe-c0f6f6f60004)
+      - drug_name (guid=8470e93b-4dbe-4a0c-8dbe-c0f6f6f60007)
+      - dose_mg (guid=8470e93b-4dbe-4a0c-8dbe-c0f6f6f60001)
+      - frequency (guid=8470e93b-4dbe-4a0c-8dbe-c0f6f6f60005)
+      - route (guid=8470e93b-4dbe-4a0c-8dbe-c0f6f6f60006)
+      - start_date (guid=8470e93b-4dbe-4a0c-8dbe-c0f6f6f60009)
+      - end_date (guid=8470e93b-4dbe-4a0c-8dbe-c0f6f6f60003)
+
+  TABLE: encounters (guid=d86a7adf-713f-47d3-b613-b6f6f6f60000)
+    columns count: 10
+      - patient_id (guid=8cd78c4a-1309-4acb-81e4-9cd35fb00cf2)
+      - discharge_disposition (guid=f51b5090-5a88-46dd-a11e-ab4f3c8a579b)
+      - encounter_id (guid=f5bdcbae-4f41-4265-b8e9-e4621a98b393)
+      - readmission_30d (guid=bd630ff9-8503-44e1-a06b-1712d9a9532b)
+      - los_days (guid=ec693ee7-5796-440d-87a7-1dd0b2388e38)
+      - admission_date (guid=dd2baae2-3315-47d7-b3a1-1a178d95305d)
+      - department (guid=f44ce33f-528e-483e-9c99-88d27521b772)
+      - discharge_date (guid=5cfb8d8a-e29a-405b-8987-d375432a4a12)
+      - created_at (guid=ccbe0700-ed79-43ef-950d-34a975f72239)
+      - admission_source (guid=83090acc-76fc-4a31-9a47-741a3bca844a)
+
+  TABLE: vitals_labs (guid=319942ea-a30f-4b8d-be5b-4af6f6f60000)
+    columns count: 15
+      - creatinine_umol (guid=4b872158-d3c4-44c7-ac19-a25bbb596be6)
+      - glucose_mmol (guid=f4c3d92b-2bf0-443a-ba46-34c22f286828)
+      - systolic_bp (guid=543d3c53-8ff5-4995-b36c-da39b231c48d)
+      - weight_kg (guid=e7ab1109-0ebc-48bc-a71e-b62632387efd)
+      - measured_at (guid=8cde24a4-8634-4ee4-b278-df12abf90a8f)
+      - bmi (guid=d4c0dcfb-2c18-4e4b-b8de-f3ec2ea8dce4)
+      - temperature_c (guid=a6a7f28b-ccb6-41c0-b9c1-d83217fd2b77)
+      - measurement_id (guid=e646cb56-af87-4637-b05f-6290bcde2555)
+      - potassium_mmol (guid=786a81ee-4de1-4400-a1ca-357425d32bb2)
+      - oxygen_saturation (guid=4aa76279-b7a5-48a9-8cad-675d7ef9e75e)
+      - sodium_mmol (guid=b6c158c5-3758-40d6-952a-17f6bc985bbc)
+      - hemoglobin_g (guid=34e460c5-eb37-45d6-af9b-b29a0c06c237)
+      - diastolic_bp (guid=1981c03b-deba-4379-80db-f7a9c47350ed)
+      - heart_rate (guid=7ac47b0a-6794-442d-b8ff-599e70d9ff34)
+      - encounter_id (guid=1d41166b-9603-4638-9969-e5dd7be22f3b)
+
+  TABLE: vitals_labs (guid=319942ea-a30f-4b8d-be5b-4af6f6f60000)
+    columns count: 15
+      - bmi (guid=d4c0dcfb-2c18-4e4b-b8de-f3ec2ea8dce4)
+      - oxygen_saturation (guid=4aa76279-b7a5-48a9-8cad-675d7ef9e75e)
+      - encounter_id (guid=1d41166b-9603-4638-9969-e5dd7be22f3b)
+      - diastolic_bp (guid=1981c03b-deba-4379-80db-f7a9c47350ed)
+      - heart_rate (guid=7ac47b0a-6794-442d-b8ff-599e70d9ff34)
+      - potassium_mmol (guid=786a81ee-4de1-4400-a1ca-357425d32bb2)
+      - creatinine_umol (guid=4b872158-d3c4-44c7-ac19-a25bbb596be6)
+      - weight_kg (guid=e7ab1109-0ebc-48bc-a71e-b62632387efd)
+      - sodium_mmol (guid=b6c158c5-3758-40d6-952a-17f6bc985bbc)
+      - measured_at (guid=8cde24a4-8634-4ee4-b278-df12abf90a8f)
+      - temperature_c (guid=a6a7f28b-ccb6-41c0-b9c1-d83217fd2b77)
+      - measurement_id (guid=e646cb56-af87-4637-b05f-6290bcde2555)
+      - glucose_mmol (guid=f4c3d92b-2bf0-443a-ba46-34c22f286828)
+      - hemoglobin_g (guid=34e460c5-eb37-45d6-af9b-b29a0c06c237)
+      - systolic_bp (guid=543d3c53-8ff5-4995-b36c-da39b231c48d)
+
+  TABLE: encounters (guid=d86a7adf-713f-47d3-b613-b6f6f6f60000)
+    columns count: 10
+      - admission_date (guid=dd2baae2-3315-47d7-b3a1-1a178d95305d)
+      - readmission_30d (guid=bd630ff9-8503-44e1-a06b-1712d9a9532b)
+      - admission_source (guid=83090acc-76fc-4a31-9a47-741a3bca844a)
+      - discharge_date (guid=5cfb8d8a-e29a-405b-8987-d375432a4a12)
+      - encounter_id (guid=f5bdcbae-4f41-4265-b8e9-e4621a98b393)
+      - patient_id (guid=8cd78c4a-1309-4acb-81e4-9cd35fb00cf2)
+      - los_days (guid=ec693ee7-5796-440d-87a7-1dd0b2388e38)
+      - department (guid=f44ce33f-528e-483e-9c99-88d27521b772)
+      - discharge_disposition (guid=f51b5090-5a88-46dd-a11e-ab4f3c8a579b)
+      - created_at (guid=ccbe0700-ed79-43ef-950d-34a975f72239)
+
+  TABLE: encounters (guid=cdd693d3-c441-4743-8ef2-70f6f6f60000)
+    columns count: 10
+      - encounter_id (guid=cdd693d3-c441-4743-8ef2-70f6f6f60002)
+      - patient_id (guid=cdd693d3-c441-4743-8ef2-70f6f6f60003)
+      - admission_date (guid=cdd693d3-c441-4743-8ef2-70f6f6f60007)
+      - discharge_date (guid=cdd693d3-c441-4743-8ef2-70f6f6f6000a)
+      - department (guid=cdd693d3-c441-4743-8ef2-70f6f6f60004)
+      - admission_source (guid=cdd693d3-c441-4743-8ef2-70f6f6f60001)
+      - discharge_disposition (guid=cdd693d3-c441-4743-8ef2-70f6f6f60008)
+      - los_days (guid=cdd693d3-c441-4743-8ef2-70f6f6f60005)
+      - readmission_30d (guid=cdd693d3-c441-4743-8ef2-70f6f6f60006)
+      - created_at (guid=cdd693d3-c441-4743-8ef2-70f6f6f60009)
+
+  TABLE: medications (guid=eb7a580f-fa4c-440a-9e2c-3ff6f6f60000)
+    columns count: 9
+      - medication_id (guid=aede8f45-0296-413b-ba55-bf990563f5d5)
+      - frequency (guid=9729488c-afde-462e-aa95-c9a73b69e9a5)
+      - atc_code (guid=ccf5eb27-a4f9-4524-9bfa-1251f8497af5)
+      - end_date (guid=b210b705-5de2-415b-b962-765d09478fdf)
+      - drug_name (guid=fec91f5a-55a1-46e8-be4d-7b276bbe739b)
+      - dose_mg (guid=e4d54da3-cc61-4c6c-abc3-985f8d31a3ec)
+      - start_date (guid=6b526d0b-56ac-45ae-be28-4e131328ed16)
+      - route (guid=90e271a5-1c94-44ac-bddc-3ad04046a012)
+      - encounter_id (guid=85bd8830-7659-4df4-9155-d37024725b8b)
+
+======================================================================
+3. ENTITIES THAT COULD MOVE TO BARNCANCER
+======================================================================
+  [healthcare_data_product] BrainChild Barncancerforskning -> coll=halsosjukvard
+  [fabric_lake_warehouse] lh_brainchild -> coll=fabric-brainchild
+  [fabric_lakehouse_table] brainchild_silver_dicom_studies -> coll=fabric-brainchild
+  [fabric_lakehouse_table] brainchild_bronze_dicom_study -> coll=fabric-brainchild
+  [fabric_lakehouse_table] brainchild_silver_dicom_pathology -> coll=fabric-brainchild
+  [fabric_lakehouse_table] brainchild_bronze_dicom_instance -> coll=fabric-brainchild
+  [fabric_lakehouse_table] brainchild_bronze_dicom_series -> coll=fabric-brainchild
+  [fabric_lakehouse_table] brainchild_silver_dicom_series -> coll=fabric-brainchild
+  [fabric_pipeline] pl_brainchild_ingestion -> coll=fabric-analytics
+  [healthcare_dicom_service] BrainChild DICOM Server -> coll=fabric-brainchild
+  [healthcare_fhir_service] BrainChild FHIR Server (R4) -> coll=fabric-brainchild
+  [fabric_lakehouse_table] silver_specimen -> coll=fabric-brainchild
+  [fabric_lakehouse_table] silver_encounter -> coll=fabric-brainchild
+  [fabric_lakehouse_table] silver_patient -> coll=fabric-brainchild
+  [fabric_lakehouse_table] fhir_bronze_observation -> coll=fabric-brainchild
+  [fabric_lakehouse_table] fhir_bronze_specimen -> coll=fabric-brainchild
+  [fabric_lakehouse_table] fhir_bronze_diagnosticreport -> coll=fabric-brainchild
+  [fabric_lakehouse_table] fhir_bronze_imagingstudy -> coll=fabric-brainchild
+  [fabric_lakehouse_table] fhir_bronze_patient -> coll=fabric-brainchild
+  [fabric_lakehouse_table] silver_condition -> coll=fabric-brainchild
+
+======================================================================
+4. FABRIC ENTITY TYPES - full counts
+======================================================================
+  fabric_lakehouse_table: 42
+  fabric_lakehouse_path: 331
+  fabric_lake_warehouse: 19
+  powerbi_dataset: 15
+  powerbi_report: 13
+  powerbi_workspace: 14
+
+======================================================================
+5. COLUMNS WITH concept_id / snomed IN OMOP TABLES
+======================================================================
+
+  diagnoses table all columns:
+    - icd10_code (guid=79a9c6fa-69e5-42a7-a2e9-896507c51aff)
+    - diagnosis_id (guid=40929988-ba77-43ea-b371-eca193d6796d)
+    - diagnosis_type (guid=76473d8d-8433-4df5-b343-c0937d264542)
+    - encounter_id (guid=b47f3a48-ab62-430d-b962-4f900bd9319e)
+    - confirmed_date (guid=0ab5828d-c920-42f1-aef7-145955a9a25c)
+    - icd10_description (guid=6a6878fe-5991-48fc-a717-81057307b8c1)
+
+Investigation complete!

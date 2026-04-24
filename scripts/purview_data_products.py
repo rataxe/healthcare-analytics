@@ -71,6 +71,7 @@ def info(msg):
 DATA_PRODUCTS = [
     {
         "name": "Klinisk Patientanalys",
+        "domain_name": "Klinisk Vård",
         "description": (
             "Dataprodukt för klinisk patientanalys — innehåller patientdemografi, "
             "vårdbesök, diagnoser, vitalparametrar och labresultat. Används för "
@@ -78,8 +79,10 @@ DATA_PRODUCTS = [
             "Följer FHIR R4 och OMOP CDM v5.4 standarder."
         ),
         "owners": ["Healthcare Analytics Team"],
-        "type": "Analytics",
+        "type": "Operational",
         "status": "Published",
+        "audience": ["DataEngineer", "BIEngineer", "DataScientist", "DataAnalyst"],
+        "business_use": "Vårdflödesoptimering, LOS-prediktion och återinläggningsrisk i klinisk verksamhet",
         "tables": ["patients", "encounters", "diagnoses", "vitals_labs", "medications"],
         "use_cases": [
             "LOS-prediktion (LightGBM)",
@@ -91,15 +94,87 @@ DATA_PRODUCTS = [
         "quality_score": None,  # Filled after DQ checks
     },
     {
+        "name": "Akutflödesmonitorering",
+        "domain_name": "Klinisk Vård",
+        "description": (
+            "Dataprodukt för realtidsnära övervakning av akutmottagningens inflöde, "
+            "triage, väntetider och utskrivningsmönster. Stödjer operativ styrning "
+            "av patientflöden och kapacitetsplanering i akutsjukvården."
+        ),
+        "owners": ["Emergency Care Analytics Team"],
+        "type": "Operational",
+        "status": "Published",
+        "audience": ["DataEngineer", "BIEngineer", "DataAnalyst"],
+        "business_use": "Operativ uppföljning av triage, väntetider och genomströmning i akutvården",
+        "tables": ["ed_visits", "triage_events", "bed_status", "discharge_decisions"],
+        "use_cases": [
+            "Övervakning av väntetid per prioritet",
+            "Prediktion av köbildning i akuten",
+            "Kapacitetsplanering per skift",
+            "Ledningsdashboard för akutflöden",
+        ],
+        "sla": "15 min uppdatering, <10 min latens, 99.9% tillgänglighet",
+        "quality_score": None,
+    },
+    {
+        "name": "Vårdplatskapacitet",
+        "domain_name": "Klinisk Vård",
+        "description": (
+            "Dataprodukt för vårdplatsbeläggning, in- och utskrivningar, beläggningsgrad "
+            "och överbeläggningsrisk per enhet. Används för daglig styrning av kapacitet "
+            "inom slutenvården."
+        ),
+        "owners": ["Inpatient Operations Team"],
+        "type": "Operational",
+        "status": "Published",
+        "audience": ["DataAnalyst", "BIEngineer", "DataEngineer"],
+        "business_use": "Styrning av vårdplatser, beläggningsgrad och utskrivningskapacitet i slutenvården",
+        "tables": ["bed_occupancy", "admission_events", "discharge_forecast", "unit_capacity"],
+        "use_cases": [
+            "Beläggningsgrad per klinik",
+            "Prognos för utskrivningar nästa 24h",
+            "Överbeläggningslarm",
+            "Planering av vårdplatsfördelning",
+        ],
+        "sla": "Timvis uppdatering, <30 min latens, 99.7% tillgänglighet",
+        "quality_score": None,
+    },
+    {
+        "name": "Läkemedelsuppföljning Klinik",
+        "domain_name": "Klinisk Vård",
+        "description": (
+            "Dataprodukt för klinisk uppföljning av ordinationer, administrering och "
+            "läkemedelsrelaterade avvikelser. Stödjer kvalitetssäkring och uppföljning "
+            "av läkemedelsprocessen i vårdverksamheten."
+        ),
+        "owners": ["Clinical Pharmacy Analytics Team"],
+        "type": "Operational",
+        "status": "Published",
+        "audience": ["DataScientist", "DataAnalyst", "BIEngineer"],
+        "business_use": "Uppföljning av läkemedelsordinationer, administrering och patientsäkerhet i klinik",
+        "tables": ["med_orders", "med_admin", "adverse_events", "med_reconciliation"],
+        "use_cases": [
+            "Avvikelsedetektion i läkemedelsadministrering",
+            "Uppföljning av antibiotikaanvändning",
+            "Patientsäkerhetsindikatorer",
+            "Läkemedelsprocess per vårdenhet",
+        ],
+        "sla": "Daglig uppdatering, <2h latens, 99.5% tillgänglighet",
+        "quality_score": None,
+    },
+    {
         "name": "OMOP Forskningsdata",
+        "domain_name": "Interoperabilitet & Standarder",
         "description": (
             "OMOP CDM v5.4-transformerade data för observationell forskning. "
             "Möjliggör kors-institutionell forskning och federerad analys. "
             "Mappning: ICD-10-SE → SNOMED CT, ATC → RxNorm."
         ),
         "owners": ["Research Data Team"],
-        "type": "Research",
+        "type": "Operational",
         "status": "Published",
+        "audience": ["DataScientist", "DataAnalyst", "DataEngineer"],
+        "business_use": "Interoperabel forskningsdata enligt OMOP för kohorter, outcomes och real-world evidence",
         "tables": ["person", "visit_occurrence", "condition_occurrence", "drug_exposure", "measurement"],
         "use_cases": [
             "Kohortstudier",
@@ -111,15 +186,86 @@ DATA_PRODUCTS = [
         "quality_score": None,
     },
     {
+        "name": "FHIR Interoperabilitetslager",
+        "domain_name": "Interoperabilitet & Standarder",
+        "description": (
+            "Dataprodukt som exponerar harmoniserade FHIR R4-resurser för patient, besök, "
+            "observationer och ordinationer. Stödjer interoperabilitet mellan kliniska system, "
+            "integrationer och sekundär användning av vårddata."
+        ),
+        "owners": ["Interoperability Platform Team"],
+        "type": "Operational",
+        "status": "Published",
+        "audience": ["DataEngineer", "DataAnalyst"],
+        "business_use": "Standardiserad FHIR-exponering för integrationer, sekundär användning och datadelning",
+        "tables": ["fhir_patient", "fhir_encounter", "fhir_observation", "fhir_medicationrequest"],
+        "use_cases": [
+            "FHIR-baserad systemintegration",
+            "Sekundär användning av strukturerade resurser",
+            "API-försörjning till partnerlösningar",
+            "Validering mot FHIR-profiler",
+        ],
+        "sla": "Realtidsnära uppdatering, <5 min latens, 99.9% tillgänglighet",
+        "quality_score": None,
+    },
+    {
+        "name": "Terminologitjänst & Kodverk",
+        "domain_name": "Interoperabilitet & Standarder",
+        "description": (
+            "Dataprodukt för förvaltning och distribution av kodverk, terminologimappningar "
+            "och semantiska referenser mellan ICD-10-SE, SNOMED CT, ATC, LOINC och RxNorm."
+        ),
+        "owners": ["Terminology Management Team"],
+        "type": "Operational",
+        "status": "Published",
+        "audience": ["DataEngineer", "DataScientist"],
+        "business_use": "Semantisk standardisering och kodverksmappning för interoperabilitet och analys",
+        "tables": ["code_systems", "code_mappings", "value_sets", "term_synonyms"],
+        "use_cases": [
+            "Kodverksmappning mellan standarder",
+            "Validering av terminologi i ETL-flöden",
+            "Sökbar referens för analytiker",
+            "Stöd för OMOP- och FHIR-transformering",
+        ],
+        "sla": "Veckovis uppdatering, <8h publicering, versionshanterad historik",
+        "quality_score": None,
+    },
+    {
+        "name": "Masterdata Vårdhändelser",
+        "domain_name": "Interoperabilitet & Standarder",
+        "description": (
+            "Dataprodukt som konsoliderar masterdata och gemensamma identifierare för "
+            "patient, vårdkontakt, vårdenhet och vårdhändelser över flera källsystem. "
+            "Minskar dubblering och stärker semantisk konsekvens i plattformen."
+        ),
+        "owners": ["Master Data Services Team"],
+        "type": "Operational",
+        "status": "Published",
+        "audience": ["DataEngineer", "BIEngineer", "DataAnalyst"],
+        "business_use": "Gemensamma identifierare och masterdata för konsistenta vårdhändelser över systemgränser",
+        "tables": ["master_patient", "master_encounter", "master_provider", "crosswalk_events"],
+        "use_cases": [
+            "Golden record för vårdkontakter",
+            "Referensnycklar i integrationsflöden",
+            "Deduplicering av vårdhändelser",
+            "Semantisk harmonisering mellan källsystem",
+        ],
+        "sla": "Daglig uppdatering, <2h latens, 99.8% tillgänglighet",
+        "quality_score": None,
+    },
+    {
         "name": "BrainChild Barncancerforskning",
+        "domain_name": "Forskning & Genomik",
         "description": (
             "Multimodal forskningsplattform för barncancer — integrerar FHIR-klinisk data, "
             "DICOM-bilddiagnostik (MRI + patologi), genomikdata (WGS/WES via GMS), "
             "biobanksdata (BTB) och kvalitetsregister (SBCR)."
         ),
         "owners": ["BrainChild Research Team"],
-        "type": "Research",
+        "type": "Operational",
         "status": "Published",
+        "audience": ["DataScientist", "DataEngineer", "DataAnalyst"],
+        "business_use": "Multimodal barncancerforskning med klinik, bilddiagnostik och genomik i samma dataprodukt",
         "tables": ["fhir_patients", "imaging_studies", "genomic_variants", "specimens", "sbcr_registrations"],
         "use_cases": [
             "Tumörklassificering (MRI + patologi AI)",
@@ -131,15 +277,87 @@ DATA_PRODUCTS = [
         "quality_score": None,
     },
     {
+        "name": "Precisionsonkologi Variantlager",
+        "domain_name": "Forskning & Genomik",
+        "description": (
+            "Dataprodukt för somatiska och germline-varianter, annotationsresultat, "
+            "panelträffar och tolkningar för precisionsonkologi inom barncancerforskning. "
+            "Kopplar genomik till fenotyp och behandlingsutfall."
+        ),
+        "owners": ["Genomics Interpretation Team"],
+        "type": "Operational",
+        "status": "Published",
+        "audience": ["DataScientist", "DataEngineer"],
+        "business_use": "Varianttolkning och biomarköranalys för precisionsonkologi och translational research",
+        "tables": ["variant_calls", "variant_annotations", "gene_panels", "molecular_findings"],
+        "use_cases": [
+            "Biomarköranalys per diagnosgrupp",
+            "Koppling mellan variant och behandlingsutfall",
+            "Prioritering av kliniskt relevanta varianter",
+            "Forskningsstöd för precisionsmedicin",
+        ],
+        "sla": "Daglig batch-ETL, <6h latens, versionssäkrad annotation",
+        "quality_score": None,
+    },
+    {
+        "name": "Pediatrisk Imaging Research Hub",
+        "domain_name": "Forskning & Genomik",
+        "description": (
+            "Dataprodukt för forskningsanpassad tillgång till DICOM-metadata, bildserier, "
+            "segmenteringar och AI-härledda features från pediatrisk bilddiagnostik. "
+            "Optimerad för radiomik och multimodala modeller."
+        ),
+        "owners": ["Imaging AI Research Team"],
+        "type": "Operational",
+        "status": "Published",
+        "audience": ["DataScientist", "DataAnalyst", "DataEngineer"],
+        "business_use": "Forskningsplattform för pediatrisk bilddiagnostik, radiomik och AI-modellering",
+        "tables": ["dicom_studies", "image_series", "segmentations", "radiomics_features"],
+        "use_cases": [
+            "Radiomikfeature-extraktion",
+            "Modellträning för tumörklassificering",
+            "Kvalitetskontroll av bildserier",
+            "Multimodal länkning till kliniska utfall",
+        ],
+        "sla": "Daglig uppdatering, <4h latens, forskaråtkomst via Fabric",
+        "quality_score": None,
+    },
+    {
+        "name": "Biobank & Provspårbarhet",
+        "domain_name": "Forskning & Genomik",
+        "description": (
+            "Dataprodukt för biobanksprov, provkedja, fryslager, uttag och koppling mellan "
+            "provmaterial, kliniska data och genomiska analyser. Säkerställer spårbarhet "
+            "och forskningsberedskap för provhantering."
+        ),
+        "owners": ["Biobank Operations Team"],
+        "type": "Operational",
+        "status": "Published",
+        "audience": ["DataScientist", "DataAnalyst", "DataEngineer"],
+        "business_use": "Spårbarhet och operativ uppföljning av biobanksprov från insamling till analys",
+        "tables": ["biobank_samples", "sample_chain", "freezer_inventory", "sample_requests"],
+        "use_cases": [
+            "Provspårning genom hela kedjan",
+            "Koppling mellan prov och analysresultat",
+            "Kapacitetsuppföljning av fryslager",
+            "Forskningsstöd för provurval",
+        ],
+        "sla": "Daglig uppdatering, <2h latens, full audit trail",
+        "quality_score": None,
+    },
+    {
         "name": "ML Feature Store",
+        "domain_name": "Data & Analytics",
         "description": (
             "Gold-lager med ML-redo features — aggregerade per vårdbesök med "
             "Charlson Comorbidity Index, senaste vitalparametrar, primärdiagnos "
             "och läkemedelsdata. Används av LOS- och readmission-modeller."
         ),
         "owners": ["ML Engineering Team"],
-        "type": "Analytics",
+        "type": "Operational",
         "status": "Published",
+        "audience": ["DataScientist", "DataEngineer", "BIEngineer"],
+        "business_use": "Produktionsnära ML-features och modellövervakning för prediktiv vårdanalys",
         "tables": ["vw_ml_encounters"],
         "use_cases": [
             "Feature serving för ML-modeller",
@@ -148,6 +366,489 @@ DATA_PRODUCTS = [
             "Drift detection",
         ],
         "sla": "Uppdateras efter varje pipeline-körning, <30min latens",
+        "quality_score": None,
+    },
+    {
+        "name": "Population Health Dashboard",
+        "domain_name": "Data & Analytics",
+        "description": (
+            "Dataprodukt för populationsbaserad analys av prevalens, vårdbehov, risksegment "
+            "och utfallsindikatorer över region, socioekonomi och diagnosgrupper. "
+            "Byggd för ledningsrapportering och planering av preventiva insatser."
+        ),
+        "owners": ["Population Analytics Team"],
+        "type": "Operational",
+        "status": "Published",
+        "audience": ["BIEngineer", "DataAnalyst", "DataScientist"],
+        "business_use": "Ledningsnära analys av population health, risksegment och vårdbehov över regioner",
+        "tables": ["population_segments", "care_need_index", "outcomes_dashboard", "regional_metrics"],
+        "use_cases": [
+            "Segmentering av riskpopulationer",
+            "Regional jämförelse av vårdutfall",
+            "Planering av preventiva program",
+            "Ledningsdashboard för population health",
+        ],
+        "sla": "Daglig uppdatering, <3h latens, publicering till Power BI",
+        "quality_score": None,
+    },
+    {
+        "name": "Operations Intelligence Mart",
+        "domain_name": "Data & Analytics",
+        "description": (
+            "Dataprodukt för operativ analys av produktion, väntetider, resursutnyttjande, "
+            "schemaläggning och produktionsutfall i vårdorganisationen. Optimerad för "
+            "ledningsnära analys och uppföljning."
+        ),
+        "owners": ["Healthcare BI Team"],
+        "type": "Operational",
+        "status": "Published",
+        "audience": ["BIEngineer", "DataAnalyst", "DataEngineer"],
+        "business_use": "Produktions- och resursanalys för operativ styrning av vårdverksamheten",
+        "tables": ["production_facts", "staffing_plan", "queue_metrics", "unit_performance"],
+        "use_cases": [
+            "Produktionsuppföljning per klinik",
+            "Schemapåverkan på genomströmning",
+            "Analys av väntetider",
+            "Effektuppföljning av förbättringsinsatser",
+        ],
+        "sla": "Timvis uppdatering, <45 min latens, 99.7% tillgänglighet",
+        "quality_score": None,
+    },
+    {
+        "name": "MLOps Modellregister",
+        "domain_name": "Data & Analytics",
+        "description": (
+            "Dataprodukt för versionshantering, prestanda, drift, feature lineage och "
+            "governance för prediktiva modeller inom hälso- och sjukvård. Ger ett samlat "
+            "lager för modellövervakning och ansvarsfull AI."
+        ),
+        "owners": ["MLOps Platform Team"],
+        "type": "Operational",
+        "status": "Published",
+        "audience": ["DataScientist", "DataAnalyst", "DataEngineer"],
+        "business_use": "Modellstyrning, driftövervakning och lineage för produktionssatta ML-modeller",
+        "tables": ["model_registry", "model_metrics", "drift_signals", "feature_lineage"],
+        "use_cases": [
+            "Versionsspårning av modeller",
+            "Drift- och biasövervakning",
+            "Audit trail för modelländringar",
+            "Rapportering för ansvarsfull AI",
+        ],
+        "sla": "Efter varje modellkörning, <15 min latens, 99.9% tillgänglighet",
+        "quality_score": None,
+    },
+    {
+        "name": "Hälsosjukvård Datastyrning",
+        "domain_name": "Hälsosjukvård",
+        "description": (
+            "Samlad dataprodukt för governance, compliance och kvalitet i vårddata. "
+            "Konsoliderar metadata, datakvalitetsresultat, policydrivna kontroller "
+            "och spårbarhet för regulatorisk uppföljning."
+        ),
+        "owners": ["Data Governance Office"],
+        "type": "Operational",
+        "status": "Published",
+        "audience": ["DataSteward", "SecurityOfficer", "DataEngineer", "DataAnalyst"],
+        "business_use": "GDPR-efterlevnad, revisionsspår och styrning av vårddata i Purview",
+        "tables": ["data_quality_report", "policy_controls", "lineage_events"],
+        "use_cases": [
+            "GDPR- och compliance-uppföljning",
+            "Datakvalitetsstyrning per domän",
+            "Lineage- och impact-analys",
+            "Ledningsrapportering av datarisk",
+        ],
+        "sla": "Daglig uppdatering, <4h latens, revisionsbar historik",
+        "quality_score": None,
+    },
+    {
+        "name": "Kardiologisk Kvalitetsuppföljning",
+        "domain_name": "Klinisk Vård",
+        "description": (
+            "Dataprodukt för kvalitetsuppföljning inom kardiologi med diagnoser, "
+            "behandlingsåtgärder, mortalitet, återbesök och läkemedelsföljsamhet. "
+            "Understödjer klinisk förbättring och utfallsjämförelser."
+        ),
+        "owners": ["Cardiology Analytics Team"],
+        "type": "Operational",
+        "status": "Published",
+        "audience": ["DataScientist", "BIEngineer", "DataAnalyst"],
+        "business_use": "Kvalitetsindikatorer och utfallsuppföljning för hjärtvård och sekundärprevention",
+        "tables": ["cardio_encounters", "cardio_procedures", "echo_measurements", "followup_outcomes"],
+        "use_cases": [
+            "Kvalitetsregisterrapportering",
+            "Rehospitaliseringsanalys",
+            "Läkemedelsföljsamhet",
+            "Outcome benchmarking",
+        ],
+        "sla": "Daglig uppdatering, <2h latens, 99.0% tillgänglighet",
+        "quality_score": None,
+    },
+    {
+        "name": "Perioperativ Produktionsstyrning",
+        "domain_name": "Klinisk Vård",
+        "description": (
+            "Dataprodukt för planering och uppföljning av operationsflöden med "
+            "operationssalar, schemaläggning, anestesitider, förseningar och "
+            "inställda ingrepp. Möjliggör produktionsstyrning i perioperativ vård."
+        ),
+        "owners": ["Surgical Operations Team"],
+        "type": "Operational",
+        "status": "Published",
+        "audience": ["DataEngineer", "BIEngineer", "DataAnalyst"],
+        "business_use": "Produktionsstyrning av operationskapacitet, punktlighet och inställda ingrepp",
+        "tables": ["or_schedule", "surgery_cases", "anesthesia_events", "capacity_slots"],
+        "use_cases": [
+            "Kapacitetsplanering",
+            "OR-utilization",
+            "Förseningsoch avvikelseanalys",
+            "Inställda operationer",
+        ],
+        "sla": "Timvis uppdatering, <1h latens, 99.5% tillgänglighet",
+        "quality_score": None,
+    },
+    {
+        "name": "FHIR Interoperabilitetsnav",
+        "domain_name": "Interoperabilitet & Standarder",
+        "description": (
+            "Dataprodukt för FHIR-baserad interoperabilitet med resurser, profiler, "
+            "valideringsutfall och meddelandeflöden mellan vårdsystem. Används för "
+            "standardiserad informationsutväxling och integrationstester."
+        ),
+        "owners": ["Interoperability Platform Team"],
+        "type": "Operational",
+        "status": "Published",
+        "audience": ["DataEngineer", "DataAnalyst"],
+        "business_use": "Övervakning och kvalitetssäkring av FHIR-baserad informationsutväxling mellan system",
+        "tables": ["fhir_messages", "resource_validation", "profile_conformance", "integration_endpoints"],
+        "use_cases": [
+            "FHIR-validering",
+            "Interoperabilitetsövervakning",
+            "Profilkonformans",
+            "Felanalys i integrationsflöden",
+        ],
+        "sla": "15 min uppdatering, <30 min latens, 99.9% tillgänglighet",
+        "quality_score": None,
+    },
+    {
+        "name": "Terminologitjänst Kliniska Kodverk",
+        "domain_name": "Interoperabilitet & Standarder",
+        "description": (
+            "Dataprodukt som konsoliderar kliniska kodverk, mappningar och versioner "
+            "för ICD-10-SE, KVÅ, SNOMED CT, LOINC och ATC. Stödjer harmonisering, "
+            "spårbarhet och standardiserad semantik i analyser."
+        ),
+        "owners": ["Terminology Management Team"],
+        "type": "Operational",
+        "status": "Published",
+        "audience": ["DataEngineer", "DataScientist", "DataAnalyst"],
+        "business_use": "Central hantering av kodverk, översättningar och semantisk interoperabilitet",
+        "tables": ["code_systems", "concept_mappings", "value_sets", "terminology_versions"],
+        "use_cases": [
+            "Kodverksmappning",
+            "Semantisk harmonisering",
+            "Versionering av terminologi",
+            "Analys av täckningsgrad",
+        ],
+        "sla": "Veckovis uppdatering, <4h latens, 99.0% tillgänglighet",
+        "quality_score": None,
+    },
+    {
+        "name": "Standardiserad Vårdepisodmodell",
+        "domain_name": "Interoperabilitet & Standarder",
+        "description": (
+            "Dataprodukt med standardiserade vårdepisoder och mappningar mellan lokala "
+            "vårdhändelser och interoperabla episodbegrepp. Underlättar jämförbarhet "
+            "mellan källsystem och analytiska modeller."
+        ),
+        "owners": ["Clinical Standards Team"],
+        "type": "Operational",
+        "status": "Published",
+        "audience": ["DataEngineer", "BIEngineer", "DataAnalyst"],
+        "business_use": "Gemensam episodmodell för rapportering, integration och tvärsystemanalys",
+        "tables": ["care_episodes", "episode_mappings", "encounter_groups", "care_pathways"],
+        "use_cases": [
+            "Episodbaserad rapportering",
+            "Jämförbarhet mellan system",
+            "Patientflödesanalys",
+            "Mapping governance",
+        ],
+        "sla": "Daglig uppdatering, <2h latens, 99.0% tillgänglighet",
+        "quality_score": None,
+    },
+    {
+        "name": "Pediatrisk Precision Onkologi",
+        "domain_name": "Forskning & Genomik",
+        "description": (
+            "Dataprodukt för precisionsonkologi inom barncancer som kombinerar "
+            "molekylära profiler, behandlingsregimer, respons och långtidsutfall. "
+            "Stödjer translational research och stratifierad behandlingsanalys."
+        ),
+        "owners": ["Pediatric Precision Oncology Team"],
+        "type": "Operational",
+        "status": "Published",
+        "audience": ["DataScientist", "DataEngineer"],
+        "business_use": "Biomarkördriven barncancerforskning och analys av behandlingsrespons",
+        "tables": ["molecular_profiles", "treatment_protocols", "response_assessments", "survival_outcomes"],
+        "use_cases": [
+            "Biomarkörstratifiering",
+            "Behandlingsresponsanalys",
+            "Långtidsuppföljning",
+            "Klinisk forskningskohort",
+        ],
+        "sla": "Daglig uppdatering, <6h latens, forskningsåtkomst i Fabric",
+        "quality_score": None,
+    },
+    {
+        "name": "Radiogenomik Barnonkologi",
+        "domain_name": "Forskning & Genomik",
+        "description": (
+            "Dataprodukt för radiogenomik med koppling mellan MRI-fynd, patologi, "
+            "genomiska varianter och kliniska utfall i barnonkologi. Möjliggör "
+            "multimodala AI-studier och hypotesdriven forskning."
+        ),
+        "owners": ["Imaging Genomics Lab"],
+        "type": "Operational",
+        "status": "Published",
+        "audience": ["DataScientist", "DataAnalyst"],
+        "business_use": "Multimodal forskning som kopplar bilddiagnostik till molekylära signaturer och utfall",
+        "tables": ["radiomics_features", "image_annotations", "genomic_signatures", "linked_outcomes"],
+        "use_cases": [
+            "Radiomics-modellering",
+            "Variantassociering",
+            "Tumörsubtypning",
+            "Bild-biomarkörforskning",
+        ],
+        "sla": "Daglig batch-ETL, <8h latens, forskaråtkomst via Fabric",
+        "quality_score": None,
+    },
+    {
+        "name": "Nationell Biobank Sammanställning",
+        "domain_name": "Forskning & Genomik",
+        "description": (
+            "Dataprodukt för samordnad överblick av prov, aliquots, samtycken och "
+            "fryslogistik över forskningsbiobanker. Stödjer spårbarhet, tillgänglighet "
+            "och effektiv provmatchning till forskningsprotokoll."
+        ),
+        "owners": ["Biobank Operations Team"],
+        "type": "Operational",
+        "status": "Published",
+        "audience": ["DataEngineer", "DataScientist", "DataAnalyst"],
+        "business_use": "Biobanksspårbarhet, provmatchning och kapacitetsuppföljning för forskning",
+        "tables": ["biobank_inventory", "specimen_consents", "freezer_locations", "research_allocations"],
+        "use_cases": [
+            "Provmatchning",
+            "Samtyckeskontroll",
+            "Fryslogistik",
+            "Forskningsallokering",
+        ],
+        "sla": "Daglig uppdatering, <4h latens, 99.0% tillgänglighet",
+        "quality_score": None,
+    },
+    {
+        "name": "Prediktiv Vårdplatskapacitet",
+        "domain_name": "Data & Analytics",
+        "description": (
+            "Dataprodukt med features och prognoser för vårdplatskapacitet, beläggning, "
+            "utskrivningar och inflöde. Stödjer planering på sjukhus- och avdelningsnivå "
+            "med fokus på kapacitetsutnyttjande."
+        ),
+        "owners": ["Capacity Analytics Team"],
+        "type": "Operational",
+        "status": "Published",
+        "audience": ["DataScientist", "BIEngineer"],
+        "business_use": "Prediktiv kapacitetsplanering och scenariostöd för vårdplatser och beläggning",
+        "tables": ["bed_capacity_features", "admission_forecasts", "discharge_predictions", "occupancy_snapshots"],
+        "use_cases": [
+            "Beläggningsprognos",
+            "Scenarioanalys",
+            "Utskrivningsprognos",
+            "Kapacitetsdashboard",
+        ],
+        "sla": "Timvis uppdatering, <30 min latens, 99.5% tillgänglighet",
+        "quality_score": None,
+    },
+    {
+        "name": "Population Health Segmentering",
+        "domain_name": "Data & Analytics",
+        "description": (
+            "Dataprodukt för segmentering av patientpopulationer baserat på risk, "
+            "vårdkonsumtion, kroniska tillstånd och socioekonomiska indikatorer. "
+            "Används för kohortstyrning och riktade preventiva insatser."
+        ),
+        "owners": ["Population Health Analytics"],
+        "type": "Operational",
+        "status": "Published",
+        "audience": ["DataScientist", "DataAnalyst", "BIEngineer"],
+        "business_use": "Risksegmentering och analys av patientpopulationer för prevention och resursstyrning",
+        "tables": ["population_segments", "risk_profiles", "care_utilization", "socioeconomic_features"],
+        "use_cases": [
+            "Risksegmentering",
+            "Kohortstyrning",
+            "Preventiva program",
+            "Vårdkonsumtionsanalys",
+        ],
+        "sla": "Daglig uppdatering, <2h latens, 99.0% tillgänglighet",
+        "quality_score": None,
+    },
+    {
+        "name": "MLOps Modelltelemetri",
+        "domain_name": "Data & Analytics",
+        "description": (
+            "Dataprodukt för telemetri, prestanda, datadrift och inferensövervakning i "
+            "produktiva vårdmodeller. Samlar modellversioner, feature drift, latens och "
+            "prediktionskvalitet för MLOps-styrning."
+        ),
+        "owners": ["MLOps Platform Team"],
+        "type": "Operational",
+        "status": "Published",
+        "audience": ["DataScientist", "DataEngineer"],
+        "business_use": "Övervakning av modellhälsa, drift och inferenskvalitet i produktionsnära AI-flöden",
+        "tables": ["model_runs", "inference_logs", "drift_metrics", "performance_snapshots"],
+        "use_cases": [
+            "Drift detection",
+            "Latency monitoring",
+            "Model comparison",
+            "Incident analysis",
+        ],
+        "sla": "15 min uppdatering, <15 min latens, 99.9% tillgänglighet",
+        "quality_score": None,
+    },
+    {
+        "name": "Compliance Kontrollbibliotek",
+        "domain_name": "Hälsosjukvård",
+        "description": (
+            "Dataprodukt som samlar regulatoriska kontroller, kontrollutfall, policykrav "
+            "och ägarskap för vårddata. Underlättar spårbar compliance-uppföljning över "
+            "plattform, domäner och processer."
+        ),
+        "owners": ["Compliance Office"],
+        "type": "Operational",
+        "status": "Published",
+        "audience": ["DataAnalyst", "DataEngineer"],
+        "business_use": "Samordnad uppföljning av regulatoriska kontroller, avvikelser och policyefterlevnad",
+        "tables": ["compliance_controls", "control_results", "policy_mappings", "remediation_actions"],
+        "use_cases": [
+            "Kontrolluppföljning",
+            "Remediation tracking",
+            "Policy mapping",
+            "Revisionsstöd",
+        ],
+        "sla": "Daglig uppdatering, <4h latens, revisionsbar historik",
+        "quality_score": None,
+    },
+    {
+        "name": "Informationsklassning Vårddata",
+        "domain_name": "Hälsosjukvård",
+        "description": (
+            "Dataprodukt för informationsklassning med klassningsnivåer, känslighetsprofiler, "
+            "PII/PHI-indikatorer och styrande skyddsåtgärder för vårddata. Används i "
+            "Purview för riskanalys och åtkomststyrning."
+        ),
+        "owners": ["Information Security Team"],
+        "type": "Operational",
+        "status": "Published",
+        "audience": ["DataAnalyst", "DataEngineer"],
+        "business_use": "Informationsklassning och riskstyrning av känsliga vårddata och metadata",
+        "tables": ["data_classifications", "sensitivity_profiles", "protection_requirements", "asset_tags"],
+        "use_cases": [
+            "Riskklassning",
+            "PII-identifiering",
+            "Skyddsnivåer",
+            "Åtkomststyrningsunderlag",
+        ],
+        "sla": "Daglig uppdatering, <2h latens, 99.5% tillgänglighet",
+        "quality_score": None,
+    },
+    {
+        "name": "Audit Lineage Vårdplattform",
+        "domain_name": "Hälsosjukvård",
+        "description": (
+            "Dataprodukt för audit, lineage och förändringsspårning över dataflöden i "
+            "vårdplattformen. Konsoliderar pipelinehändelser, åtkomstspår, policyutfall "
+            "och beroenden för incidentanalys och revision."
+        ),
+        "owners": ["Platform Governance Team"],
+        "type": "Operational",
+        "status": "Published",
+        "audience": ["DataEngineer", "DataAnalyst"],
+        "business_use": "Revision, lineage-analys och incidentutredning över vårdplattformens dataflöden",
+        "tables": ["audit_events", "lineage_snapshots", "access_logs", "pipeline_dependencies"],
+        "use_cases": [
+            "Revisionsspårning",
+            "Impact analysis",
+            "Incidentutredning",
+            "Lineage compliance",
+        ],
+        "sla": "Timvis uppdatering, <1h latens, 99.5% tillgänglighet",
+        "quality_score": None,
+    },
+    {
+        "name": "Informationsklassning & Policyefterlevnad",
+        "domain_name": "Hälsosjukvård",
+        "description": (
+            "Dataprodukt för informationsklassning, policyramverk, kontrollstatus och "
+            "efterlevnadsgrad per datadomän, system och informationsmängd. Gör det möjligt "
+            "att följa upp styrning på ett enhetligt sätt i Purview."
+        ),
+        "owners": ["Information Governance Team"],
+        "type": "Operational",
+        "status": "Published",
+        "audience": ["DataAnalyst"],
+        "business_use": "Informationsklassning och policyefterlevnad för styrning av vårddata och informationsmängder",
+        "tables": ["information_classes", "policy_catalog", "control_status", "compliance_scores"],
+        "use_cases": [
+            "Uppföljning av informationsklassning",
+            "Kontrollstatus per policyområde",
+            "Gap-analys mot styrande krav",
+            "Ledningsrapportering av compliance",
+        ],
+        "sla": "Daglig uppdatering, <4h latens, revisionsbar historik",
+        "quality_score": None,
+    },
+    {
+        "name": "Åtkomstgranskning & Behörighetskontroll",
+        "domain_name": "Hälsosjukvård",
+        "description": (
+            "Dataprodukt för uppföljning av åtkomstmönster, roller, privilegier, avvikande "
+            "behörigheter och attestflöden för vårddata. Stödjer säkerhetsgranskning och "
+            "least-privilege-principen i dataförvaltningen."
+        ),
+        "owners": ["Identity & Access Governance Team"],
+        "type": "Operational",
+        "status": "Published",
+        "audience": ["DataAnalyst", "DataEngineer"],
+        "business_use": "Granskning av åtkomst, behörigheter och avvikelser för skyddad vårddata",
+        "tables": ["access_logs", "role_assignments", "privilege_exceptions", "attestation_cycles"],
+        "use_cases": [
+            "Upptäckt av avvikande behörigheter",
+            "Kvartalsvis attest av åtkomst",
+            "Spårbarhet för skyddad dataåtkomst",
+            "Revisionsunderlag för säkerhetskontroller",
+        ],
+        "sla": "Daglig uppdatering, <2h latens, full revisionsspårbarhet",
+        "quality_score": None,
+    },
+    {
+        "name": "Lineage & Data Risk Office",
+        "domain_name": "Hälsosjukvård",
+        "description": (
+            "Dataprodukt för central uppföljning av lineage, beroenden, data risk score, "
+            "påverkansanalys och kritiska datapipelines. Används av data governance office "
+            "för att prioritera riskreducerande åtgärder."
+        ),
+        "owners": ["Data Risk Office"],
+        "type": "Operational",
+        "status": "Published",
+        "audience": ["DataAnalyst", "DataEngineer"],
+        "business_use": "Övergripande riskstyrning, lineage-analys och impact assessment för dataprodukter",
+        "tables": ["lineage_graph", "impact_assessments", "risk_scores", "critical_pipelines"],
+        "use_cases": [
+            "Riskprioritering av datapipelines",
+            "Impact-analys vid schemaändringar",
+            "Identifiering av kritiska beroenden",
+            "Ledningsrapportering av datarisk",
+        ],
+        "sla": "Daglig uppdatering, <4h latens, versionshanterad riskhistorik",
         "quality_score": None,
     },
 ]
@@ -159,16 +860,34 @@ def create_data_products():
 
     created = 0
 
-    # Check existing data products
-    r = requests.get(
-        f"{UNIFIED}/dataproducts?api-version={API_VER}",
+    # Resolve business domains once for deterministic domain mapping.
+    domain_resp = requests.get(
+        f"{UNIFIED}/businessDomains?api-version={API_VER}",
         headers=h, timeout=30
     )
-    existing = []
+    if domain_resp.status_code != 200:
+        warn(f"Could not read business domains: {domain_resp.status_code}")
+        return 0
+    domain_map = {d["name"]: d["id"] for d in domain_resp.json().get("value", [])}
+
+    # Check existing data products
+    r = requests.get(
+        f"{UNIFIED}/dataProducts?api-version={API_VER}",
+        headers=h, timeout=30
+    )
+    existing = {}
     if r.status_code == 200:
-        existing = [dp["name"] for dp in r.json().get("value", [])]
+        existing = {dp["name"]: dp for dp in r.json().get("value", [])}
         if existing:
-            info(f"Existing data products: {', '.join(existing)}")
+            info(f"Existing data products: {', '.join(existing.keys())}")
+
+    # Reuse known-good contacts shape from existing products when available.
+    default_contacts = {"owner": [{"id": "9350a243-7bcf-4053-8f7e-996364f4de24", "description": "Creator"}]}
+    for ep in existing.values():
+        c = ep.get("contacts")
+        if isinstance(c, dict) and c.get("owner"):
+            default_contacts = c
+            break
 
     for dp in DATA_PRODUCTS:
         if dp["name"] in existing:
@@ -176,22 +895,28 @@ def create_data_products():
             created += 1
             continue
 
-        # Try creating via Unified Catalog API
+        domain_id = domain_map.get(dp["domain_name"])
+        if not domain_id:
+            warn(f"{dp['name']}: missing domain '{dp['domain_name']}'")
+            continue
+
+        # Create via Unified Catalog API with required schema fields.
         payload = {
             "name": dp["name"],
             "description": dp["description"],
-            "properties": {
-                "type": dp["type"],
-                "status": dp["status"],
-                "owners": dp["owners"],
-                "tables": dp["tables"],
-                "useCases": dp["use_cases"],
-                "sla": dp["sla"],
-            },
+            "status": dp["status"],
+            "type": dp["type"],
+            "domain": domain_id,
+            "businessUse": dp.get("business_use", ""),
+            "contacts": default_contacts,
+            "termsOfUse": [],
+            "documentation": [],
+            "endorsed": True,
+            "audience": dp.get("audience", ["DataEngineer"]),
         }
 
-        r = requests.put(
-            f"{UNIFIED}/dataproducts/{dp['name'].replace(' ', '-').lower()}?api-version={API_VER}",
+        r = requests.post(
+            f"{UNIFIED}/dataProducts?api-version={API_VER}",
             headers=h, json=payload, timeout=30
         )
         if r.status_code in (200, 201):
@@ -247,12 +972,13 @@ def create_dp_as_glossary(dp):
 
     # Create term for data product
     term_payload = {
-        "name": f"DP: {dp['name']}",
-        "glossaryGuid": g_guid,
+        "name": f"DP {dp['name']}",
+        "anchor": {"glossaryGuid": g_guid},
         "shortDescription": dp["description"][:256],
         "longDescription": (
             f"**Typ:** {dp['type']}\n"
             f"**Status:** {dp['status']}\n"
+            f"**Domän:** {dp.get('domain_name', 'N/A')}\n"
             f"**Ägare:** {', '.join(dp['owners'])}\n"
             f"**Tabeller:** {', '.join(dp['tables'])}\n"
             f"**SLA:** {dp['sla']}\n\n"
@@ -266,13 +992,13 @@ def create_dp_as_glossary(dp):
 
     r = requests.post(f"{ATLAS}/glossary/term", headers=h, json=term_payload, timeout=30)
     if r.status_code in (200, 201):
-        ok(f"DP: {dp['name']} — created as glossary term")
+        ok(f"DP {dp['name']} — created as glossary term")
         return 1
-    elif r.status_code == 409 or (r.status_code == 400 and "ATLAS-400-00-072" in r.text):
-        ok(f"DP: {dp['name']} — already exists")
+    elif r.status_code == 409 or (r.status_code == 400 and "already exists" in r.text.lower()):
+        ok(f"DP {dp['name']} — already exists")
         return 1
     else:
-        warn(f"DP: {dp['name']}: {r.status_code} {r.text[:100]}")
+        warn(f"DP {dp['name']}: {r.status_code} {r.text[:100]}")
         return 0
 
 
@@ -433,7 +1159,7 @@ def create_okrs():
 
         term_payload = {
             "name": term_name,
-            "glossaryGuid": g_guid,
+            "anchor": {"glossaryGuid": g_guid},
             "shortDescription": obj_short,
             "longDescription": f"Objective {i} - {obj_short}\n\nKey Results:\n{kr_text}",
             "status": "Approved",
@@ -445,7 +1171,7 @@ def create_okrs():
         if r.status_code in (200, 201):
             ok(f"O{i}: {okr['objective'][:60]}...")
             created += 1
-        elif r.status_code == 409 or (r.status_code == 400 and "ATLAS-400-00-0" in r.text):
+        elif r.status_code == 409 or (r.status_code == 400 and "already exists" in r.text.lower()):
             ok(f"O{i}: already exists")
             created += 1
         else:
@@ -867,7 +1593,7 @@ def store_dq_results_in_purview(results):
 
         term_payload = {
             "name": term_name,
-            "glossaryGuid": g_guid,
+            "anchor": {"glossaryGuid": g_guid},
             "shortDescription": short_desc[:256],
             "longDescription": long_desc,
             "status": "Approved",
@@ -878,7 +1604,7 @@ def store_dq_results_in_purview(results):
         r = requests.post(f"{ATLAS}/glossary/term", headers=h, json=term_payload, timeout=30)
         if r.status_code in (200, 201):
             stored += 1
-        elif r.status_code == 409 or (r.status_code == 400 and "ATLAS-400-00-0" in r.text):
+        elif r.status_code == 409 or (r.status_code == 400 and "already exists" in r.text.lower()):
             # Already exists
             stored += 1
         else:
@@ -905,10 +1631,10 @@ def store_dq_results_in_purview(results):
 # ══════════════════════════════════════════════════════════════════
 def main():
     print(f"""
-{BOLD}{BLUE}╔══════════════════════════════════════════════════════════════════╗
-║  PURVIEW DATA PRODUCTS, OKRs & DATA QUALITY                     ║
-║  {datetime.now().strftime('%Y-%m-%d %H:%M')}                                              ║
-╚══════════════════════════════════════════════════════════════════╝{RESET}
+{BOLD}{BLUE}======================================================================
+  PURVIEW DATA PRODUCTS, OKRs & DATA QUALITY
+  {datetime.now().strftime('%Y-%m-%d %H:%M')}
+======================================================================{RESET}
 """)
 
     # 1. Data Products

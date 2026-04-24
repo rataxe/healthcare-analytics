@@ -50,6 +50,7 @@ import requests
 import json
 from pathlib import Path
 from typing import Dict, List, Optional
+from azure.identity import AzureCliCredential
 
 class UnifiedCatalogClient:
     """Client for Purview Unified Catalog API"""
@@ -70,30 +71,22 @@ class UnifiedCatalogClient:
                 key, value = line.split('=', 1)
                 self.config[key.strip()] = value.strip()
         
-        self.tenant_id = self.config['PURVIEW_TENANT_ID']
-        self.client_id = self.config['PURVIEW_CLIENT_ID']
-        self.client_secret = self.config['PURVIEW_CLIENT_SECRET']
         self.account = self.config['PURVIEW_ACCOUNT']
         self.base_url = self.config['UNIFIED_CATALOG_BASE']
         self.api_version = self.config['API_VERSION']
         
-        # Get access token
+        # Get access token via AzureCliCredential (az login)
+        self._credential = AzureCliCredential()
         self._access_token = None
-        self._get_access_token()
+        self._refresh_token()
+    
+    def _refresh_token(self):
+        """Refresh access token via AzureCliCredential"""
+        self._access_token = self._credential.get_token("https://purview.azure.net/.default").token
     
     def _get_access_token(self):
-        """Get OAuth2 access token"""
-        token_url = f"https://login.microsoftonline.com/{self.tenant_id}/oauth2/token"
-        token_data = {
-            'grant_type': 'client_credentials',
-            'client_id': self.client_id,
-            'client_secret': self.client_secret,
-            'resource': 'https://purview.azure.net'
-        }
-        
-        r = requests.post(token_url, data=token_data, timeout=30)
-        r.raise_for_status()
-        self._access_token = r.json()['access_token']
+        """Compatibility: refresh token"""
+        self._refresh_token()
     
     @property
     def headers(self) -> Dict[str, str]:

@@ -10,3 +10,6 @@ __pycache__/
 coverage.xml
 *.log
 .vscode/nowdev-ai-config.json
+
+# Purview credentials
+.env.purview

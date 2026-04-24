@@ -419,50 +419,62 @@ def update_data_product_metadata(entity_guid, product_name, details):
     okrs_json = str(details["okrs"])
     use_cases_text = "\n".join([f"- {uc}" for uc in details["use_cases"]])
     
-    # Build entity update payload
-    entity_update = {
-        "entity": {
-            "guid": entity_guid,
-            "typeName": "healthcare_data_product",
-            "attributes": {
-                "name": product_name,
-                "description": details["description"],
-                "owner": details["owner"],
-                "userDescription": details["description"],
-                "criticalElements": critical_elements_json,
-                "okrs": okrs_json,
-                "useCases": use_cases_text,
-                "steward": details["steward"],
-                "dataQualityContact": details["data_quality_contact"],
-                "slaAvailability": details["sla"]["availability"],
-                "slaFreshness": details["sla"]["data_freshness"],
-                "slaSupportHours": details["sla"]["support_hours"]
-            }
-        }
-    }
-    
     try:
-        r = requests.put(
-            f"{ATLAS_API}/entity",
+        # 1) Fetch full existing entity
+        r_get = requests.get(
+            f"{ATLAS_API}/entity/guid/{entity_guid}",
             headers=headers,
-            json=entity_update,
             timeout=30
         )
-        
-        if r.status_code in [200, 201]:
+
+        if r_get.status_code != 200:
+            print(f"   ⚠️  Could not fetch entity (HTTP {r_get.status_code})")
+            print(f"      Response: {r_get.text[:200]}")
+            return False
+
+        entity = r_get.json().get("entity", {})
+        attrs = entity.get("attributes", {})
+
+        # 2) Update only business metadata attributes
+        attrs.update({
+            "name": product_name,
+            "description": details["description"],
+            "owner": details["owner"],
+            "userDescription": details["description"],
+            "criticalElements": critical_elements_json,
+            "okrs": okrs_json,
+            "useCases": use_cases_text,
+            "steward": details["steward"],
+            "dataQualityContact": details["data_quality_contact"],
+            "slaAvailability": details["sla"]["availability"],
+            "slaFreshness": details["sla"]["data_freshness"],
+            "slaSupportHours": details["sla"]["support_hours"],
+        })
+        entity["attributes"] = attrs
+
+        # Remove server-managed fields that can cause request validation errors
+        for field in ["lastModifiedTS", "createTime", "updateTime", "status"]:
+            entity.pop(field, None)
+
+        # 3) Submit as bulk Atlas update (working pattern in this repo)
+        r_update = requests.post(
+            f"{ATLAS_API}/entity/bulk",
+            headers=headers,
+            json={"entities": [entity]},
+            timeout=30
+        )
+
+        if r_update.status_code == 200:
             print(f"   ✅ Updated {product_name}")
             print(f"      - {len(details['critical_elements'])} critical elements")
             print(f"      - {len(details['okrs'])} OKRs")
             print(f"      - {len(details['use_cases'])} use cases")
             return True
-        elif r.status_code == 404:
-            print(f"   ⚠️  Entity not found (404) - may need to use partial update")
-            return try_partial_update(entity_guid, details)
-        else:
-            print(f"   ⚠️  Update failed (HTTP {r.status_code})")
-            print(f"      Response: {r.text[:200]}")
-            return False
-            
+
+        print(f"   ⚠️  Update failed (HTTP {r_update.status_code})")
+        print(f"      Response: {r_update.text[:200]}")
+        return False
+
     except Exception as e:
         print(f"   ❌ Error: {e}")
         return False

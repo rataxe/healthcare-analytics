@@ -1,0 +1,864 @@
+{
+  "d2754761-113e-4618-bcef-b4e403b91b20": {
+    "name": "DW",
+    "description": "",
+    "source": {
+      "type": "PurviewDataMap",
+      "assetId": "d2754761-113e-4618-bcef-b4e403b91b20",
+      "assetType": "fabric_data_warehouse",
+      "assetAttributes": {
+        "owner": "",
+        "replicatedTo": "",
+        "userDescription": "",
+        "replicatedFrom": "",
+        "qualifiedName": "https://app.fabric.microsoft.com/groups/fe7abfd7-4352-40ab-8454-90ac555212e5/datawarehouses/f9a5cfaf-641c-4d7f-b190-19e0bd1576af",
+        "displayName": "",
+        "description": "",
+        "createdDateTime": "1732560914700",
+        "dedicatedCapacityName": "Trial-20240904T113629Z-jlBGAQ26i0CsOYwUdcvnrg",
+        "createdBy": "admin@MngEnvMCAP522719.onmicrosoft.com",
+        "name": "DW",
+        "tenantId": "",
+        "artifactId": "f9a5cfaf-641c-4d7f-b190-19e0bd1576af",
+        "modifiedBy": "admin@MngEnvMCAP522719.onmicrosoft.com",
+        "modifiedDateTime": "1732889014857",
+        "workspaceName": "Datawarehouse"
+      },
+      "fqn": "https://app.fabric.microsoft.com/groups/fe7abfd7-4352-40ab-8454-90ac555212e5/datawarehouses/f9a5cfaf-641c-4d7f-b190-19e0bd1576af",
+      "accountName": "prviewacc",
+      "lastRefreshedAt": "2024-11-29T14:06:12.197Z",
+      "lastRefreshedBy": "9350a243-7bcf-4053-8f7e-996364f4de24"
+    },
+    "assetType": "fabric_data_warehouse"
+  },
+  "0a938850-c2d4-46d4-accf-400d43767460": {
+    "name": "DW",
+    "description": "",
+    "source": {
+      "type": "PurviewDataMap",
+      "assetId": "0a938850-c2d4-46d4-accf-400d43767460",
+      "assetType": "powerbi_dataset",
+      "assetAttributes": {
+        "owner": "",
+        "isRefreshable": "false",
+        "replicatedTo": "",
+        "userDescription": "",
+        "replicatedFrom": "",
+        "qualifiedName": "https://app.powerbi.com/groups/fe7abfd7-4352-40ab-8454-90ac555212e5/datasets/397c2940-5b7a-4dfd-bbc3-5165d2ff080b",
+        "displayName": "DW",
+        "description": "",
+        "contentProviderType": "InCompositeMode",
+        "users": "[{\"emailAddress\":\"admin@MngEnvMCAP522719.onmicrosoft.com\",\"displayName\":\"System Administrator\",\"userAccessRight\":\"ReadWriteReshareExplore\",\"graphId\":\"9350a243-7bcf-4053-8f7e-996364f4de24\"}]",
+        "dedicatedCapacityName": "Trial-20240904T113629Z-jlBGAQ26i0CsOYwUdcvnrg",
+        "createdDate": "1732560917583",
+        "name": "https://app.powerbi.com/groups/fe7abfd7-4352-40ab-8454-90ac555212e5/datasets/397c2940-5b7a-4dfd-bbc3-5165d2ff080b",
+        "tenantId": "71c4b6d5-0065-4c6c-a125-841a582754eb",
+        "workspaceName": "Datawarehouse",
+        "configuredBy": "admin@MngEnvMCAP522719.onmicrosoft.com",
+        "targetStorageMode": "PremiumFiles"
+      },
+      "fqn": "https://app.powerbi.com/groups/fe7abfd7-4352-40ab-8454-90ac555212e5/datasets/397c2940-5b7a-4dfd-bbc3-5165d2ff080b",
+      "accountName": "prviewacc",
+      "lastRefreshedAt": "2025-01-21T15:51:53.071Z"
+    },
+    "assetType": "powerbi_dataset"
+  },
+  "9b75afe1-8c90-4fe1-9e53-97107d7a54b0": {
+    "name": "healthcare1_msft_gold_omop",
+    "description": "",
+    "source": {
+      "type": "PurviewDataMap",
+      "assetId": "9b75afe1-8c90-4fe1-9e53-97107d7a54b0",
+      "assetType": "powerbi_dataset",
+      "assetAttributes": {
+        "owner": "",
+        "isRefreshable": "false",
+        "replicatedTo": "",
+        "userDescription": "",
+        "replicatedFrom": "",
+        "qualifiedName": "https://app.powerbi.com/groups/49380599-d702-4fec-af1e-e00e7dff4940/datasets/bb6deb5f-cb68-443e-ada4-458bac311e3f",
+        "displayName": "healthcare1_msft_gold_omop",
+        "description": "",
+        "contentProviderType": "InImportMode",
+        "users": "[{\"emailAddress\":\"admin@MngEnvMCAP522719.onmicrosoft.com\",\"displayName\":\"System Administrator\",\"userAccessRight\":\"ReadWriteReshareExplore\",\"graphId\":\"9350a243-7bcf-4053-8f7e-996364f4de24\"}]",
+        "dedicatedCapacityName": "Trial-20240904T113629Z-jlBGAQ26i0CsOYwUdcvnrg",
+        "createdDate": "1726554394937",
+        "name": "https://app.powerbi.com/groups/49380599-d702-4fec-af1e-e00e7dff4940/datasets/bb6deb5f-cb68-443e-ada4-458bac311e3f",
+        "tenantId": "71c4b6d5-0065-4c6c-a125-841a582754eb",
+        "workspaceName": "Helalthcare",
+        "configuredBy": "admin@MngEnvMCAP522719.onmicrosoft.com",
+        "targetStorageMode": "Abf"
+      },
+      "fqn": "https://app.powerbi.com/groups/49380599-d702-4fec-af1e-e00e7dff4940/datasets/bb6deb5f-cb68-443e-ada4-458bac311e3f",
+      "accountName": "prviewacc",
+      "lastRefreshedAt": "2025-01-21T15:51:53.071Z"
+    },
+    "assetType": "powerbi_dataset"
+  },
+  "ee1b9d63-97ca-492a-87aa-bc333bd4c18e": {
+    "name": "healthcare1_msft_silver",
+    "description": "",
+    "source": {
+      "type": "PurviewDataMap",
+      "assetId": "ee1b9d63-97ca-492a-87aa-bc333bd4c18e",
+      "assetType": "powerbi_dataset",
+      "assetAttributes": {
+        "owner": "",
+        "isRefreshable": "false",
+        "replicatedTo": "",
+        "userDescription": "",
+        "replicatedFrom": "",
+        "qualifiedName": "https://app.powerbi.com/groups/49380599-d702-4fec-af1e-e00e7dff4940/datasets/258fd188-b925-4361-a95f-fa4e73d789ba",
+        "displayName": "healthcare1_msft_silver",
+        "description": "",
+        "contentProviderType": "InImportMode",
+        "users": "[{\"emailAddress\":\"admin@MngEnvMCAP522719.onmicrosoft.com\",\"displayName\":\"System Administrator\",\"userAccessRight\":\"ReadWriteReshareExplore\",\"graphId\":\"9350a243-7bcf-4053-8f7e-996364f4de24\"}]",
+        "dedicatedCapacityName": "Trial-20240904T113629Z-jlBGAQ26i0CsOYwUdcvnrg",
+        "createdDate": "1726554395033",
+        "name": "https://app.powerbi.com/groups/49380599-d702-4fec-af1e-e00e7dff4940/datasets/258fd188-b925-4361-a95f-fa4e73d789ba",
+        "tenantId": "71c4b6d5-0065-4c6c-a125-841a582754eb",
+        "workspaceName": "Helalthcare",
+        "configuredBy": "admin@MngEnvMCAP522719.onmicrosoft.com",
+        "targetStorageMode": "Abf"
+      },
+      "fqn": "https://app.powerbi.com/groups/49380599-d702-4fec-af1e-e00e7dff4940/datasets/258fd188-b925-4361-a95f-fa4e73d789ba",
+      "accountName": "prviewacc",
+      "lastRefreshedAt": "2025-01-21T15:51:53.071Z"
+    },
+    "assetType": "powerbi_dataset"
+  },
+  "c2997048-887e-4a95-9eb8-63eaccdc6dc3": {
+    "name": "healthcare1_msft_bronze",
+    "description": "",
+    "source": {
+      "type": "PurviewDataMap",
+      "assetId": "c2997048-887e-4a95-9eb8-63eaccdc6dc3",
+      "assetType": "powerbi_dataset",
+      "assetAttributes": {
+        "owner": "",
+        "isRefreshable": "false",
+        "replicatedTo": "",
+        "userDescription": "",
+        "replicatedFrom": "",
+        "qualifiedName": "https://app.powerbi.com/groups/49380599-d702-4fec-af1e-e00e7dff4940/datasets/82cdd581-730b-4ac5-ab9d-e2530b8e040b",
+        "displayName": "healthcare1_msft_bronze",
+        "description": "",
+        "contentProviderType": "InImportMode",
+        "users": "[{\"emailAddress\":\"admin@MngEnvMCAP522719.onmicrosoft.com\",\"displayName\":\"System Administrator\",\"userAccessRight\":\"ReadWriteReshareExplore\",\"graphId\":\"9350a243-7bcf-4053-8f7e-996364f4de24\"}]",
+        "dedicatedCapacityName": "Trial-20240904T113629Z-jlBGAQ26i0CsOYwUdcvnrg",
+        "createdDate": "1726554394990",
+        "name": "https://app.powerbi.com/groups/49380599-d702-4fec-af1e-e00e7dff4940/datasets/82cdd581-730b-4ac5-ab9d-e2530b8e040b",
+        "tenantId": "71c4b6d5-0065-4c6c-a125-841a582754eb",
+        "workspaceName": "Helalthcare",
+        "configuredBy": "admin@MngEnvMCAP522719.onmicrosoft.com",
+        "targetStorageMode": "Abf"
+      },
+      "fqn": "https://app.powerbi.com/groups/49380599-d702-4fec-af1e-e00e7dff4940/datasets/82cdd581-730b-4ac5-ab9d-e2530b8e040b",
+      "accountName": "prviewacc",
+      "lastRefreshedAt": "2025-01-21T15:51:53.071Z"
+    },
+    "assetType": "powerbi_dataset"
+  },
+  "aa926266-95cd-4a3a-98e2-46f6f6f60000": {
+    "name": "patients",
+    "description": "📊 Patientdemografi (10 000 patienter)\nStandards: FHIR Patient, OMOP Person\nPHI-känsliga kolumner: patient_id, birth_date, postal_code\nKopplad till: encounters (patient_id), Medallion Bronze→Silver→Gold",
+    "source": {
+      "type": "PurviewDataMap",
+      "assetId": "aa926266-95cd-4a3a-98e2-46f6f6f60000",
+      "assetType": "azure_sql_table",
+      "assetAttributes": {
+        "owner": "",
+        "modifiedTime": "0",
+        "replicatedTo": "",
+        "userDescription": "📊 Patientdemografi (10 000 patienter)\nStandards: FHIR Patient, OMOP Person\nPHI-känsliga kolumner: patient_id, birth_date, postal_code\nKopplad till: encounters (patient_id), Medallion Bronze→Silver→Gold",
+        "replicatedFrom": "",
+        "createTime": "0",
+        "qualifiedName": "mssql://sql-hca-demo.database.windows.net/HealthcareAnalyticsDB/dbo/hca/patients",
+        "displayName": "",
+        "name": "patients",
+        "description": "Patientdemografi — 10 000 syntetiska patienter med FHIR Patient / OMOP Person mappning",
+        "principalId": "0",
+        "objectType": ""
+      },
+      "fqn": "mssql://sql-hca-demo.database.windows.net/HealthcareAnalyticsDB/dbo/hca/patients",
+      "accountName": "prviewacc",
+      "lastRefreshedAt": "2026-04-22T07:45:43.529",
+      "lastRefreshedBy": "9350a243-7bcf-4053-8f7e-996364f4de24"
+    },
+    "assetType": "azure_sql_table"
+  },
+  "eb7a580f-fa4c-440a-9e2c-3ff6f6f60000": {
+    "name": "medications",
+    "description": "💊 Läkemedel (60 563 förskrivningar, ATC-klassificerade)\nStandards: FHIR MedicationRequest, OMOP Drug Exposure\nHuvudkolumner: atc_code, drug_name, dose_mg\nKopplad till: encounters (encounter_id)",
+    "source": {
+      "type": "PurviewDataMap",
+      "assetId": "eb7a580f-fa4c-440a-9e2c-3ff6f6f60000",
+      "assetType": "azure_sql_table",
+      "assetAttributes": {
+        "owner": "",
+        "modifiedTime": "0",
+        "replicatedTo": "",
+        "userDescription": "💊 Läkemedel (60 563 förskrivningar, ATC-klassificerade)\nStandards: FHIR MedicationRequest, OMOP Drug Exposure\nHuvudkolumner: atc_code, drug_name, dose_mg\nKopplad till: encounters (encounter_id)",
+        "replicatedFrom": "",
+        "createTime": "0",
+        "qualifiedName": "mssql://sql-hca-demo.database.windows.net/HealthcareAnalyticsDB/dbo/hca/medications",
+        "displayName": "",
+        "name": "medications",
+        "description": "Läkemedel — 60 563 förskrivningar med ATC-klassificering. FHIR MedicationRequest / OMOP Drug Exposure",
+        "principalId": "0",
+        "objectType": ""
+      },
+      "fqn": "mssql://sql-hca-demo.database.windows.net/HealthcareAnalyticsDB/dbo/hca/medications",
+      "accountName": "prviewacc",
+      "lastRefreshedAt": "2026-04-22T09:49:57.744",
+      "lastRefreshedBy": "9350a243-7bcf-4053-8f7e-996364f4de24"
+    },
+    "assetType": "azure_sql_table"
+  },
+  "d86a7adf-713f-47d3-b613-b6f6f6f60000": {
+    "name": "encounters",
+    "description": "🏥 Vårdbesök (17 292 encounters)\nStandards: FHIR Encounter, OMOP Visit Occurrence\nML-mål: los_days (vårdtid), readmission_30d (återinläggning)\nKopplad till: patients, diagnoses, vitals_labs, medications",
+    "source": {
+      "type": "PurviewDataMap",
+      "assetId": "d86a7adf-713f-47d3-b613-b6f6f6f60000",
+      "assetType": "azure_sql_table",
+      "assetAttributes": {
+        "owner": "",
+        "modifiedTime": "0",
+        "replicatedTo": "",
+        "userDescription": "🏥 Vårdbesök (17 292 encounters)\nStandards: FHIR Encounter, OMOP Visit Occurrence\nML-mål: los_days (vårdtid), readmission_30d (återinläggning)\nKopplad till: patients, diagnoses, vitals_labs, medications",
+        "replicatedFrom": "",
+        "createTime": "0",
+        "qualifiedName": "mssql://sql-hca-demo.database.windows.net/HealthcareAnalyticsDB/dbo/hca/encounters",
+        "displayName": "",
+        "name": "encounters",
+        "description": "Vårdbesök — 17 292 encounters med LOS och återinläggningsrisk. FHIR Encounter / OMOP Visit Occurrence",
+        "principalId": "0",
+        "objectType": ""
+      },
+      "fqn": "mssql://sql-hca-demo.database.windows.net/HealthcareAnalyticsDB/dbo/hca/encounters",
+      "accountName": "prviewacc",
+      "lastRefreshedAt": "2026-04-22T07:45:43.529",
+      "lastRefreshedBy": "9350a243-7bcf-4053-8f7e-996364f4de24"
+    },
+    "assetType": "azure_sql_table"
+  },
+  "a3aaeb32-7928-403c-806b-14f6f6f60000": {
+    "name": "diagnoses",
+    "description": "",
+    "source": {
+      "type": "PurviewDataMap",
+      "assetId": "a3aaeb32-7928-403c-806b-14f6f6f60000",
+      "assetType": "azure_sql_table",
+      "assetAttributes": {
+        "owner": "",
+        "modifiedTime": "1776752491000",
+        "replicatedTo": "",
+        "userDescription": "",
+        "replicatedFrom": "",
+        "createTime": "1776752491000",
+        "qualifiedName": "mssql://sql-hca-demo.database.windows.net/HealthcareAnalyticsDB/hca/diagnoses",
+        "displayName": "",
+        "name": "diagnoses",
+        "description": "",
+        "principalId": "0",
+        "objectType": "U "
+      },
+      "fqn": "mssql://sql-hca-demo.database.windows.net/HealthcareAnalyticsDB/hca/diagnoses",
+      "accountName": "prviewacc",
+      "lastRefreshedAt": "2026-04-23T09:27:39.648"
+    },
+    "assetType": "azure_sql_table"
+  },
+  "cdd693d3-c441-4743-8ef2-70f6f6f60000": {
+    "name": "encounters",
+    "description": "",
+    "source": {
+      "type": "PurviewDataMap",
+      "assetId": "cdd693d3-c441-4743-8ef2-70f6f6f60000",
+      "assetType": "azure_sql_table",
+      "assetAttributes": {
+        "owner": "",
+        "modifiedTime": "1776752491000",
+        "replicatedTo": "",
+        "userDescription": "",
+        "replicatedFrom": "",
+        "createTime": "1776752491000",
+        "qualifiedName": "mssql://sql-hca-demo.database.windows.net/HealthcareAnalyticsDB/hca/encounters",
+        "displayName": "",
+        "name": "encounters",
+        "description": "",
+        "principalId": "0",
+        "objectType": "U "
+      },
+      "fqn": "mssql://sql-hca-demo.database.windows.net/HealthcareAnalyticsDB/hca/encounters",
+      "accountName": "prviewacc",
+      "lastRefreshedAt": "2026-04-23T09:27:40.638"
+    },
+    "assetType": "azure_sql_table"
+  },
+  "3b3299c0-dc94-4680-a533-2cf6f6f60000": {
+    "name": "patients",
+    "description": "",
+    "source": {
+      "type": "PurviewDataMap",
+      "assetId": "3b3299c0-dc94-4680-a533-2cf6f6f60000",
+      "assetType": "azure_sql_table",
+      "assetAttributes": {
+        "owner": "",
+        "modifiedTime": "1776752491000",
+        "replicatedTo": "",
+        "userDescription": "",
+        "replicatedFrom": "",
+        "createTime": "1776752491000",
+        "qualifiedName": "mssql://sql-hca-demo.database.windows.net/HealthcareAnalyticsDB/hca/patients",
+        "displayName": "",
+        "name": "patients",
+        "description": "",
+        "principalId": "0",
+        "objectType": "U "
+      },
+      "fqn": "mssql://sql-hca-demo.database.windows.net/HealthcareAnalyticsDB/hca/patients",
+      "accountName": "prviewacc",
+      "lastRefreshedAt": "2026-04-23T09:27:53.637"
+    },
+    "assetType": "azure_sql_table"
+  },
+  "8470e93b-4dbe-4a0c-8dbe-c0f6f6f60000": {
+    "name": "medications",
+    "description": "",
+    "source": {
+      "type": "PurviewDataMap",
+      "assetId": "8470e93b-4dbe-4a0c-8dbe-c0f6f6f60000",
+      "assetType": "azure_sql_table",
+      "assetAttributes": {
+        "owner": "",
+        "modifiedTime": "1776752491000",
+        "replicatedTo": "",
+        "userDescription": "",
+        "replicatedFrom": "",
+        "createTime": "1776752491000",
+        "qualifiedName": "mssql://sql-hca-demo.database.windows.net/HealthcareAnalyticsDB/hca/medications",
+        "displayName": "",
+        "name": "medications",
+        "description": "",
+        "principalId": "0",
+        "objectType": "U "
+      },
+      "fqn": "mssql://sql-hca-demo.database.windows.net/HealthcareAnalyticsDB/hca/medications",
+      "accountName": "prviewacc",
+      "lastRefreshedAt": "2026-04-22T09:50:03.083",
+      "lastRefreshedBy": "9350a243-7bcf-4053-8f7e-996364f4de24"
+    },
+    "assetType": "azure_sql_table"
+  },
+  "d4f88b9a-7676-42f0-a5d6-13f6f6f60000": {
+    "name": "diagnoses",
+    "description": "🩺 Diagnoser (30 297 st, ICD-10-klassificerade)\nStandards: FHIR Condition, OMOP Condition Occurrence\nHuvudkolumner: icd10_code, icd10_description\nKopplad till: encounters (encounter_id)",
+    "source": {
+      "type": "PurviewDataMap",
+      "assetId": "d4f88b9a-7676-42f0-a5d6-13f6f6f60000",
+      "assetType": "azure_sql_table",
+      "assetAttributes": {
+        "owner": "",
+        "modifiedTime": "0",
+        "replicatedTo": "",
+        "userDescription": "🩺 Diagnoser (30 297 st, ICD-10-klassificerade)\nStandards: FHIR Condition, OMOP Condition Occurrence\nHuvudkolumner: icd10_code, icd10_description\nKopplad till: encounters (encounter_id)",
+        "replicatedFrom": "",
+        "createTime": "0",
+        "qualifiedName": "mssql://sql-hca-demo.database.windows.net/HealthcareAnalyticsDB/dbo/hca/diagnoses",
+        "displayName": "",
+        "name": "diagnoses",
+        "description": "Diagnoser — 30 297 ICD-10-kodade diagnoser. FHIR Condition / OMOP Condition Occurrence",
+        "principalId": "0",
+        "objectType": ""
+      },
+      "fqn": "mssql://sql-hca-demo.database.windows.net/HealthcareAnalyticsDB/dbo/hca/diagnoses",
+      "accountName": "prviewacc",
+      "lastRefreshedAt": "2026-04-22T09:49:46.388",
+      "lastRefreshedBy": "9350a243-7bcf-4053-8f7e-996364f4de24"
+    },
+    "assetType": "azure_sql_table"
+  },
+  "93242838-92d9-4e1e-9ad0-8425ecd7d2eb": {
+    "name": "HealthcareAnalyticsDB",
+    "description": "Healthcare Analytics database — 166 283 rader, 5 tabeller, 1 ML-vy. Schema: hca.",
+    "source": {
+      "type": "PurviewDataMap",
+      "assetId": "93242838-92d9-4e1e-9ad0-8425ecd7d2eb",
+      "assetType": "azure_sql_db",
+      "assetAttributes": {
+        "owner": "",
+        "resourceGroupName": "rg-healthcare-analytics",
+        "replicatedTo": "",
+        "userDescription": "",
+        "replicatedFrom": "",
+        "qualifiedName": "mssql://sql-hca-demo.database.windows.net/HealthcareAnalyticsDB",
+        "displayName": "",
+        "description": "Healthcare Analytics database — 166 283 rader, 5 tabeller, 1 ML-vy. Schema: hca.",
+        "createTime": "0",
+        "compatibilityLevel": "0",
+        "name": "HealthcareAnalyticsDB",
+        "location": "swedencentral",
+        "ownerSid": "",
+        "collation": "",
+        "subscriptionId": "5b44c9f3-bbe7-464c-aa3e-562726a12004"
+      },
+      "fqn": "mssql://sql-hca-demo.database.windows.net/HealthcareAnalyticsDB",
+      "accountName": "prviewacc",
+      "lastRefreshedAt": "2026-04-23T09:27:39.399"
+    },
+    "assetType": "azure_sql_db"
+  },
+  "ce321bd0-8b5d-4e38-a498-eaca7fb63660": {
+    "name": "DICOM MRI_Brain",
+    "description": "MR-hjärna (T1, T2, FLAIR) — primärtumör och uppföljning. DICOMweb: https://brainchildhdws-brainchilddicom.dicom.azurehealthcareapis.com",
+    "source": {
+      "type": "PurviewDataMap",
+      "assetId": "ce321bd0-8b5d-4e38-a498-eaca7fb63660",
+      "assetType": "healthcare_dicom_modality",
+      "assetAttributes": {
+        "owner": "",
+        "studyCount": "0",
+        "endpoint": "https://brainchildhdws-brainchilddicom.dicom.azurehealthcareapis.com",
+        "modality": "MRI",
+        "replicatedTo": "",
+        "userDescription": "MR-hjärna (T1, T2, FLAIR) — primärtumör och uppföljning. DICOMweb: https://brainchildhdws-brainchilddicom.dicom.azurehealthcareapis.com",
+        "replicatedFrom": "",
+        "qualifiedName": "healthcare://https://brainchildhdws-brainchilddicom.dicom.azurehealthcareapis.com/MRI_Brain",
+        "displayName": "",
+        "name": "DICOM MRI_Brain",
+        "description": "MR-hjärna (T1, T2, FLAIR) — primärtumör och uppföljning"
+      },
+      "fqn": "healthcare://https://brainchildhdws-brainchilddicom.dicom.azurehealthcareapis.com/MRI_Brain",
+      "accountName": "prviewacc",
+      "lastRefreshedAt": "2026-04-22T07:45:48.972",
+      "lastRefreshedBy": "9350a243-7bcf-4053-8f7e-996364f4de24"
+    },
+    "assetType": "healthcare_dicom_modality"
+  },
+  "1f7468f2-1120-4c3f-916a-36f6f6f60000": {
+    "name": "brainchild_silver_dicom_pathology",
+    "description": "BrainChild Silver | DICOM Patologi — histopatologiska prover med fargning",
+    "source": {
+      "type": "PurviewDataMap",
+      "assetId": "1f7468f2-1120-4c3f-916a-36f6f6f60000",
+      "assetType": "fabric_lakehouse_table",
+      "assetAttributes": {
+        "owner": "",
+        "replicatedTo": "",
+        "userDescription": "BrainChild Silver | DICOM Patologi — histopatologiska prover med fargning",
+        "replicatedFrom": "",
+        "qualifiedName": "https://app.fabric.microsoft.com/groups/5c9b06e2-1c7f-4671-a902-46d0372bf0fd/lakehouses/ffe48d2d-99d1-4fa1-9a2e-4de0079a3852/tables/brainchild_silver_dicom_pathology",
+        "displayName": "",
+        "description": "",
+        "numRecords": "79",
+        "rootPath": "https://onelake.dfs.fabric.microsoft.com//5c9b06e2-1c7f-4671-a902-46d0372bf0fd/ffe48d2d-99d1-4fa1-9a2e-4de0079a3852/Tables/brainchild_silver_dicom_pathology",
+        "type": "Delta",
+        "dedicatedCapacityName": "Trial-20260223T144903Z-Xm-CJbXHkUKtFPHaYfOFEA",
+        "name": "brainchild_silver_dicom_pathology",
+        "tenantId": "71c4b6d5-0065-4c6c-a125-841a582754eb",
+        "workspaceName": "BrainChild-Demo"
+      },
+      "fqn": "https://app.fabric.microsoft.com/groups/5c9b06e2-1c7f-4671-a902-46d0372bf0fd/lakehouses/ffe48d2d-99d1-4fa1-9a2e-4de0079a3852/tables/brainchild_silver_dicom_pathology",
+      "accountName": "prviewacc",
+      "lastRefreshedAt": "2026-04-22T21:18:00.028"
+    },
+    "assetType": "fabric_lakehouse_table"
+  },
+  "36a4a28d-1409-478d-9dbf-4bf6f6f60000": {
+    "name": "silver_patient",
+    "description": "",
+    "source": {
+      "type": "PurviewDataMap",
+      "assetId": "36a4a28d-1409-478d-9dbf-4bf6f6f60000",
+      "assetType": "fabric_lakehouse_table",
+      "assetAttributes": {
+        "owner": "",
+        "replicatedTo": "",
+        "userDescription": "",
+        "replicatedFrom": "",
+        "qualifiedName": "https://app.fabric.microsoft.com/groups/5c9b06e2-1c7f-4671-a902-46d0372bf0fd/lakehouses/ffe48d2d-99d1-4fa1-9a2e-4de0079a3852/tables/silver_patient",
+        "displayName": "",
+        "description": "",
+        "numRecords": "50",
+        "rootPath": "https://onelake.dfs.fabric.microsoft.com//5c9b06e2-1c7f-4671-a902-46d0372bf0fd/ffe48d2d-99d1-4fa1-9a2e-4de0079a3852/Tables/silver_patient",
+        "type": "Delta",
+        "dedicatedCapacityName": "Trial-20260223T144903Z-Xm-CJbXHkUKtFPHaYfOFEA",
+        "name": "silver_patient",
+        "tenantId": "71c4b6d5-0065-4c6c-a125-841a582754eb",
+        "workspaceName": "BrainChild-Demo"
+      },
+      "fqn": "https://app.fabric.microsoft.com/groups/5c9b06e2-1c7f-4671-a902-46d0372bf0fd/lakehouses/ffe48d2d-99d1-4fa1-9a2e-4de0079a3852/tables/silver_patient",
+      "accountName": "prviewacc",
+      "lastRefreshedAt": "2026-04-22T21:18:01.033"
+    },
+    "assetType": "fabric_lakehouse_table"
+  },
+  "3c5fc230-94bf-4f0c-9570-80f6f6f60000": {
+    "name": "brainchild_silver_dicom_studies",
+    "description": "BrainChild Silver | DICOM Study — renad studiedata med patientkoppling",
+    "source": {
+      "type": "PurviewDataMap",
+      "assetId": "3c5fc230-94bf-4f0c-9570-80f6f6f60000",
+      "assetType": "fabric_lakehouse_table",
+      "assetAttributes": {
+        "owner": "",
+        "replicatedTo": "",
+        "userDescription": "BrainChild Silver | DICOM Study — renad studiedata med patientkoppling",
+        "replicatedFrom": "",
+        "qualifiedName": "https://app.fabric.microsoft.com/groups/5c9b06e2-1c7f-4671-a902-46d0372bf0fd/lakehouses/ffe48d2d-99d1-4fa1-9a2e-4de0079a3852/tables/brainchild_silver_dicom_studies",
+        "displayName": "",
+        "description": "",
+        "numRecords": "121",
+        "rootPath": "https://onelake.dfs.fabric.microsoft.com//5c9b06e2-1c7f-4671-a902-46d0372bf0fd/ffe48d2d-99d1-4fa1-9a2e-4de0079a3852/Tables/brainchild_silver_dicom_studies",
+        "type": "Delta",
+        "dedicatedCapacityName": "Trial-20260223T144903Z-Xm-CJbXHkUKtFPHaYfOFEA",
+        "name": "brainchild_silver_dicom_studies",
+        "tenantId": "71c4b6d5-0065-4c6c-a125-841a582754eb",
+        "workspaceName": "BrainChild-Demo"
+      },
+      "fqn": "https://app.fabric.microsoft.com/groups/5c9b06e2-1c7f-4671-a902-46d0372bf0fd/lakehouses/ffe48d2d-99d1-4fa1-9a2e-4de0079a3852/tables/brainchild_silver_dicom_studies",
+      "accountName": "prviewacc",
+      "lastRefreshedAt": "2026-04-22T21:18:00.037"
+    },
+    "assetType": "fabric_lakehouse_table"
+  },
+  "4f4e6a80-9087-450c-ac6a-001b2ae006a0": {
+    "name": "BrainChild DICOM Server",
+    "description": "DICOMweb API for BrainChild. Endpoint: https://brainchildhdws-brainchilddicom.dicom.azurehealthcareapis.com. Modaliteter: MR-hjärna (T1, T2, FLAIR), Patologi (H&E).",
+    "source": {
+      "type": "PurviewDataMap",
+      "assetId": "4f4e6a80-9087-450c-ac6a-001b2ae006a0",
+      "assetType": "healthcare_dicom_service",
+      "assetAttributes": {
+        "owner": "",
+        "endpoint": "https://brainchildhdws-brainchilddicom.dicom.azurehealthcareapis.com",
+        "modalities": "MR, SM (Slide Microscopy)",
+        "replicatedTo": "",
+        "userDescription": "DICOMweb API for BrainChild. Endpoint: https://brainchildhdws-brainchilddicom.dicom.azurehealthcareapis.com. Modaliteter: MR-hjärna (T1, T2, FLAIR), Patologi (H&E).",
+        "replicatedFrom": "",
+        "qualifiedName": "healthcare://https://brainchildhdws-brainchilddicom.dicom.azurehealthcareapis.com",
+        "displayName": "",
+        "name": "BrainChild DICOM Server",
+        "description": "Azure Health Data Services DICOMweb — BrainChild barncancerprojektet. MR-hjärna (T1/T2/FLAIR) och histopatologi (H&E-färgning)."
+      },
+      "fqn": "healthcare://https://brainchildhdws-brainchilddicom.dicom.azurehealthcareapis.com",
+      "accountName": "prviewacc",
+      "lastRefreshedAt": "2026-04-22T07:45:48.972",
+      "lastRefreshedBy": "9350a243-7bcf-4053-8f7e-996364f4de24"
+    },
+    "assetType": "healthcare_dicom_service"
+  },
+  "dca24c56-4aec-4453-bbdf-48eece6c9eaf": {
+    "name": "BrainChild FHIR Server (R4)",
+    "description": "FHIR R4 API for BrainChild. Endpoint: https://brainchildhdws-brainchildfhir.fhir.azurehealthcareapis.com. Resurser: Patient (50), Encounter, Condition, Observation, Specimen, ImagingStudy, DiagnosticReport, MedicationRequest.",
+    "source": {
+      "type": "PurviewDataMap",
+      "assetId": "dca24c56-4aec-4453-bbdf-48eece6c9eaf",
+      "assetType": "healthcare_fhir_service",
+      "assetAttributes": {
+        "owner": "",
+        "endpoint": "https://brainchildhdws-brainchildfhir.fhir.azurehealthcareapis.com",
+        "replicatedTo": "",
+        "userDescription": "FHIR R4 API for BrainChild. Endpoint: https://brainchildhdws-brainchildfhir.fhir.azurehealthcareapis.com. Resurser: Patient (50), Encounter, Condition, Observation, Specimen, ImagingStudy, DiagnosticReport, MedicationRequest.",
+        "replicatedFrom": "",
+        "qualifiedName": "healthcare://https://brainchildhdws-brainchildfhir.fhir.azurehealthcareapis.com",
+        "displayName": "",
+        "fhirVersion": "R4",
+        "resourceCount": "8",
+        "name": "BrainChild FHIR Server (R4)",
+        "description": "Azure Health Data Services FHIR R4 — BrainChild barncancerprojektet. Innehåller Patient, Encounter, Condition, Observation, Specimen, ImagingStudy, DiagnosticReport och MedicationRequest."
+      },
+      "fqn": "healthcare://https://brainchildhdws-brainchildfhir.fhir.azurehealthcareapis.com",
+      "accountName": "prviewacc",
+      "lastRefreshedAt": "2026-04-22T07:45:48.972",
+      "lastRefreshedBy": "9350a243-7bcf-4053-8f7e-996364f4de24"
+    },
+    "assetType": "healthcare_fhir_service"
+  },
+  "c6fd8e96-24c6-40ef-94a4-cd6f80c85048": {
+    "name": "FHIR Observation",
+    "description": "FHIR Observation-resurs — labresultat och vitalparametrar. Endpoint: https://brainchildhdws-brainchildfhir.fhir.azurehealthcareapis.com/Observation",
+    "source": {
+      "type": "PurviewDataMap",
+      "assetId": "c6fd8e96-24c6-40ef-94a4-cd6f80c85048",
+      "assetType": "healthcare_fhir_resource_type",
+      "assetAttributes": {
+        "owner": "",
+        "endpoint": "https://brainchildhdws-brainchildfhir.fhir.azurehealthcareapis.com/Observation",
+        "replicatedTo": "",
+        "userDescription": "FHIR Observation-resurs — labresultat och vitalparametrar. Endpoint: https://brainchildhdws-brainchildfhir.fhir.azurehealthcareapis.com/Observation",
+        "replicatedFrom": "",
+        "qualifiedName": "healthcare://https://brainchildhdws-brainchildfhir.fhir.azurehealthcareapis.com/Observation",
+        "displayName": "",
+        "fhirVersion": "R4",
+        "name": "FHIR Observation",
+        "description": "FHIR Observation-resurs — labresultat och vitalparametrar",
+        "resourceType": "Observation"
+      },
+      "fqn": "healthcare://https://brainchildhdws-brainchildfhir.fhir.azurehealthcareapis.com/Observation",
+      "accountName": "prviewacc",
+      "lastRefreshedAt": "2026-04-22T07:45:48.972",
+      "lastRefreshedBy": "9350a243-7bcf-4053-8f7e-996364f4de24"
+    },
+    "assetType": "healthcare_fhir_resource_type"
+  },
+  "0a034311-74c8-4ac1-9893-99c3f4a88d4a": {
+    "name": "OMOP Forskningsdata",
+    "description": "OMOP CDM v5.4 forskningsdatabas med person, condition_occurrence, drug_exposure, measurement, visit_occurrence, specimen och cohort tables. De-identifierad data för observational research och real-world evidence studies.",
+    "source": {
+      "type": "PurviewDataMap",
+      "assetId": "0a034311-74c8-4ac1-9893-99c3f4a88d4a",
+      "assetType": "healthcare_data_product",
+      "assetAttributes": {
+        "owner": "joandolf@microsoft.com",
+        "replicatedTo": "",
+        "userDescription": "OMOP CDM v5.4 forskningsdatabas med person, condition_occurrence, drug_exposure, measurement, visit_occurrence, specimen och cohort tables. De-identifierad data för observational research och real-world evidence studies.",
+        "replicatedFrom": "",
+        "qualifiedName": "dp://omop-forskningsdata",
+        "displayName": "",
+        "quality_score": "0.96",
+        "description": "OMOP CDM v5.4 forskningsdatabas med person, condition_occurrence, drug_exposure, measurement, visit_occurrence, specimen och cohort tables. De-identifierad data för observational research och real-world evidence studies.",
+        "product_status": "Published",
+        "sla": "Månatlig uppdatering, <7 dagar latens, 99.9% tillgänglighet, Indefinite retention",
+        "use_cases": "Kohort-identifiering | Observationsstudier | Drug-safety analys | Real-world evidence | Komparativ effektivitet | Vocabularies mapping",
+        "tables": "person, condition_occurrence, drug_exposure, measurement, visit_occurrence, specimen, concept, vocabulary",
+        "product_type": "Research",
+        "product_owners": "Clinical Research Team | OMOP Data Stewards | Dr. Erik Johansson",
+        "name": "OMOP Forskningsdata"
+      },
+      "fqn": "dp://omop-forskningsdata",
+      "accountName": "prviewacc",
+      "lastRefreshedAt": "2026-04-23T15:06:26.238",
+      "lastRefreshedBy": "9350a243-7bcf-4053-8f7e-996364f4de24"
+    },
+    "assetType": "healthcare_data_product"
+  },
+  "573e6090-5f35-4a5e-9aad-4f60687081a1": {
+    "name": "gold_omop",
+    "description": "Gold OMOP | OMOP CDM-standardiserad data.",
+    "source": {
+      "type": "PurviewDataMap",
+      "assetId": "573e6090-5f35-4a5e-9aad-4f60687081a1",
+      "assetType": "fabric_lake_warehouse",
+      "assetAttributes": {
+        "owner": "",
+        "replicatedTo": "",
+        "userDescription": "Gold OMOP | OMOP CDM-standardiserad data.",
+        "replicatedFrom": "",
+        "qualifiedName": "https://app.fabric.microsoft.com/groups/afda4639-34ce-4ee9-a82f-ab7b5cfd7334/lakewarehouses/a791937d-372d-42ed-b798-16490a7decb5",
+        "displayName": "",
+        "description": "",
+        "createdDateTime": "0",
+        "dedicatedCapacityName": "Trial-20260223T144903Z-Xm-CJbXHkUKtFPHaYfOFEA",
+        "createdBy": "",
+        "name": "gold_omop",
+        "tenantId": "71c4b6d5-0065-4c6c-a125-841a582754eb",
+        "artifactId": "a791937d-372d-42ed-b798-16490a7decb5",
+        "modifiedBy": "admin@MngEnvMCAP522719.onmicrosoft.com",
+        "modifiedDateTime": "1776859804256",
+        "workspaceName": "Healthcare-Analytics"
+      },
+      "fqn": "https://app.fabric.microsoft.com/groups/afda4639-34ce-4ee9-a82f-ab7b5cfd7334/lakewarehouses/a791937d-372d-42ed-b798-16490a7decb5",
+      "accountName": "prviewacc",
+      "lastRefreshedAt": "2026-04-22T21:17:45.283"
+    },
+    "assetType": "fabric_lake_warehouse"
+  },
+  "426fefce-ed7e-40e6-9e5c-370ece0d5244": {
+    "name": "healthcare-analytics-v1",
+    "description": "",
+    "source": {
+      "type": "PurviewDataMap",
+      "assetId": "426fefce-ed7e-40e6-9e5c-370ece0d5244",
+      "assetType": "fabric_ml_experiment",
+      "assetAttributes": {
+        "owner": "",
+        "replicatedTo": "",
+        "userDescription": "",
+        "replicatedFrom": "",
+        "qualifiedName": "https://app.fabric.microsoft.com/groups/afda4639-34ce-4ee9-a82f-ab7b5cfd7334/mlexperiments/0f32bb68-1eab-4d3f-b2c6-46e0ab35ae2d",
+        "displayName": "",
+        "description": "",
+        "createdDateTime": "0",
+        "dedicatedCapacityName": "Trial-20260223T144903Z-Xm-CJbXHkUKtFPHaYfOFEA",
+        "createdBy": "admin@MngEnvMCAP522719.onmicrosoft.com",
+        "name": "healthcare-analytics-v1",
+        "tenantId": "71c4b6d5-0065-4c6c-a125-841a582754eb",
+        "artifactId": "0f32bb68-1eab-4d3f-b2c6-46e0ab35ae2d",
+        "modifiedBy": "admin@MngEnvMCAP522719.onmicrosoft.com",
+        "modifiedDateTime": "0",
+        "workspaceName": "Healthcare-Analytics"
+      },
+      "fqn": "https://app.fabric.microsoft.com/groups/afda4639-34ce-4ee9-a82f-ab7b5cfd7334/mlexperiments/0f32bb68-1eab-4d3f-b2c6-46e0ab35ae2d",
+      "accountName": "prviewacc",
+      "lastRefreshedAt": "2026-04-22T21:17:45.314"
+    },
+    "assetType": "fabric_ml_experiment"
+  },
+  "702dcc3f-9db7-4b26-9163-1bf6f6f60000": {
+    "name": "ml_predictions",
+    "description": "Gold | ML-prediktioner — LOS och readmission risk scores. Tranad pa Silver-features",
+    "source": {
+      "type": "PurviewDataMap",
+      "assetId": "702dcc3f-9db7-4b26-9163-1bf6f6f60000",
+      "assetType": "fabric_lakehouse_table",
+      "assetAttributes": {
+        "owner": "",
+        "replicatedTo": "",
+        "userDescription": "Gold | ML-prediktioner — LOS och readmission risk scores. Tranad pa Silver-features",
+        "replicatedFrom": "",
+        "qualifiedName": "https://app.fabric.microsoft.com/groups/afda4639-34ce-4ee9-a82f-ab7b5cfd7334/lakehouses/2960eef0-5de6-4117-80b1-6ee783cdaeec/tables/ml_predictions",
+        "displayName": "",
+        "description": "",
+        "numRecords": "3459",
+        "rootPath": "https://onelake.dfs.fabric.microsoft.com//afda4639-34ce-4ee9-a82f-ab7b5cfd7334/2960eef0-5de6-4117-80b1-6ee783cdaeec/Tables/ml_predictions",
+        "type": "Delta",
+        "dedicatedCapacityName": "Trial-20260223T144903Z-Xm-CJbXHkUKtFPHaYfOFEA",
+        "name": "ml_predictions",
+        "tenantId": "71c4b6d5-0065-4c6c-a125-841a582754eb",
+        "workspaceName": "Healthcare-Analytics"
+      },
+      "fqn": "https://app.fabric.microsoft.com/groups/afda4639-34ce-4ee9-a82f-ab7b5cfd7334/lakehouses/2960eef0-5de6-4117-80b1-6ee783cdaeec/tables/ml_predictions",
+      "accountName": "prviewacc",
+      "lastRefreshedAt": "2026-04-22T21:17:59.963"
+    },
+    "assetType": "fabric_lakehouse_table"
+  },
+  "9339dfea-6e9b-4b25-9498-34b2eb42ff8a": {
+    "name": "los-predictor-lgbm",
+    "description": "",
+    "source": {
+      "type": "PurviewDataMap",
+      "assetId": "9339dfea-6e9b-4b25-9498-34b2eb42ff8a",
+      "assetType": "fabric_ml_model",
+      "assetAttributes": {
+        "owner": "",
+        "replicatedTo": "",
+        "userDescription": "",
+        "replicatedFrom": "",
+        "qualifiedName": "https://app.fabric.microsoft.com/groups/afda4639-34ce-4ee9-a82f-ab7b5cfd7334/mlmodels/773e067c-c169-47d2-941f-76d546ea17b7",
+        "displayName": "",
+        "description": "",
+        "createdDateTime": "0",
+        "dedicatedCapacityName": "Trial-20260223T144903Z-Xm-CJbXHkUKtFPHaYfOFEA",
+        "createdBy": "admin@MngEnvMCAP522719.onmicrosoft.com",
+        "name": "los-predictor-lgbm",
+        "tenantId": "71c4b6d5-0065-4c6c-a125-841a582754eb",
+        "artifactId": "773e067c-c169-47d2-941f-76d546ea17b7",
+        "modifiedBy": "admin@MngEnvMCAP522719.onmicrosoft.com",
+        "modifiedDateTime": "0",
+        "workspaceName": "Healthcare-Analytics"
+      },
+      "fqn": "https://app.fabric.microsoft.com/groups/afda4639-34ce-4ee9-a82f-ab7b5cfd7334/mlmodels/773e067c-c169-47d2-941f-76d546ea17b7",
+      "accountName": "prviewacc",
+      "lastRefreshedAt": "2026-04-22T21:17:45.314"
+    },
+    "assetType": "fabric_ml_model"
+  },
+  "22ddca6a-0aa5-4f98-9ce2-53af9d959c68": {
+    "name": "FHIR Patient",
+    "description": "FHIR Patient-resurs — patientdemografi. Endpoint: https://brainchildhdws-brainchildfhir.fhir.azurehealthcareapis.com/Patient",
+    "source": {
+      "type": "PurviewDataMap",
+      "assetId": "22ddca6a-0aa5-4f98-9ce2-53af9d959c68",
+      "assetType": "healthcare_fhir_resource_type",
+      "assetAttributes": {
+        "owner": "",
+        "endpoint": "https://brainchildhdws-brainchildfhir.fhir.azurehealthcareapis.com/Patient",
+        "replicatedTo": "",
+        "userDescription": "FHIR Patient-resurs — patientdemografi. Endpoint: https://brainchildhdws-brainchildfhir.fhir.azurehealthcareapis.com/Patient",
+        "replicatedFrom": "",
+        "qualifiedName": "healthcare://https://brainchildhdws-brainchildfhir.fhir.azurehealthcareapis.com/Patient",
+        "displayName": "",
+        "fhirVersion": "R4",
+        "name": "FHIR Patient",
+        "description": "FHIR Patient-resurs — patientdemografi",
+        "resourceType": "Patient"
+      },
+      "fqn": "healthcare://https://brainchildhdws-brainchildfhir.fhir.azurehealthcareapis.com/Patient",
+      "lastRefreshedAt": "2026-04-22T07:45:48.972",
+      "lastRefreshedBy": "9350a243-7bcf-4053-8f7e-996364f4de24"
+    },
+    "assetType": "healthcare_fhir_resource_type"
+  },
+  "e7010e17-8987-4c31-af29-b06fcf4b2142": {
+    "name": "Klinisk Patientanalys",
+    "description": "Omfattar patientdemografi, diagnoser (ICD-10), vårdtillfällen, läkemedel (ATC), laboratorieprov (LOINC), vitala parametrar och DICOM-studier. Används för vårdkvalitetsanalys, patientflödesoptimering och klinisk beslutsfattande.",
+    "source": {
+      "type": "PurviewDataMap",
+      "assetId": "e7010e17-8987-4c31-af29-b06fcf4b2142",
+      "assetType": "healthcare_data_product",
+      "assetAttributes": {
+        "owner": "joandolf@microsoft.com",
+        "replicatedTo": "",
+        "userDescription": "Omfattar patientdemografi, diagnoser (ICD-10), vårdtillfällen, läkemedel (ATC), laboratorieprov (LOINC), vitala parametrar och DICOM-studier. Används för vårdkvalitetsanalys, patientflödesoptimering och klinisk beslutsfattande.",
+        "replicatedFrom": "",
+        "qualifiedName": "dp://klinisk-patientanalys",
+        "displayName": "",
+        "quality_score": "0.95",
+        "description": "Omfattar patientdemografi, diagnoser (ICD-10), vårdtillfällen, läkemedel (ATC), laboratorieprov (LOINC), vitala parametrar och DICOM-studier. Används för vårdkvalitetsanalys, patientflödesoptimering och klinisk beslutsfattande.",
+        "product_status": "Published",
+        "sla": "Daglig uppdatering, <1h latens, 99.5% tillgänglighet, 10 års retention",
+        "use_cases": "LOS-prediktion (LightGBM) | Återinläggningsrisk (Random Forest) | Charlson Comorbidity Index | Avdelningsstatistik | GDPR-compliance | Kliniskt beslutsfattande",
+        "tables": "patients, encounters, diagnoses, medications, vitals_labs, observations, dicom_studies",
+        "product_type": "Analytics",
+        "product_owners": "Healthcare Analytics Team | Clinical Data Stewards | Dr. Anna Svensson",
+        "name": "Klinisk Patientanalys"
+      },
+      "fqn": "dp://klinisk-patientanalys",
+      "lastRefreshedAt": "2026-04-23T15:06:21.322",
+      "lastRefreshedBy": "9350a243-7bcf-4053-8f7e-996364f4de24"
+    },
+    "assetType": "healthcare_data_product"
+  },
+  "fd5a3cbd-a01c-4b95-aa9f-b797052b3857": {
+    "name": "OneLake Catalog - Governance for Admins",
+    "description": "",
+    "source": {
+      "type": "PurviewDataMap",
+      "assetId": "fd5a3cbd-a01c-4b95-aa9f-b797052b3857",
+      "assetType": "powerbi_report",
+      "assetAttributes": {
+        "typeName": "powerbi_report",
+        "displayName": "OneLake Catalog - Governance for Admins",
+        "qualifiedName": "https://app.powerbi.com/groups/e379bab3-2418-4181-b72a-7d396f71e2da/reports/03785a9d-cb6b-4f9d-b5c6-50c743a0ac0b",
+        "hostUrl": "https://app.powerbi.com",
+        "workspaceId": "e379bab3-2418-4181-b72a-7d396f71e2da",
+        "workspaceUrl": "https://app.powerbi.com/groups/e379bab3-2418-4181-b72a-7d396f71e2da"
+      },
+      "fqn": "https://app.powerbi.com/groups/e379bab3-2418-4181-b72a-7d396f71e2da/reports/03785a9d-cb6b-4f9d-b5c6-50c743a0ac0b",
+      "lastRefreshedAt": "2026-04-22T21:17:46.443"
+    },
+    "assetType": "powerbi_report"
+  },
+  "faef8abd-9b4f-4e74-9045-7ef6f6f60000": {
+    "name": "ml_features",
+    "description": "Silver | ML-features — CCI-score, prior_admissions, medication_count, vitals. Feature engineering fran Bronze",
+    "source": {
+      "type": "PurviewDataMap",
+      "assetId": "faef8abd-9b4f-4e74-9045-7ef6f6f60000",
+      "assetType": "fabric_lakehouse_table",
+      "assetAttributes": {
+        "owner": "",
+        "replicatedTo": "",
+        "userDescription": "Silver | ML-features — CCI-score, prior_admissions, medication_count, vitals. Feature engineering fran Bronze",
+        "replicatedFrom": "",
+        "qualifiedName": "https://app.fabric.microsoft.com/groups/afda4639-34ce-4ee9-a82f-ab7b5cfd7334/lakehouses/270a6614-2a07-463d-94de-0c55b26ec6de/tables/ml_features",
+        "displayName": "",
+        "description": "",
+        "numRecords": "17292",
+        "rootPath": "https://onelake.dfs.fabric.microsoft.com//afda4639-34ce-4ee9-a82f-ab7b5cfd7334/270a6614-2a07-463d-94de-0c55b26ec6de/Tables/ml_features",
+        "type": "Delta",
+        "dedicatedCapacityName": "Trial-20260223T144903Z-Xm-CJbXHkUKtFPHaYfOFEA",
+        "name": "ml_features",
+        "tenantId": "71c4b6d5-0065-4c6c-a125-841a582754eb",
+        "workspaceName": "Healthcare-Analytics"
+      },
+      "fqn": "https://app.fabric.microsoft.com/groups/afda4639-34ce-4ee9-a82f-ab7b5cfd7334/lakehouses/270a6614-2a07-463d-94de-0c55b26ec6de/tables/ml_features",
+      "lastRefreshedAt": "2026-04-22T21:17:59.905"
+    },
+    "assetType": "fabric_lakehouse_table"
+  }
+}

@@ -51,8 +51,8 @@ SPARA CREDENTIALS:
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 Tenant ID: {tenant_id}
-Client ID: [KLISTRA IN HÄR]
-Client Secret: [KLISTRA IN HÄR]
+Client ID: 
+Client Secret: 
 
 ⚠️  VIKTIGT: Spara dessa värden säkert! Secret:en kan inte visas igen.
 """.format(tenant_id=TENANT_ID))
